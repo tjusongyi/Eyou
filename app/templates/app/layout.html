@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="易游，您出国旅行的全面管家。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - 您出国旅行的全面管家</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/zui.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/lib/datetimepicker/datetimepicker.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/lib/chosen/chosen.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/doc.css' %}" />
+    <link href="{% static 'app/css/fine-uploader-new.min.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'app/lib/jquery/jquery.js' %}"></script>
+    <script src="{% static 'app/js/doc.js' %}"></script>
+</head>
+
+<body>
+<div spellcheck="false" class="example" id="Navbar">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">易游</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-collapse-example">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">网站介绍</a></li>
+                    <li><a href="#">使用指南</a></li>
+                    <li><a href="#">选择语言</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的 <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/profile/{{user.pk}}">账号设置</a></li>
+                            <li><a href="/publish">发布房源</a></li>
+                            <li><a href="#">我的房子</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/logout">登出</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#register">注册</a></li>
+                    {% endif %}
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+   </div>
+      <div class="modal fade" id="register">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="container">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <div class="signup-form-fields">
+                        <form action="/register" method="post">{% csrf_token %}
+                             <input id="from" name="from" value="email_signup" type="hidden">
+
+                        <div class="control-group row-space-1" id="inputFirst">
+                            <input name="user[name]" placeholder="用户名" class="decorative-input" value="" type="text">
+                        </div>
+                        <div class="control-group row-space-1" id="inputEmail">
+                            <input name="user[email]" placeholder="电子邮件地址" class="decorative-input inspectletIgnore" value="" type="email">
+                        </div>
+                        <div class="control-group row-space-1" id="inputPassword">
+                            <input id="user_password" name="user[password]" placeholder="密码" class="decorative-input inspectletIgnore" type="password">
+                        </div>
+                        <div class="control-group row-space-1" id="inputConfirmPassword">
+                            <input name="user[password_confirmation]" placeholder="确认密码" class="decorative-input inspectletIgnore" type="password">
+                        </div>
+
+                        <label for="user_profile_info_receive_promotional_email" class="checkbox">
+                            <input name="user_profile_info[receive_promotional_email]" value="0" type="hidden">
+                            <input checked="checked" id="user_profile_info_receive_promotional_email" name="user_profile_info[receive_promotional_email]" value="1" type="checkbox">
+                            告知我有关易游的新闻
+                        </label>
+                        <div class="row-space-2 row-space-top-2">
+                            <small>
+                                注册即代表我同意<a href="/terms" data-popup="true">服务条款</a>、<a href="/terms/privacy_policy" data-popup="true">隐私政策</a>、 <a href="/terms/guest_refund_policy" data-popup="true">房客退款政策</a>及<a href="/terms/host_guarantee" data-popup="true">房东保障计划条款</a>。
+                            </small>
+                        </div>
+                        <input id="is_in_header_view" name="is_in_header_view" value="true" type="hidden">
+                        <button type="submit" class="btn btn-info btn-block btn-large">
+                            注册
+                        </button>
+                        <hr />
+                        </form>
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="container">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <div class="signup-form-fields">
+                        <input id="from" name="from" value="email_signup" type="hidden">
+                        <form action="/login/" method="get">{% csrf_token %}
+                                                   <div class="control-group row-space-1" id="inputFirst">
+                            <input name="user[name]" placeholder="用户名" class="decorative-input" value="" type="text">
+                        </div>
+                        <div class="control-group row-space-1" id="inputPassword">
+                            <input id="user_password" name="user[password]" placeholder="密码" class="decorative-input inspectletIgnore" type="password">
+                        </div>                       
+                        <button type="submit" class="btn btn-info btn-block btn-large">
+                            登录
+                        </button>
+                        <hr />
+                        </form>
+  
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+{% block content %}{% endblock %}
+        <hr/>
+        <footer style="text-align: center;">
+            <p>&copy; {{ year }} - 易游</p>
+        </footer>
+    </div>
+
+
+    <script src="{% static 'app/js/zui.js' %}"></script>
+    <script src="{% static 'app/lib/datetimepicker/datetimepicker.js' %}"></script>
+    <script src="{% static 'app/lib/chosen/chosen.min.js' %}"></script>
+   
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

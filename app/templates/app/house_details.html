@@ -1,0 +1,805 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+        <div class="example">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li class="" data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li class="" data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img alt="First slide " src="/{{MEDIA_URL}}{{ house.pics}}/">
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="icon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="icon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    <div class="example">
+        <div class="row">
+            <div class="col-md-8 ">
+                <div class="col-md-3 text-center col-md-offset-1">
+                    <a href="#host-profile" class="media-photo media-round"><img alt="{{publisher.username}}" class="host-profile-image" src="https://a0.muscache.com/ic/users/7596012/profile_pic/1416709262/original.jpg?interpolation=lanczos-none&amp;crop=w:w;*,*&amp;crop=h:h;*,*&amp;resize=225:*&amp;output-format=jpg&amp;output-quality=70" title="{{publisher.username}}" height="90" width="90"></a>
+                </div>
+                <div class="col-md-6">
+
+                    <h1 itemprop="name" class="overflow h3 row-space-1 text-center-sm" style="margin-top: 0" id="listing_name">
+                       {{ house.title }}
+                    </h1>
+
+                    <div id="display-address" class="row-space-2 text-muted hide-sm">
+
+                        <span>{{ house.address }}</span>
+
+                        &nbsp;
+                        <a href="#reviews" class="link-reset">
+                            <div class="star-rating">
+                                <div class="foreground">
+                                    <i class="icon icon-beach icon-star"></i>
+                                    <i class="icon icon-beach icon-star"></i>
+                                    <i class="icon icon-beach icon-star"></i>
+                                    <i class="icon icon-beach icon-star"></i>
+                                    <i class="icon icon-beach icon-star-half"></i>
+                                    (<span itemprop="reviewCount">14</span>)
+
+
+                                </div>
+
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <form accept-charset="UTF-8" action="" class="info new-o2-form-inline instant-book" id="book_it_form" method="post">
+                    <div id="pricing">
+                        <div id="price_amount" itemprop="price" class="pull-left h3 text-special lead">¥{{ house.rent }}</div>
+
+                        <div id="payment-period-container" class="pull-right">
+                            {% ifequal  house.rentype 0 %}
+                            <div id="per_night" class="lead">
+                                每晚
+                            </div>
+                            {% endifequal %}
+                            {% ifequal  house.rentype 1 %}
+                            <div id="per_month" class="lead">
+                                每月
+                            </div>
+                            {% endifequal %}
+                            {% ifequal  house.rentype 2 %}
+                            <div id="per_month" class="lead">
+                                每年
+                            </div>
+                            {% endifequal %}
+                        </div>                 
+                    </div>
+                    <div id="book_it" class="display-subtotal" style="top: 0px;">
+                        <div class="panel">
+                            <div class="panel-body panel-light">
+                                <div class="form-fields">
+                                    <div class="row row-condensed row-space-3">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-sm-6 row-space-1-sm">
+                                                    <label for="checkin">
+                                                        入住日期
+                                                    </label>
+                                                    <input class=" form-control form-date" id="checkin" name="checkin" placeholder="yyyy-mm-日" type="text">
+                                                </div>
+                                                <div class="col-sm-6 row-space-1-sm">
+                                                    <label for="checkout">
+                                                        退房日期
+                                                    </label>
+                                                    <input class=" form-control form-date" id="checkout" name="checkout" placeholder="yyyy-mm-日" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="number_of_guests">
+                                                房客
+                                            </label>
+                                            <div class="select select-block">
+                                                <select id="number_of_guests" name="number_of_guests" class="form-control">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="book_it_status" class="">
+                                    <div id="book_it_enabled" class="clearfix">
+                                        <div id="subtotal_area" class="panel-padding-fit">
+                                            <table class="table table-bordered table-breakdown">
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td id="average_price" name="{{ house.rent }}">
+                                                            ¥{{ house.rent }}x 1晚
+
+                                                        </td>
+                                                        <td class="table-cell-price">¥{{ house.rent }}</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            房主联系方式:                                                           
+
+                                                        </td>
+                                                        <td class="table-cell-price">{{ house.contactNumber}}</td>
+                                                    </tr>
+
+
+                                                    <tr class="table-row-total">
+                                                        <td>总价</td>
+                                                        <td id="total_price">¥214</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="book_it_button_container">
+                                            <button type="submit" class="btn btn-primary btn-large btn-block" id="book_it_button">
+
+                                                <span class="instant-book">
+                                                    <i class="icon icon-bolt icon-beach h4"></i>
+                                                    马上预订
+                                                </span>
+
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input id="hosting_id" name="hosting_id" value="4645430" type="hidden">
+                </form>
+            </div>
+        </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var each = $("#average_price").attr("name");
+            $("#total_price").text(each);
+    });
+    </script>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-md-3 text-muted text-center hide-sm col-md-offset-1">
+                    <a href="#host-profile" class="link-reset text-wrap">{{house.publisher.username}}</a>
+                </div>
+                {% ifequal  house.housetype 0 %}
+                <div class="col-sm-1">
+                    酒店
+                </div>
+               {% endifequal %}
+                {% ifequal  house.housetype 1 %}
+                <div class="col-sm-1">
+                    个人
+                </div>
+                {% endifequal %}
+                {% ifequal  house.housetype 2 %}
+                <div class="col-sm-1">
+                    第三方
+                </div>
+                 {% endifequal %}
+                {% ifequal  house.roomtype 0 %}
+                <div class="col-sm-1">
+                    整套
+                </div>
+               {% endifequal %}
+                {% ifequal  house.roomtype 1 %}
+                <div class="col-sm-1">
+                    独立房间
+                </div>
+                {% endifequal %}
+                {% ifequal  house.roomtype 2 %}
+                <div class="col-sm-1">
+                    合住
+                </div>
+                 {% endifequal %}
+
+                
+                <div class="col-sm-2">
+                    可入住{{house.checkinNumber}}位房客
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+<div class="example container">
+        <div class="row">
+            <div class="col-lg-10" id="details-column">
+
+                <div class="col-lg-9 col-md-offset-2">
+
+                    <h4 class="row-space-4 text-center-sm">
+                        关于此房源
+                    </h4>
+
+
+                    <p>{{house.description}}</p>
+
+                    <p class="text-center-sm">
+                        <a id="contact-host-link" href="#">
+                            <strong>联系房东</strong>
+                        </a>
+                    </p>                    
+                    <hr>
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="text-muted">
+                                房源
+                            </div>
+
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div>床型 <strong>实体床</strong></div>
+                                    <div>房源类型 <strong><a href="/s/Beijing--China?type=apartment" class="link-reset">公寓</a></strong></div>
+                                    <div>可住： <strong>2</strong></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div>卧室： <strong>1</strong></div>
+                                    <div>卫生间： <strong>1</strong></div>
+                                    <div>床位： <strong>1</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+
+                    <div class="row amenities">
+                        <div class="col-md-3 text-muted">
+                            便利设施
+                        </div>
+
+
+                        <div class="col-md-9 expandable expandable-trigger-more">
+                            <div class="expandable-content-summary">
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+
+                                        <div class="row-space-1">
+                                            <i class="icon h3 icon-meal"></i>
+                                            &nbsp;
+                                            <span id="amenity-short-tooltip-trigger-8">
+                                                厨房
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1">
+                                            <i class="icon h3 icon-internet"></i>
+                                            &nbsp;
+                                            <span id="amenity-short-tooltip-trigger-3">
+                                                网络
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1">
+                                            <i class="icon h3 icon-tv"></i>
+                                            &nbsp;
+                                            <span id="amenity-short-tooltip-trigger-1">
+                                                电视
+                                            </span>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                        <div class="row-space-1">
+                                            <i class="icon h3 icon-essentials"></i>
+                                            &nbsp;
+                                            <span id="amenity-short-tooltip-trigger-40">
+                                                生活必需品
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1">
+                                            <i class="icon h3 icon-shampoo"></i>
+                                            &nbsp;
+                                            <span id="amenity-short-tooltip-trigger-41">
+                                                洗发水
+                                            </span>
+                                        </div>
+
+
+
+                                        <a class="expandable-trigger-more" href="#">
+                                            <strong>更多内容</strong>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="expandable-content-full" style="height: 106px;">
+                                <div class="row">
+                                    <div class="col-sm-6">
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-meal"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-8">
+                                                <strong>
+                                                    厨房
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-internet"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-3">
+                                                <strong>
+                                                    网络
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-tv"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-1">
+                                                <strong>
+                                                    电视
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-essentials"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-40">
+                                                <strong>
+                                                    生活必需品
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-shampoo"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-41">
+                                                <strong>
+                                                    洗发水
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-heating"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-30">
+                                                <strong>
+                                                    暖气
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-air-conditioning"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-5">
+                                                <strong>
+                                                    空调
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-washer"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-33">
+                                                <strong>
+                                                    洗衣机
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-34">
+                                                <del>
+                                                    烘干机
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-9">
+                                                <del>
+                                                    内部提供免费停车位
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-wifi"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-4">
+                                                <strong>
+                                                    无线网络
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-2">
+                                                <del>
+                                                    有线电视
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-cup"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-16">
+                                                <strong>
+                                                    早餐
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-12">
+                                                <del>
+                                                    允许携带宠物
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-family"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-31">
+                                                <strong>
+                                                    <a href="/explore/beijing--china/apartment/family-friendly" class="link-reset">
+                                                        欢迎家庭/携带孩子入住
+                                                    </a>
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-balloons"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-32">
+                                                <strong>
+                                                    适合举办活动
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-11">
+                                                <del>
+                                                    允许吸烟
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-6">
+                                                <del>
+                                                    无障碍设施
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 ">
+                                            <i class="icon h3 icon-elevator"></i>
+                                            &nbsp;
+                                            <span id="amenity-long-tooltip-trigger-21">
+                                                <strong>
+                                                    大厦内电梯
+                                                </strong>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-27">
+                                                <del>
+                                                    室内壁炉
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-28">
+                                                <del>
+                                                    蜂鸣器/无线对讲机
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-14">
+                                                <del>
+                                                    门卫
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-7">
+                                                <del>
+                                                    游泳池
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-25">
+                                                <del>
+                                                    热水浴缸
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-15">
+                                                <del>
+                                                    健身房
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-35">
+                                                <del>
+                                                    烟雾探测器
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-36">
+                                                <del>
+                                                    一氧化碳探测器
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-37">
+                                                <del>
+                                                    急救包
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-38">
+                                                <del>
+                                                    安全卡
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+
+
+                                        <div class="row-space-1 text-muted">
+                                            <span id="amenity-long-tooltip-trigger-39">
+                                                <del>
+                                                    灭火器
+                                                </del>
+                                            </span>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <hr>
+
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="text-muted">
+                                价格
+                            </div>
+
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div>额外人员: <strong><span id="localized_people_pricing_description_string">无需付费</span></strong></div>
+                                    <div>每周价格: <strong><span id="weekly_price_string">¥1196</span> /周</strong></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div><a class="link-reset" href="/s/Beijing--China?sublets=monthly">月租价格</a> <strong><span id="monthly_price_string">¥4722</span> /月</strong></div>
+                                    <div>退订政策： <strong><a href="/home/cancellation_policies#flexible" data-popup="true" id="cancellation-policy">灵活</a></strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="text-muted">
+                                可租用性
+                            </div>
+
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    最少住宿天数<strong>1晚</strong>。
+                                </div>
+                                <div class="col-md-6">
+                                    <a id="view-calendar" href="#"><strong>查看日历</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row-space-4 row-space-top-4 inline-photo">
+                        <a href="#" class="photo-trigger" data-index="2"><img alt="Cozy house in BJ CBD…" class="media-photo media-photo-block row-space-1 row-space-top-1 img-responsive" src="https://a2.muscache.com/ic/pictures/60597510/7613e60a_original.jpg?interpolation=lanczos-none&amp;size=x_large&amp;output-format=progressive-jpeg&amp;output-quality=70"></a>
+                        <div class="row">
+                            <div class="col-lg-9">
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="text-muted pull-right">认证照片</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="photo-grid-bottom" class="photo-grid hide row-space-4 row-space-top-4 hide-sm">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\bin\Microsoft.PythonTools.WebRole.dll
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\attach_server.py
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\visualstudio_py_debugger.py
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\visualstudio_py_repl.py
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\visualstudio_py_util.py
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\__init__.py
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\__main__.py
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\bin\AzureSetup.cfg
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\bin\Microsoft.PythonTools.AzureSetup.exe
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\bin\Microsoft.PythonTools.AzureSetup.exe.config
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\bin\wfastcgi.py
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\web.config
+c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\web.debug.config
