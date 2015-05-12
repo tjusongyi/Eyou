@@ -1,4 +1,4 @@
-﻿{% extends "app/layout.html" %}
+{% extends "app/layout.html" %}
 {% load staticfiles %}
 {% block content %}
 
@@ -173,7 +173,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var each = $("#average_price").attr("name");
-            $("#total_price").text(each);
+            $("#total_price").text("¥"+each);
     });
     </script>
         <div class="row">
@@ -202,7 +202,7 @@
                 </div>
                {% endifequal %}
                 {% ifequal  house.roomtype 1 %}
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     独立房间
                 </div>
                 {% endifequal %}
@@ -779,18 +779,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row-space-4 row-space-top-4 inline-photo">
-                        <a href="#" class="photo-trigger" data-index="2"><img alt="Cozy house in BJ CBD…" class="media-photo media-photo-block row-space-1 row-space-top-1 img-responsive" src="https://a2.muscache.com/ic/pictures/60597510/7613e60a_original.jpg?interpolation=lanczos-none&amp;size=x_large&amp;output-format=progressive-jpeg&amp;output-quality=70"></a>
-                        <div class="row">
-                            <div class="col-lg-9">
-                            </div>
-                            <div class="col-lg-3">
-                                <span class="text-muted pull-right">认证照片</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div>     
 
 
                     <div id="photo-grid-bottom" class="photo-grid hide row-space-4 row-space-top-4 hide-sm">

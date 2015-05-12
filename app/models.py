@@ -21,7 +21,7 @@ class House(models.Model):
     description = models.CharField(max_length = 1000)
     rent = models.DecimalField(decimal_places = 2,max_digits = 20)
     rentype = models.PositiveSmallIntegerField()
-    contactNumber = models.PositiveIntegerField()
+    contactNumber = models.CharField(max_length = 20,null=True)
     publisher = models.ForeignKey(User)
     pics = models.ImageField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
 
@@ -32,3 +32,6 @@ class House(models.Model):
 class UserProfile(models.Model):
     user = models.ForeignKey(User);
     avatar = models.FileField()
+
+class HousePicture(models.Model):
+    pic = models.ImageField()

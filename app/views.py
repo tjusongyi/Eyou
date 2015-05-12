@@ -34,6 +34,8 @@ def userLogin(request):
         password = request.GET['user[password]']
         user = authenticate(username=username, password=password)
         login(request, user)
+        request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
+        return HttpResponseRedirect(request.session['login_from'])
     return render(
         request,
         'app/index.html',
@@ -44,7 +46,7 @@ def userLogin(request):
         })
     )
 
-@csrf_protect
+
 def register(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'POST':
