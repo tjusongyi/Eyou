@@ -23,7 +23,7 @@ class House(models.Model):
     rentype = models.PositiveSmallIntegerField()
     contactNumber = models.CharField(max_length = 20,null=True)
     publisher = models.ForeignKey(User)
-    pics = models.ImageField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
+    pics = models.FileField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
 
 
     def __unicode__(self):
@@ -34,4 +34,4 @@ class UserProfile(models.Model):
     avatar = models.FileField()
 
 class HousePicture(models.Model):
-    pic = models.ImageField()
+    pic = models.FileField()
