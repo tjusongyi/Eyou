@@ -23,9 +23,36 @@ class House(models.Model):
     rentype = models.PositiveSmallIntegerField()
     contactNumber = models.CharField(max_length = 20,null=True)
     publisher = models.ForeignKey(User)
+    rate = models.PositiveSmallIntegerField()
     pics = models.FileField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
 
+    def __unicode__(self):
+        return self.title
 
+class TravelProduct(models.Model):
+    title = models.CharField(max_length = 50)
+    price = models.PositiveIntegerField()
+    planeticket = models.CharField(max_length = 100)
+    checkinHotel = models.CharField(max_length = 100)
+    startime = models.DateField()
+    endtime = models.DateField()
+    createdTime = models.DateTimeField(auto_now_add = True)
+    updatedTime = models.DateTimeField(auto_now_add = True)
+    timesViewed = models.PositiveIntegerField()
+    description = models.CharField(max_length = 1000)
+    publisher = models.ForeignKey(User)
+    rate = models.PositiveSmallIntegerField()
+    pics = models.FileField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
+
+class Itinerary(models.Model):
+    title = models.CharField(max_length = 50)
+    createdTime = models.DateTimeField(auto_now_add = True)
+    updatedTime = models.DateTimeField(auto_now_add = True)
+    timesViewed = models.PositiveIntegerField()
+    description = models.CharField(max_length = 1000)
+    publisher = models.ForeignKey(User)
+    rate = models.PositiveSmallIntegerField()
+    pics = models.FileField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
     def __unicode__(self):
         return self.title
 
@@ -35,3 +62,11 @@ class UserProfile(models.Model):
 
 class HousePicture(models.Model):
     pic = models.FileField()
+    
+    #relatedType:0 is travel, 1 is study, 2 is hotel
+    #score is from 0 to 5
+class Ratings(models.Model):
+    relatedType = models.PositiveSmallIntegerField();
+    relatedId = models.IntegerField();
+    content = models.CharField(max_length = 1000);
+    score = models.PositiveSmallIntegerField();

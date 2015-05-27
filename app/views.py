@@ -26,6 +26,48 @@ def home(request):
         })
     )
 
+def hotel_index(request):
+    assert isinstance(request, HttpRequest)
+    houses = House.objects.all()
+    return render(
+        request,
+        'app/hotel_index.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'houses':houses,
+        })
+    )
+
+def travel_index(request):
+    assert isinstance(request, HttpRequest)
+    houses = House.objects.all()
+    return render(
+        request,
+        'app/travel_index.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'houses':houses,
+        })
+    )
+
+def study_index(request):
+    assert isinstance(request, HttpRequest)
+    houses = House.objects.all()
+    return render(
+        request,
+        'app/study_index.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'houses':houses,
+        })
+    )
+
 @csrf_protect
 def userLogin(request):
     assert isinstance(request, HttpRequest)

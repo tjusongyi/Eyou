@@ -52,10 +52,13 @@
     <Folder Include="MyApp\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\hotel_index.html" />
     <Content Include="app\templates\app\house_add_picture.html" />
     <Content Include="app\templates\app\house_details.html" />
     <Content Include="app\templates\app\profile.html" />
     <Content Include="app\templates\app\publish.html" />
+    <Content Include="app\templates\app\study_index.html" />
+    <Content Include="app\templates\app\travel_index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
