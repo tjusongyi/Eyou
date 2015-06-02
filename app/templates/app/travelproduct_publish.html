@@ -1,0 +1,117 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="example">
+        <div class="col-7 col-center text-center">
+            <h1 class="h2">发布您的旅游产品</h1>
+            <p class="text-lead">
+                分享您独特的旅游服务。
+            </p>
+        </div>
+    </div>
+    <div class="example">      
+                <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">标题</p>
+            </div>
+            <div class="col-md-5">
+              <input type="text" id="title" placeholder=""style="width: 100%;"></>
+
+            </div>                    
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">价格</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="price" placeholder="人均价格"></>
+            </div>
+        </div>
+                <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">机票</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="planeticket" placeholder="航班"></>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">住宿</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="checkinHotel" placeholder="酒店名称"></>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead"> 行程日期</p>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group ">
+                            <input class="form-control form-date" id="startime" placeholder="开始日期" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <input class="form-control form-date" id="endtime" placeholder="结束日期" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                        </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">描述</p>
+            </div>
+            <div class="col-md-5">
+              <textarea class="kindeditor" id="kindeditor" style="width: 100%;"></textarea>
+            </div>                    
+        </div>
+                <br/> 
+           
+        <br/>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-2">
+                <div class="btn btn-info" id="publish">发布</div>
+            </div>
+        </div>
+
+        </div>
+<script type="text/javascript">
+$(document).ready(function(){
+   
+    $("#publish").click(function () {
+        var title = $("#title").val();
+        var desc = editor.html();
+        var price = $("#price").val();
+        var startime = $("#startime").val();
+        var endtime = $("#endtime").val();
+        var planeticket = $("#planeticket").val();
+        var checkinHotel = $("#checkinHotel").val();
+        //alert(contact);
+        $.ajax({
+            url: '/travelproduct_publish/',
+
+            type: 'POST',
+
+            data: {
+                title: title,
+                desc: desc,
+                price: price,
+                planeticket: planeticket,
+                startime: startime,
+                endtime: endtime,
+                checkinHotel: checkinHotel
+            },
+
+            dataType: 'json',
+
+            timeout: 1000,
+
+            error: function (result) { alert("asd"); alert(result) },
+
+            success: function (result) { location.href = "/travelproduct_add_picture/" + result; }
+
+        });
+        });
+    });
+</script>
+{% endblock %}

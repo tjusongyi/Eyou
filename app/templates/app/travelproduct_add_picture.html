@@ -1,0 +1,24 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="example">
+        <div class="col-7 col-center text-center">
+            <h1 class="h2">给您的旅游产品添加一张封面照片吧</h1>
+        </div>
+    </div>
+<form enctype="multipart/form-data" method="POST" action="/travelproduct_add_picture/{{travelproduct.pk}}/">
+        <div>
+         <div class="col-md-1 col-md-offset-4">
+                <p class="lead">照片</p>
+            </div>
+            <div class="col-md-2">
+             <input type="file" name="file_photo" class="btn "/><br/> 
+            </div>
+            <div class="row">
+            <div class="col-md-1 col-md-offset-5">
+                <button class="btn btn-info" id="publish">上传</button>
+            </div>
+        </div>
+        </div>
+</form>
+{% endblock %}

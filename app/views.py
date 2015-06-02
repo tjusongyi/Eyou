@@ -9,7 +9,8 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
-from app.models import House, UserProfile
+from django.contrib.auth.decorators import login_required  
+from app.models import House, UserProfile, Itinerary, Comments, TravelProduct
 
 def home(request):
     """Renders the home page."""
@@ -28,7 +29,7 @@ def home(request):
 
 def hotel_index(request):
     assert isinstance(request, HttpRequest)
-    houses = House.objects.all()
+    houses = House.objects.all()[:4]
     return render(
         request,
         'app/hotel_index.html',
@@ -42,7 +43,7 @@ def hotel_index(request):
 
 def travel_index(request):
     assert isinstance(request, HttpRequest)
-    houses = House.objects.all()
+    travelproducts = TravelProduct.objects.all()[:4]
     return render(
         request,
         'app/travel_index.html',
@@ -50,13 +51,13 @@ def travel_index(request):
         {
             'title':'易游',
             'year':datetime.now().year,
-            'houses':houses,
+            'travelproducts':travelproducts,
         })
     )
 
 def study_index(request):
     assert isinstance(request, HttpRequest)
-    houses = House.objects.all()
+    houses = House.objects.all()[:4]
     return render(
         request,
         'app/study_index.html',
@@ -65,6 +66,104 @@ def study_index(request):
             'title':'易游',
             'year':datetime.now().year,
             'houses':houses,
+        })
+    )
+
+def hotel_list(request):
+    assert isinstance(request, HttpRequest)
+    houses = House.objects.all()
+    return render(
+        request,
+        'app/hotel_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'houses':houses,
+        })
+    )
+
+def travel_list(request):
+    assert isinstance(request, HttpRequest)
+    travelproducts = TravelProduct.objects.all()
+    return render(
+        request,
+        'app/travel_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'travelproducts':travelproducts,
+        })
+    )
+
+def study_list(request):
+    assert isinstance(request, HttpRequest)
+    houses = House.objects.all()
+    return render(
+        request,
+        'app/study_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'houses':houses,
+        })
+    )
+
+def my_house_list(request):
+    assert isinstance(request, HttpRequest)
+    houses = House.objects.filter(publisher=request.user)
+    return render(
+        request,
+        'app/my_house_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'houses':houses,
+        })
+    )
+
+def my_itinerary_list(request):
+    assert isinstance(request, HttpRequest)
+    itinerarys = Itinerary.objects.filter(publisher=request.user)
+    return render(
+        request,
+        'app/my_itinerary_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'itinerarys':itinerarys,
+        })
+    )
+
+def my_travel_list(request):
+    assert isinstance(request, HttpRequest)
+    travelproducts = TravelProduct.objects.filter(publisher=request.user)
+    return render(
+        request,
+        'app/my_travel_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'travelproducts':travelproducts,
+        })
+    )
+
+def community(request):
+    assert isinstance(request, HttpRequest)
+    itineraries = Itinerary.objects.all()
+    return render(
+        request,
+        'app/community.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'itineraries':itineraries,
         })
     )
 
@@ -108,8 +207,30 @@ def register(request):
         })
     )
 
+@login_required
+def itinerary_publish(request):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST' and request.is_ajax():
+        response = HttpResponse()  
+        title = request.POST['title']
+        desc = request.POST['desc']
+        itinerary = Itinerary(title=title,description=desc,publisher=request.user,timesViewed = 1, rate =0)
+        itinerary.save()
+        response.write(itinerary.pk)
+        return response
+    return render(
+        request,
+        'app/itinerary_publish.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'发布游记',
+            'year':datetime.now().year,
+        })
+        
+    )
 
-def publish(request):
+@login_required
+def house_publish(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'POST' and request.is_ajax():
         response = HttpResponse()  
@@ -131,7 +252,7 @@ def publish(request):
         return response
     return render(
         request,
-        'app/publish.html',
+        'app/house_publish.html',
         context_instance = RequestContext(request,
         {
             'title':'发布房源',
@@ -140,6 +261,34 @@ def publish(request):
         
     )
 
+@login_required
+def travelproduct_publish(request):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST' and request.is_ajax():
+        response = HttpResponse()  
+        title = request.POST['title']
+        desc = request.POST['desc']
+        price = request.POST['price']
+        planeticket = request.POST['planeticket']     
+        startime = request.POST['startime']
+        endtime = request.POST['endtime']
+        checkinHotel = request.POST['checkinHotel']
+        travelproduct = TravelProduct(title=title,startime=startime,price=price,endtime=endtime,planeticket=planeticket,checkinHotel=checkinHotel,description=desc,publisher=request.user,timesViewed = 1,rate=0)
+        travelproduct.save()
+        response.write(travelproduct.pk)
+        return response
+    return render(
+        request,
+        'app/travelproduct_publish.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'发布房源',
+            'year':datetime.now().year,
+        })
+        
+    )
+
+@login_required
 def house_add_picture(request,houseid):
     assert isinstance(request, HttpRequest)
     try:
@@ -162,13 +311,63 @@ def house_add_picture(request,houseid):
     })
      )
 
+@login_required
+def itinerary_add_picture(request,itineraryid):
+    assert isinstance(request, HttpRequest)
+    try:
+         itineraryid = int(itineraryid)
+    except ValueError:
+         raise Http404()
+    itinerary = Itinerary.objects.get(pk=itineraryid)
+    if request.method == 'POST':       
+        itinerary.pics = request.FILES.get('file_photo', None)
+        itinerary.save()
+        return HttpResponseRedirect('/itinerary_details/%s/' %itinerary.pk)
+    return render(
+    request,
+    'app/itinerary_add_picture.html',
+    context_instance = RequestContext(request,
+    {
+        'title':'添加照片',
+        'year':datetime.now().year,
+        'itinerary':itinerary,
+    })
+     )
+
+@login_required
+def travelproduct_add_picture(request,travelproductid):
+    assert isinstance(request, HttpRequest)
+    try:
+         travelproductid = int(travelproductid)
+    except ValueError:
+         raise Http404()
+    travelproduct = TravelProduct.objects.get(pk=travelproductid)
+    if request.method == 'POST':       
+        travelproduct.pics = request.FILES.get('file_photo', None)
+        travelproduct.save()
+        return HttpResponseRedirect('/travelproduct_details/%s/' %travelproduct.pk)
+    return render(
+    request,
+    'app/travelproduct_add_picture.html',
+    context_instance = RequestContext(request,
+    {
+        'title':'添加照片',
+        'year':datetime.now().year,
+        'travelproduct':travelproduct,
+    })
+     )
+
 def house_details(request,houseid):
     assert isinstance(request, HttpRequest)
     try:
          houseid = int(houseid)
     except ValueError:
          raise Http404()
-    house = House.objects.get(pk=houseid)
+    try:
+        house = House.objects.get(pk=houseid)
+    except ValueError:
+        raise Http404()
+    comments = Comments.objects.filter(relatedId=itineraryid,relatedType=2)
     return render(
         request,
         'app/house_details.html',
@@ -177,8 +376,68 @@ def house_details(request,houseid):
             'title':'房屋详情',
             'year':datetime.now().year,
             'house':house,
+            'comments':comments,
         })
     )
+
+def itinerary_details(request,itineraryid):
+    assert isinstance(request, HttpRequest)
+    try:
+         itineraryid = int(itineraryid)
+    except ValueError:
+         raise Http404()
+    try:
+        itinerary = Itinerary.objects.get(pk=itineraryid)
+    except ValueError:
+        raise Http404()
+    comments = Comments.objects.filter(relatedId=itineraryid,relatedType=3)
+    return render(
+        request,
+        'app/itinerary_details.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'游记',
+            'year':datetime.now().year,
+            'itinerary':itinerary,
+            'comments':comments,
+        })
+    )
+
+def travelproduct_details(request,itineraryid):
+    assert isinstance(request, HttpRequest)
+    try:
+         itineraryid = int(itineraryid)
+    except ValueError:
+         raise Http404()
+    
+    travelproduct = TravelProduct.objects.get(pk=itineraryid)
+    comments = Comments.objects.filter(relatedId=itineraryid,relatedType=0)
+    return render(
+        request,
+        'app/travelproduct_details.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'游记',
+            'year':datetime.now().year,
+            'travelproduct':travelproduct,
+            'comments':comments,
+        })
+    )
+
+def comment(request,relatedType,relatedId):
+    assert isinstance(request, HttpRequest)
+    try:
+         relatedType = int(relatedType)
+         relatedId = int(relatedId)
+    except ValueError:
+         raise Http404()
+    if request.method == 'POST' and request.is_ajax():
+        content = request.POST['content']
+        response = HttpResponse()
+        comment = Comments(relatedType=relatedType,relatedId = relatedId,publisher=request.user,content=content)
+        comment.save()
+        response.write(comment.pk)
+        return response
 
 def profile(request,userid):
     """Renders the contact page."""

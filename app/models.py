@@ -57,16 +57,22 @@ class Itinerary(models.Model):
         return self.title
 
 class UserProfile(models.Model):
-    user = models.ForeignKey(User);
+    user = models.ForeignKey(User)
     avatar = models.FileField()
 
 class HousePicture(models.Model):
     pic = models.FileField()
     
-    #relatedType:0 is travel, 1 is study, 2 is hotel
+    #relatedType:0 is travel, 1 is study, 2 is hotel, 3 is itinerary
     #score is from 0 to 5
 class Ratings(models.Model):
-    relatedType = models.PositiveSmallIntegerField();
-    relatedId = models.IntegerField();
-    content = models.CharField(max_length = 1000);
-    score = models.PositiveSmallIntegerField();
+    relatedType = models.PositiveSmallIntegerField()
+    relatedId = models.IntegerField()
+    score = models.PositiveSmallIntegerField()
+
+class Comments(models.Model):
+    relatedType = models.PositiveSmallIntegerField()
+    relatedId = models.IntegerField()
+    createdTime = models.DateTimeField(auto_now_add = True)
+    publisher = models.ForeignKey(User)
+    content = models.CharField(max_length = 1000)

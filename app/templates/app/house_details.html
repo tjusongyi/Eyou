@@ -222,7 +222,7 @@
         </div>
 
     </div>
-<div class="example container">
+<div class="example">
         <div class="row">
             <div class="col-lg-10" id="details-column">
 
@@ -731,18 +731,73 @@
 
                     </div>
 
-                    <hr>
-
-                    <hr>
-
-
-                    <div id="photo-grid-bottom" class="photo-grid hide row-space-4 row-space-top-4 hide-sm">
-                    </div>
-
                 </div>
 
             </div>
         </div>
     </div>
+<div class="example">
+     {% for comment in comments%}
+    <div class="comments">
+        <header>            
+            <h3><i class="icon-comments icon-border-circle"></i>{{comments.count}} 条评论</h3>
+        </header>
+        <section class="comments-list">
+            <div class="comment">
+                <a href="###" class="avatar"><i class="icon-user icon-border icon-2x icon-muted"></i></a>
+                <div class="content">
+                    <div class="pull-right"><span class="text-muted" title="2013-11-08 15:52:32">2 hours ago</span> &nbsp;</div>
+                    <span class="author">
+                        <a href="#"><strong>Catouse</strong></a>
+                    </span>
+                    <div class="text">
+                       {{comment.content}}
+                    </div>
+                </div>
+            </div>
+           
+        </section>        
+    </div>
+    {% endfor %}
+    <footer>
+            <div class="reply-form" id="commentReplyForm">
+                <a href="###" class="avatar"><i class="icon-user icon-border icon-2x icon-muted"></i></a>
+                <div class="form">
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea id="content"class="form-control new-comment-text" rows="2" placeholder="write a comment..."></textarea>
+                        </div>
+                        <div id ="publish" class="btn btn-info"><i class="icon-comment-alt"></i> 发表评论</div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
 
+    $("#publish").click(function () {
+        var content = $("#content").val();
+        alert(content);
+        $.ajax({
+            url: '/comment/2/{{house.pk}}/',
+
+            type: 'POST',
+
+            data: {
+                content: content,
+            },
+
+            dataType: 'json',
+
+            timeout: 1000,
+
+            error: function (result) { alert("asd"); alert(result) },
+
+            success: function (result) {location.reload();  }
+
+        });
+        });
+    });
+</script>
 {% endblock %}

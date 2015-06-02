@@ -52,13 +52,26 @@
     <Folder Include="MyApp\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\community.html" />
     <Content Include="app\templates\app\hotel_index.html" />
+    <Content Include="app\templates\app\hotel_list.html" />
     <Content Include="app\templates\app\house_add_picture.html" />
     <Content Include="app\templates\app\house_details.html" />
+    <Content Include="app\templates\app\itinerary_add_picture.html" />
+    <Content Include="app\templates\app\itinerary_details.html" />
+    <Content Include="app\templates\app\itinerary_publish.html" />
+    <Content Include="app\templates\app\my_house_list.html" />
+    <Content Include="app\templates\app\my_itinerary_list.html" />
+    <Content Include="app\templates\app\my_travel_list.html" />
     <Content Include="app\templates\app\profile.html" />
-    <Content Include="app\templates\app\publish.html" />
+    <Content Include="app\templates\app\house_publish.html" />
     <Content Include="app\templates\app\study_index.html" />
+    <Content Include="app\templates\app\study_list.html" />
+    <Content Include="app\templates\app\travelproduct_add_picture.html" />
+    <Content Include="app\templates\app\travelproduct_details.html" />
+    <Content Include="app\templates\app\travelproduct_publish.html" />
     <Content Include="app\templates\app\travel_index.html" />
+    <Content Include="app\templates\app\travel_list.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

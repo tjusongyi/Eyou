@@ -67,63 +67,26 @@
             <div class="list">
                 <header>
                     <div class="pull-right">
-                        <a href="#">查看更多</a>
+                        <a href="/hotel_list">查看更多</a>
                     </div>
                     <h3> 热门房源 &nbsp;<small></small></h3>
                 </header>
                 <section class="cards">
+                    {% for house in houses %}
                     <div class="col-md-4 col-sm-6 col-lg-3">
-                        <a href="/house_details/{{ houses.0.pk}}" class="card">
-                            <img src="{{MEDIA_URL}}{{ houses.0.pics}}" alt="">
-                            <span class="caption">{{houses.0.title}}</span>
+                        <a href="/house_details/{{ house.pk}}" class="card">
+                            <img src="{{MEDIA_URL}}{{ house.pics}}" alt="">
+                            <span class="caption">{{house.title}}</span>
                         </a>
                         <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
                                         <div>
                                             <sup class="h6 text-contrast">¥</sup>
-                                            <span class="h3 price-amount">{{houses.0.rent}}</span>
+                                            <span class="h3 price-amount">{{house.rent}}</span>
                                             <sup class="h6 text-contrast"></sup>
                                         </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-lg-3">
-                        <a href="/house_details/{{ houses.1.pk}}" class="card">
-                            <img src="{{MEDIA_URL}}{{ houses.1.pics}}" alt="">
-                            <span class="caption">{{houses.1.title}}</span>
-                        </a>
-                        <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
-                                        <div>
-                                            <sup class="h6 text-contrast">¥</sup>
-                                            <span class="h3 price-amount">{{houses.1.rent}}</span>
-                                            <sup class="h6 text-contrast"></sup>
-                                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-lg-3">
-                        <a href="/house_details/{{ houses.2.pk}}" class="card"><img src="{{MEDIA_URL}}{{ houses.2.pics}}" alt="">
-                        <span class="caption">{{houses.2.title}}</span>
-                        </a>
-                        
-                        <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
-                                        <div>
-                                            <sup class="h6 text-contrast">¥</sup>
-                                            <span class="h3 price-amount">{{houses.2.rent}}</span>
-                                            <sup class="h6 text-contrast"></sup>
-                                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-lg-3">
-                        <a href="/house_details/{{ houses.3.pk}}" class="card"><img src="{{MEDIA_URL}}{{ houses.3.pics}}" alt="">
-                        <span class="caption">{{houses.3.title}}</span>
-                        </a>
-                        
-                        <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
-                                        <div>
-                                            <sup class="h6 text-contrast">¥</sup>
-                                            <span class="h3 price-amount">{{houses.3.rent}}</span>
-                                            <sup class="h6 text-contrast"></sup>
-                                        </div>
-                        </div>
-                    </div>
+                    </div>                   
+                    {% endfor %}
 
                 </section>
                 <footer>

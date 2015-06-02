@@ -11,3 +11,29 @@ c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\bin\Microsoft.Pyth
 c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\bin\wfastcgi.py
 c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\web.config
 c:\users\pc\documents\visual studio 2013\Projects\MyApp\MyApp\obj\Debug\web.debug.config
+C:\Users\TED\Desktop\MyApp\MyApp\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\attach_server.py
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\visualstudio_py_debugger.py
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\visualstudio_py_repl.py
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\visualstudio_py_util.py
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\__init__.py
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\__main__.py
+C:\Users\TED\Desktop\MyApp\MyApp\bin\AzureSetup.cfg
+C:\Users\TED\Desktop\MyApp\MyApp\bin\Microsoft.PythonTools.AzureSetup.exe
+C:\Users\TED\Desktop\MyApp\MyApp\bin\Microsoft.PythonTools.AzureSetup.exe.config
+C:\Users\TED\Desktop\MyApp\MyApp\bin\wfastcgi.py
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\web.config
+C:\Users\TED\Desktop\MyApp\MyApp\obj\Debug\web.debug.config
+J:\MyApp\MyApp\bin\Microsoft.PythonTools.WebRole.dll
+J:\MyApp\MyApp\obj\Debug\attach_server.py
+J:\MyApp\MyApp\obj\Debug\visualstudio_py_debugger.py
+J:\MyApp\MyApp\obj\Debug\visualstudio_py_repl.py
+J:\MyApp\MyApp\obj\Debug\visualstudio_py_util.py
+J:\MyApp\MyApp\obj\Debug\__init__.py
+J:\MyApp\MyApp\obj\Debug\__main__.py
+J:\MyApp\MyApp\bin\AzureSetup.cfg
+J:\MyApp\MyApp\bin\Microsoft.PythonTools.AzureSetup.exe
+J:\MyApp\MyApp\bin\Microsoft.PythonTools.AzureSetup.exe.config
+J:\MyApp\MyApp\bin\wfastcgi.py
+J:\MyApp\MyApp\obj\Debug\web.config
+J:\MyApp\MyApp\obj\Debug\web.debug.config

@@ -95,12 +95,11 @@ $(function()
             format: 'hh:ii'
         });
     }
-
     if(window.KindEditor)
     {
         KindEditor.ready(function(K)
         {
-          K.create('textarea.kindeditor',
+          window.editor = K.create('textarea.kindeditor',
           {
             allowFileManager : true,
             bodyClass : 'article-content',

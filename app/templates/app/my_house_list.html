@@ -1,0 +1,55 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+  <div class="list">
+        <header>          
+          <h3><i class="icon-list-ul icon-border-circle"></i> 我发布的房源  &nbsp;<small>{{houses.count}}间房子</small><a href="/house_publish" class="btn btn-info pull-right">发布新的房源</a></h3>
+          
+        </header>
+        <section class="items items-hover">
+            {% for house in houses %}
+                <div class="item">
+                <div class="item-heading">
+                    <div class="row">
+                        <div class="col-md-1">
+                             <img src="{{MEDIA_URL}}{{ house.pics}}" class="img-rounded" alt="" height="86px" width="86px">
+                        </div>
+                        <div class="col-md-3">
+                               <h4><span class="label label-success">NEW</span>&nbsp; <a href="/house_details/{{house.pk}}">{{house.title}}</a>&nbsp; &nbsp; &nbsp; <span class="text-muted">{{house.publisher.username}}</span></h4>
+                             <div class="item-content">
+                   {{house.description}}
+                </div>
+                <div class="item-footer">
+                  <a href="#" class="text-muted"><i class="icon-comments"></i> 243</a>&nbsp;
+                  <span class="text-muted">{{house.createdTime}}</span>
+                </div>
+              </div>
+                        </div>
+                      
+                    </div>
+                 
+                  
+                </div>
+               
+            {% endfor %}
+          
+        </section>
+        <footer>
+          <ul class="pager">
+            <li class="previous"><a href="#">« 上一页</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">⋯</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">⋯</a></li>
+            <li><a href="#">12</a></li>
+            <li class="next"><a href="#">下一页 »</a></li>
+          </ul>
+        </footer>
+      </div>
+      
+{% endblock %}
