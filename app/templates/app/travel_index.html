@@ -1,4 +1,4 @@
-﻿{% extends "app/layout.html" %}
+{% extends "app/layout.html" %}
 {% load staticfiles %}
 {% block content %}
 
@@ -74,7 +74,7 @@
                 <section class="cards">
                     {% for travel in travelproducts%}
                     <div class="col-md-4 col-sm-6 col-lg-3">
-                        <a href="/house_details/{{ travel.pk}}" class="card">
+                        <a href="/travel_details/{{ travel.pk}}" class="card">
                             <img src="{{MEDIA_URL}}{{ travel.pics}}" alt="">
                             <span class="caption">{{travel.title}}</span>
                         </a>
