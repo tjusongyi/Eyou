@@ -367,7 +367,7 @@ def house_details(request,houseid):
         house = House.objects.get(pk=houseid)
     except ValueError:
         raise Http404()
-    comments = Comments.objects.filter(relatedId=itineraryid,relatedType=2)
+    comments = Comments.objects.filter(relatedId=houseid,relatedType=2)
     return render(
         request,
         'app/house_details.html',
@@ -403,15 +403,15 @@ def itinerary_details(request,itineraryid):
         })
     )
 
-def travelproduct_details(request,itineraryid):
+def travelproduct_details(request,travelid):
     assert isinstance(request, HttpRequest)
     try:
-         itineraryid = int(itineraryid)
+         travelid = int(travelid)
     except ValueError:
          raise Http404()
     
-    travelproduct = TravelProduct.objects.get(pk=itineraryid)
-    comments = Comments.objects.filter(relatedId=itineraryid,relatedType=0)
+    travelproduct = TravelProduct.objects.get(pk=travelid)
+    comments = Comments.objects.filter(relatedId=travelid,relatedType=0)
     return render(
         request,
         'app/travelproduct_details.html',
