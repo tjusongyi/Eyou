@@ -246,7 +246,7 @@ def house_publish(request):
         addr = request.POST['addr']
         contact = request.POST['contact']
         house = House(title=title,housetype = housetype,roomtype = roomtype,checkinNumber=checkinNumber,rentype=rentype,rent=rent,startime=startime,endtime=endtime
-                      ,address=addr,description=desc,contactNumber=contact,publisher=request.user,timesViewed = 1)
+                      ,address=addr,description=desc,contactNumber=contact,publisher=request.user,timesViewed = 1,rate=0)
         house.save()
         response.write(house.pk)
         return response
