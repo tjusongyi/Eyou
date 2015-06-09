@@ -16,7 +16,7 @@
                 <p class="lead">联系方式</p>
             </div>
             <div class="col-md-2">
-              <input type="text" id="rent" placeholder="QQ"></>
+              <input type="text" id="contact" placeholder="QQ"></>
             </div>
         </div>
         <div class="row">
@@ -40,8 +40,6 @@ $(document).ready(function(){
         var desc = $("#desc").val();
         var rent = $("#rent").val();
         var contact = $("#contact").val();
-        alert(contact);
-        //alert(contact);
         $.ajax({
             url: '/publish/',
 

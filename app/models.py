@@ -56,6 +56,9 @@ class Itinerary(models.Model):
     def __unicode__(self):
         return self.title
 
+class EduProduct(models.Model):
+    title = models.CharField(max_length = 50)
+
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
     avatar = models.FileField()

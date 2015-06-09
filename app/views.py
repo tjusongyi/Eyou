@@ -69,6 +69,20 @@ def study_index(request):
         })
     )
 
+def hotel_list(request,des,startime,endtime):
+    assert isinstance(request, HttpRequest)
+    houses = House.objects.filter(address__icontains=des,startime__lte=startime,endtime__gte=endtime)
+    return render(
+        request,
+        'app/hotel_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'houses':houses,
+        })
+    )
+
 def hotel_list(request):
     assert isinstance(request, HttpRequest)
     houses = House.objects.all()
@@ -142,6 +156,10 @@ def my_itinerary_list(request):
 def my_travel_list(request):
     assert isinstance(request, HttpRequest)
     travelproducts = TravelProduct.objects.filter(publisher=request.user)
+    comments = list()
+    for travel_product in travel_products:
+        comment = Comments.object.filter(relatedId=travel_product.pk,relatedType=0)
+        comments.append(comment)
     return render(
         request,
         'app/my_travel_list.html',
@@ -150,6 +168,7 @@ def my_travel_list(request):
             'title':'易游',
             'year':datetime.now().year,
             'travelproducts':travelproducts,
+            'comments':comments,
         })
     )
 
@@ -230,6 +249,29 @@ def itinerary_publish(request):
     )
 
 @login_required
+def itinerary_edit(request,itineraryid):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST' and request.is_ajax():
+        response = HttpResponse()  
+        title = request.POST['title']
+        desc = request.POST['desc']
+        itinerary = Itinerary.objects.get(pk=itineraryid)
+        itinerary.update(title=title,description=desc)
+        itinerary.save()
+        response.write(itinerary.pk)
+        return response
+    return render(
+        request,
+        'app/itinerary_edit.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'编辑游记',
+            'year':datetime.now().year,
+        })
+        
+    )
+
+@login_required
 def house_publish(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'POST' and request.is_ajax():
@@ -262,6 +304,39 @@ def house_publish(request):
     )
 
 @login_required
+def house_edit(request,houseid):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST' and request.is_ajax():
+        response = HttpResponse()  
+        title = request.POST['title']
+        desc = request.POST['desc']
+        checkinNumber = request.POST['checkinNumber']
+        housetype = request.POST['housetype']
+        roomtype = request.POST['roomtype']
+        rentype = request.POST['rentype']
+        rent = request.POST['rent']
+        startime = request.POST['startime']
+        endtime = request.POST['endtime']
+        addr = request.POST['addr']
+        contact = request.POST['contact']
+        house = House.objects.get(pk=houseid)
+        house.update(title=title,housetype = housetype,roomtype = roomtype,checkinNumber=checkinNumber,rentype=rentype,rent=rent,startime=startime,endtime=endtime
+                      ,address=addr,description=desc,contactNumber=contact)
+        house.save()
+        response.write(house.pk)
+        return response
+    return render(
+        request,
+        'app/house_edit.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'发布房源',
+            'year':datetime.now().year,
+        })
+        
+    )
+
+@login_required
 def travelproduct_publish(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'POST' and request.is_ajax():
@@ -282,11 +357,79 @@ def travelproduct_publish(request):
         'app/travelproduct_publish.html',
         context_instance = RequestContext(request,
         {
-            'title':'发布房源',
+            'title':'发布旅游产品',
             'year':datetime.now().year,
         })
         
     )
+
+@login_required
+def travelproduct_edit(request,travelid):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST' and request.is_ajax():
+        response = HttpResponse()  
+        title = request.POST['title']
+        desc = request.POST['desc']
+        price = request.POST['price']
+        planeticket = request.POST['planeticket']     
+        startime = request.POST['startime']
+        endtime = request.POST['endtime']
+        checkinHotel = request.POST['checkinHotel']
+        travelproduct = TravelProduct.objects.get(pk=travelid)
+        travelproduct.update(title=title,startime=startime,price=price,endtime=endtime,planeticket=planeticket,checkinHotel=checkinHotel,description=desc)
+        travelproduct.save()
+        response.write(travelproduct.pk)
+        return response
+    return render(
+        request,
+        'app/travelproduct_edit.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'编辑旅游产品',
+            'year':datetime.now().year,
+        })
+        
+    )
+
+@login_required
+def house_delete(request,houseid):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST'and request.is_ajax():
+        response = HttpResponse()
+        house = House.objects.get(pk=houseid)
+        house.delete()
+        response.write(1)
+        return response
+
+@login_required
+def travel_delete(request,travelid):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST'and request.is_ajax():
+        response = HttpResponse()
+        travel = TravelProduct.objects.get(pk=travelid)
+        travel.delete()
+        response.write(1)
+        return response
+
+@login_required
+def itinerary_delete(request,itineraryid):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST'and request.is_ajax():
+        response = HttpResponse()
+        travel = Itinerary.objects.get(pk=itineraryid)
+        travel.delete()
+        response.write(1)
+        return response
+
+@login_required
+def comment_delete(request,commentid):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST'and request.is_ajax():
+        response = HttpResponse()
+        comment = Comments.objects.get(pk=commentid)
+        comment.delete()
+        response.write(1)
+        return response
 
 @login_required
 def house_add_picture(request,houseid):

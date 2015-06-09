@@ -1,0 +1,69 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="example">
+        <div class="col-7 col-center text-center">
+            <h1 class="h2">发布您的游记</h1>
+            <p class="text-lead">
+                你可以在这里分享您在路上遇到的一切。
+            </p>
+        </div>
+    </div>
+    <div class="example">      
+                <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">标题</p>
+            </div>
+            <div class="col-md-5">
+              <input type="text" id="title" placeholder=""style="width: 100%;"></>
+            </div>                    
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">描述</p>
+            </div>
+            <div class="col-md-5">
+              <textarea class="kindeditor" id="kindeditor" style="width: 100%;"></textarea>
+            </div>                    
+        </div>
+                <br/> 
+           
+        <br/>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-2">
+                <div class="btn btn-info" id="publish">发布</div  >
+            </div>
+        </div>
+
+        </div>
+<script type="text/javascript">
+$(document).ready(function(){
+   
+    $("#publish").click(function () {
+        var title = $("#title").val();
+        var desc = editor.html();
+        //alert(contact);
+        $.ajax({
+            url: '/itinerary_publish/',
+
+            type: 'POST',
+
+            data: {
+                title: title,
+                desc: desc,
+            },
+
+            dataType: 'json',
+
+            timeout: 1000,
+
+            error: function (result) { alert("asd"); alert(result) },
+
+            success: function (result) { location.href = "/itinerary_add_picture/" + result; }
+
+        });
+        });
+    });
+</script>
+{% endblock %}

@@ -12,7 +12,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img alt="First slide " src="/{{MEDIA_URL}}{{ travelproduct.pics}}/">
+                        <img alt="First slide " src="{{MEDIA_URL}}{{ travelproduct.pics}}/">
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -38,7 +38,8 @@
 
                     <h1 itemprop="name" class="overflow h3 row-space-1 text-center-sm" style="margin-top: 0">
                        {{ travelproduct.title }}
-                    </h1>                         
+                    </h1>
+                     (<a href="#comments">{{comments.count}}条评论</a>)
                     <h5 itemprop="name" class="overflow h3 row-space-1 text-center-sm" style="margin-top: 0">行程日期： <span class="text-muted">{{travelproduct.startime}}——{{travelproduct.endtime}}</span></h5>
                     <h5 itemprop="name" class="overflow h3 row-space-1 text-center-sm" style="margin-top: 0">人均价格： <span class="text-muted">{{travelproduct.price}}￥</span></h5>
                     <h5 itemprop="name" class="overflow h3 row-space-1 text-center-sm" style="margin-top: 0">航班： <span class="text-muted">{{travelproduct.planeticket}}</span></h5>
@@ -62,8 +63,6 @@
             <div class="col-lg-10" id="details-column">
 
                 <div class="col-lg-9 ">
-
-
                     <p>{{travelproduct.description|safe}}</p>                                    
                 </div>
 
@@ -71,7 +70,7 @@
         </div>
     </div>
 
-<div class="example">
+<div class="example" id="comments">
      {% for comment in comments%}
     <div class="comments">
         <header>            

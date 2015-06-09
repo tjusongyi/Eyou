@@ -11,7 +11,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img alt="First slide " src="/{{MEDIA_URL}}{{ house.pics}}/">
+                        <img alt="First slide " src="{{MEDIA_URL}}{{ house.pics}}/">
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                     <h1 itemprop="name" class="overflow h3 row-space-1 text-center-sm" style="margin-top: 0" id="listing_name">
                        {{ house.title }}
                     </h1>
-
+                    <span>可供入住日期: {{house.startime}}-{{house.endtime}}</span>
                     <div id="display-address" class="row-space-2 text-muted hide-sm">
 
                         <span>{{ house.address }}</span>
@@ -44,14 +44,7 @@
                         <a href="#reviews" class="link-reset">
                             <div class="star-rating">
                                 <div class="foreground">
-                                    <i class="icon icon-beach icon-star"></i>
-                                    <i class="icon icon-beach icon-star"></i>
-                                    <i class="icon icon-beach icon-star"></i>
-                                    <i class="icon icon-beach icon-star"></i>
-                                    <i class="icon icon-beach icon-star-half"></i>
-                                    (<span itemprop="reviewCount">14</span>)
-
-
+                                    (<a href="#comments">{{comments.count}}条评论</a>)
                                 </div>
 
                             </div>
@@ -736,7 +729,7 @@
             </div>
         </div>
     </div>
-<div class="example">
+<div class="example" id="comments">
      {% for comment in comments%}
     <div class="comments">
         <header>            

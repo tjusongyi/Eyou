@@ -1,0 +1,208 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="example">
+        <div class="col-7 col-center text-center">
+            <h1 class="h2">发布您的房源</h1>
+            <p class="text-lead">
+                易游让您通过出租您的房子赚钱。
+            </p>
+        </div>
+    </div>
+    <div class="example">
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">房源类型</p>
+            </div>
+            <div class="col-md-2">
+                <div class="btn-group" id="housetype">
+                    <button class="btn btn-default">酒店</button>
+                    <button class="btn btn-default">个人</button>
+                    <button class="btn btn-default">第三方</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">房间类型</p>
+            </div>
+            <div class="col-md-2">
+                <div class="btn-group" id="roomtype">
+                    <button class="btn btn-default">整套</button>
+                    <button class="btn btn-default">独立房间</button>
+                    <button class="btn btn-default">合住</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">人数</p>
+            </div>
+            <div class="col-md-1">
+                <select class="form-control" id="checkinNumber">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">租金支付</p>
+            </div>
+            <div class="col-md-2">
+                <div class="btn-group" id="rentype">
+                    <button class="btn btn-default">日付</button>
+                    <button class="btn btn-default">月付</button>
+                    <button class="btn btn-default">年付</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">租金</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="rent" placeholder="租金金额"></>
+            </div>
+        </div>
+                <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">标题</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="title" placeholder="给您的房子取一个吸引人的标题"style="width: 100%;"></>
+            </div>                    
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">描述</p>
+            </div>
+            <div class="col-md-2">
+              <textarea id="desc" placeholder="简单介绍一下您的房源"style="width: 100%;"></textarea>
+            </div>                    
+        </div>
+                <br/> 
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">出租日期</p>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group ">
+                            <input class="form-control form-date" id="startime" placeholder="开始日期" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <input class="form-control form-date" id="endtime" placeholder="结束日期" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                        </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">地址</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="addr" placeholder="您的房源在哪儿？"></>
+            </div>
+        </div>
+                <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">联系方式</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="contact" placeholder="请填写正确的联系方式"></>
+            </div>
+        </div>        
+        <br/>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-5">
+                <div class="btn btn-info" id="publish">下一步</div>
+            </div>
+        </div>
+
+        </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    var housetype = 0;
+    var roomtype = 0;
+    var rentype = 0;
+    $("#housetype button").each(function(index,elem)
+    {
+        this.onclick = (function () {
+            housetype = index;
+            $(this).addClass("btn-info");
+            $(this).siblings("button").each(function () {
+                $(this).removeClass("btn-info");
+            });
+        });                   
+    });
+    $("#roomtype button").each(function (index, elem) {
+        this.onclick = (function () {
+            roomtype = index;
+            $(this).addClass("btn-info");
+            $(this).siblings("button").each(function () {
+                $(this).removeClass("btn-info");
+            });
+        });
+
+    });
+    $("#rentype button").each(function (index, elem) {
+        this.onclick = (function () {
+            rentype = index;
+            $(this).addClass("btn-info");
+            $(this).siblings("button").each(function () {
+                $(this).removeClass("btn-info");
+            });
+        });
+    });
+    
+    $("#publish").click(function () {
+        var title = $("#title").val();
+        var desc = $("#desc").val();
+        var rent = $("#rent").val();
+        var startime = $("#startime").val();
+        var endtime = $("#endtime").val();
+        var addr = $("#addr").val();
+        var contact = $("#contact").val();
+        var checkinNumber = $("#checkinNumber").val();
+        //alert(contact);
+        $.ajax({
+            url: '/house_publish/',
+
+            type: 'POST',
+
+            data: {
+                title: title,
+                desc: desc,
+                checkinNumber:checkinNumber,
+                housetype:housetype,
+                roomtype:roomtype,
+                rentype:rentype,
+                rent:rent,
+                startime: startime,
+                endtime: endtime,
+                addr: addr,
+                contact: contact
+
+            },
+
+            dataType: 'json',
+
+            timeout: 1000,
+
+            error: function (result) { alert("提交数据错误"); alert(result) },
+
+            success: function (result) { location.href = "/house_add_picture/"+result; }
+
+        });
+        });
+    });
+</script>
+{% endblock %}
