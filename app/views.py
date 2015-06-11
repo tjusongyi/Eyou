@@ -69,7 +69,7 @@ def study_index(request):
         })
     )
 
-def hotel_list(request,des,startime,endtime):
+def hotel_search_list(request,des,startime,endtime):
     assert isinstance(request, HttpRequest)
     houses = House.objects.filter(address__icontains=des,startime__lte=startime,endtime__gte=endtime)
     return render(
@@ -86,6 +86,10 @@ def hotel_list(request,des,startime,endtime):
 def hotel_list(request):
     assert isinstance(request, HttpRequest)
     houses = House.objects.all()
+    comments = list()
+    for house in houses:
+        comment = Comments.objects.filter(relatedId=house.pk,relatedType=2)
+        comments.append(comment.count)
     return render(
         request,
         'app/hotel_list.html',
@@ -94,6 +98,7 @@ def hotel_list(request):
             'title':'易游',
             'year':datetime.now().year,
             'houses':houses,
+            'comments':comments,
         })
     )
 
@@ -214,6 +219,7 @@ def register(request):
         password = request.POST['user[password]']
         new_user = User.objects.create_user(username, request.POST['user[email]'], password)
         new_user.save()
+        profile = UserProfile(user=new_user);
         user = authenticate(username=username, password=password)
         login(request, user)
     return render(
@@ -424,7 +430,7 @@ def itinerary_delete(request,itineraryid):
 @login_required
 def comment_delete(request,commentid):
     assert isinstance(request, HttpRequest)
-    if request.method == 'POST'and request.is_ajax():
+    if request.method == 'POST' and request.is_ajax():
         response = HttpResponse()
         comment = Comments.objects.get(pk=commentid)
         comment.delete()
@@ -582,20 +588,17 @@ def comment(request,relatedType,relatedId):
         response.write(comment.pk)
         return response
 
+@login_required
 def profile(request,userid):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
-    #if request.user.pk == int(userid):
+    #profile = UserProfile.objects.get(user=userid)
     if request.method == 'POST':
-        if request.FILES:           
-            #if request.POST['qqfile']:
-
-            #    response.write('{ok:1}')
-            #    return response
-            #else:
-            #    response.write('{sad:2}')
-            return HttpResponseRedirect('/')       
-        return HttpResponseRedirect('/')
+        response = HttpResponse()
+        profile.avatar = request.FILES.get('file_photo', None)
+        profile.save()
+        response.write(profile.pk)
+        return response
     return render(
         request,
         'app/profile.html',
@@ -603,6 +606,7 @@ def profile(request,userid):
         {
             'title':'账号设置',
             'year':datetime.now().year,
+            'profile':profile,
         })
     )
     

@@ -43,7 +43,6 @@ $(document).ready(function(){
     $("#publish").click(function () {
         var title = $("#title").val();
         var desc = editor.html();
-        //alert(contact);
         $.ajax({
             url: '/itinerary_publish/',
 
@@ -58,7 +57,7 @@ $(document).ready(function(){
 
             timeout: 1000,
 
-            error: function (result) { alert("asd"); alert(result) },
+            error: function (result) { alert("发表失败");},
 
             success: function (result) { location.href = "/itinerary_add_picture/" + result; }
 

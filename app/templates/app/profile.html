@@ -3,6 +3,7 @@
 {% block content %}
     <div class="example">
         <div class="row">
+            <form enctype="multipart/form-data" method="POST" action="/profile/{{user.pk}}/">
             <div class="col-md-1 col-md-offset-4">
                 <p class="lead">名字</p>
             </div>
@@ -27,49 +28,27 @@
               <textarea id="desc" placeholder="简单介绍一下您自己"style="width: 100%;"></textarea>
             </div>                    
         </div>
+          <br/> 
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <p class="lead">新密码</p>
+            </div>
+            <div class="col-md-2">
+              <textarea id="desc" placeholder="不填则不变"style="width: 100%;"></textarea>
+            </div>                    
+        </div>
                 <br/> 
+        <div class="col-md-1 col-md-offset-4">
+                <p class="lead">照片</p>
+            </div>
+            <div class="col-md-2">
+             <input type="file" name="file_photo" class="btn "/><br/> 
+            </div>
         <div class="row">
             <div class="col-md-1 col-md-offset-5">
                 <div class="btn btn-info" id="publish">保存</div>
             </div>
         </div>
-        <script type="text/javascript">
-$(document).ready(function(){ 
-    $("#publish").click(function () {
-        var name = $("#name").val();
-        var desc = $("#desc").val();
-        var rent = $("#rent").val();
-        var contact = $("#contact").val();
-        $.ajax({
-            url: '/publish/',
+        </div>
 
-            type: 'POST',
-
-            data: {
-                title: title,
-                desc: desc,
-                checkinNumber:checkinNumber,
-                housetype:housetype,
-                roomtype:roomtype,
-                rentype:rentype,
-                rent:rent,
-                startime: startime,
-                endtime: endtime,
-                addr: addr,
-                contact: contact
-
-            },
-
-            dataType: 'json',
-
-            timeout: 1000,
-
-            error: function (result) { alert("asd"); alert(result) },
-
-            success: function (result) { location.href = "/house_add_picture/"+result; }
-
-        });
-        });
-    });
-</script>
 {% endblock %}

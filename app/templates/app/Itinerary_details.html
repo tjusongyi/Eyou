@@ -85,6 +85,12 @@
                     <div class="text">
                        {{comment.content}}
                     </div>
+                    {% ifequal user itinerary.publisher%}
+                    <div class="actions">
+                        
+                    <div id="{{comment.pk}}" class="delete btn-link">delete</div>
+                    </div>
+                    {%endifequal%}
                 </div>
             </div>
            
@@ -110,7 +116,6 @@ $(document).ready(function(){
 
     $("#publish").click(function () {
         var content = $("#content").val();
-        alert(content);
         $.ajax({
             url: '/comment/3/{{itinerary.pk}}/',
 
@@ -124,12 +129,29 @@ $(document).ready(function(){
 
             timeout: 1000,
 
-            error: function (result) { alert("asd"); alert(result) },
+            error: function (result) { alert("发表失败"); alert(result) },
 
             success: function (result) {location.reload();  }
 
         });
         });
+    $(".delete").click(function () {
+        var id = $(this).attr('id');
+        $.ajax({
+            url: '/comment_delete/'+id+'/',
+
+            type: 'POST',
+
+            dataType: 'json',
+
+            timeout: 1000,
+
+            error: function (result) { alert("删除失败");},
+
+            success: function (result) {location.reload();  }
+
+        });
+     });
     });
 </script>
 {% endblock %}

@@ -26,6 +26,7 @@
                   <span class="text-muted">{{itinerary.createdTime}}</span>
                 </div>
               </div>
+                        <div id="{{itinerary.pk}}" class="btn btn-info pull-right delete">删除</div>
                         </div>
                       
                     </div>
@@ -51,5 +52,25 @@
           </ul>
         </footer>
       </div>
-      
+      <script type="text/javascript">
+$(document).ready(function(){
+    $(".delete").click(function () {
+        var id = $(this).attr('id');
+        $.ajax({
+            url: '/itinerary_delete/'+id+'/',
+
+            type: 'POST',
+
+            dataType: 'json',
+
+            timeout: 1000,
+
+            error: function (result) { alert("删除失败");},
+
+            success: function (result) {location.reload();  }
+
+        });
+     });
+    });
+</script>
 {% endblock %}
