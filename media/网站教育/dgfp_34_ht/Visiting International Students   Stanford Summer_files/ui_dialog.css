@@ -1,0 +1,148 @@
+/* UI Dialog For Challenges */
+
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.3;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-clearfix {
+	min-height: 0; /* support: IE7 */
+}
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	filter:Alpha(Opacity=0);
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+
+/* Overlays */
+.ui-widget-overlay {
+  background: url(../images/ui-overlay.png) 50% 50% repeat;
+  position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.ui-widget-shadow {
+	margin: -5px 0 0 -5px;
+	padding: 5px;
+	background: #000000 url(../images/ui-bg_flat_10_000000_40x100.png) 50% 50% repeat-x;
+	opacity: .2;
+	filter: Alpha(Opacity=20);
+	border-radius: 5px;
+}
+
+
+
+/* Misc visuals
+----------------------------------*/
+
+.ui-dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	outline: 0;
+  background: #fff;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.ui-dialog .ui-dialog-titlebar {display: block; position: relative;}
+.ui-dialog .ui-dialog-title {display: none;}
+.ui-dialog .ui-dialog-titlebar-close {
+  display: block; 
+  position: absolute; 
+  top: 20px;
+  right: 17px;
+  width: 15px; 
+  height: 15px;
+  background: url(../images/btn-dialog-close.png) no-repeat 0 0;
+  text-indent: -999em;
+  z-index: 99;
+  border: none;
+}
+.ui-dialog .ui-dialog-buttonpane {display: none;}
+
+.ui-dialog .ui-dialog-content {
+	position: relative;
+	border: 0;
+	overflow: auto;
+  margin: 53px 60px 53px 60px;
+}
+
+
+
+#newsletter-dialog .title{
+  padding: 0;
+  margin: 0 0 30px 10px;
+}
+#newsletter-dialog .highlighted_text{
+  padding: 0;
+  margin: 0 0 20px 10px;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 28px;
+}
+#newsletter-dialog .note{
+  padding: 0;
+  margin: 0 0 20px 10px;
+  font-size: 14px;
+  line-height: 22px;
+}
+#newsletter-dialog .row{
+  padding: 0 !important;
+  margin: 0 0 10px 0;
+  position: relative;
+}
+#newsletter-dialog .error-msg{
+  position: absolute;
+  color: #8c1515;
+  bottom: 15px;
+  left: 150px;
+  display: none;
+  width: 300px;
+}
+
+
+#submission-thanks .thanks-msg{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  line-height: 34px;
+  margin: 30px 0 80px 0;
+}

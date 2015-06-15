@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="emx_nav_right.css" type="text/css" />
+<script type="text/javascript">
+<!--
+var time = 3000;
+var numofitems = 7;
+
+//menu constructor
+function menu(allitems,thisitem,startstate){ 
+  callname= "gl"+thisitem;
+  divname="subglobal"+thisitem;  
+	this.numberofmenuitems = allitems;
+	this.caller = document.getElementById(callname);
+	this.thediv = document.getElementById(divname);
+	this.thediv.style.visibility = startstate;
+}
+				 
+//menu methods
+function ehandler(event,theobj){
+  for (var i=1; i<= theobj.numberofmenuitems; i++){
+	  var shutdiv =eval( "menuitem"+i+".thediv");
+    shutdiv.style.visibility="hidden";
+	}
+	theobj.thediv.style.visibility="visible";
+}
+				
+function closesubnav(event){
+  if ((event.clientY <48)||(event.clientY > 107)){
+    for (var i=1; i<= numofitems; i++){
+      var shutdiv =eval('menuitem'+i+'.thediv');
+			shutdiv.style.visibility='hidden';
+		}  
+	}
+}
+// -->
+</script>
+<style type="text/css">
+<!--
+.STYLE1 {
+	font-size: 18px;
+	font-family: "宋体";
+	color: #333333;
+}
+.STYLE4 {font-family: "宋体"}
+.STYLE8 {color: #000000; font-size: 18px; }
+.titlebackground {
+	background-color: #B9D1DF;
+	background-image: url(IMG_1090.jpg);
+}
+.introduction {
+	height: 400px;
+	width: 50%;
+	float: left;
+	background-color: #FFF;
+}
+.detail {
+	height: auto;
+	width: 85%;
+	float: left;
+	background-color: #FFF;
+}
+-->
+</style>
+</head>
+<body onmousemove="closesubnav(event);">
+<div class="skipLinks">skip to: <a href="#content">page content</a> | <a href="#pageNav">links on this page</a> | <a href="#globalNav">site navigation</a> | <a href="#siteInfo">footer (site information)</a> </div>
+<div id="masthead">
+  <h1 id="siteName">USGO</h1>
+  <div id="utility"> <a href="#">注册</a> | <a href="#">登录</a> | <a href="#">发布房源</a> </div>
+  <div id="globalNav"> <img alt="" src="gblnav_left.gif" height="32" width="4" id="gnl" /> <img alt="" src="glbnav_right.gif" height="32" width="4" id="gnr" />
+    <div id="globalLink"> <a href="#" id="gl1" class="glink" onmouseover="ehandler(event,menuitem1);">首页</a><a href="#" id="gl2" class="glink" onmouseover="ehandler(event,menuitem2);">旅游</a><a href="#" id="gl3" class="glink" onmouseover="ehandler(event,menuitem3);">教育</a><a href="#" id="gl4" class="glink" onmouseover="ehandler(event,menuitem4);">租房</a><a href="#" id="gl5" class="glink" onmouseover="ehandler(event,menuitem5);">论坛</a><a href="#" id="gl6" class="glink" onmouseover="ehandler(event,menuitem6);">global link</a><a href="#" id="gl7" class="glink" onmouseover="ehandler(event,menuitem7);">global link</a> </div>
+    <form id="search" action="">
+      <input name="searchFor" type="text" size="10" />
+      <a href="">搜索</a>
+    </form>
+  <!--end globalLinks--></div>
+  <!-- end globalNav -->
+  <div id="subglobal1" class="subglobalNav"> <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> </div>
+  <div id="subglobal2" class="subglobalNav"> <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> </div>
+  <div id="subglobal3" class="subglobalNav"> <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> </div>
+  <div id="subglobal4" class="subglobalNav"> <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> </div>
+  <div id="subglobal5" class="subglobalNav"> <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> </div>
+  <div id="subglobal6" class="subglobalNav"> <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> </div>
+  <div id="subglobal7" class="subglobalNav"> <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> </div>
+  <div id="subglobal8" class="subglobalNav"> <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> </div>
+</div>
+<!-- end masthead -->
+<div class="detail" id="pagecell1">
+  <!--pagecell1-->
+  <img alt="" src="tl_curve_white.gif" height="6" width="6" id="tl" /> <img alt="" src="tr_curve_white.gif" height="6" width="6" id="tr" />
+  <div id="breadCrumb"></div>
+  <div id="pageName" class="titlebackground">
+    <h2>&nbsp;</h2>
+    <h2>&nbsp;</h2>
+    <h2>EDU</h2>
+</div>
+  <div id="pageNav">
+    <div id="sectionLinks"> <a href="#">热门资讯</a><a href="#">线路推荐</a> <a href="#">学校排名</a> <a href="#">留学生分布</a></div>
+    <div class="relatedLinks">
+      <h3>相关网站</h3>
+      <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> </div>
+    <div class="relatedLinks">
+      <h3>院校推荐</h3>
+      <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> </div>
+    <div id="advert"> <img src="images/det_pic.jpg" alt="" width="150" height="100" /> Advertisement copy goes here. Advertisement copy goes here. </div>
+  </div>
+  <div id="content">
+    <div class="introduction">
+      <p><img src="../71cf3bc79f3df8dc8fbad9d0cc11728b461028ef.jpg" alt="project" width="372" height="290" align="absmiddle" /></p>
+    </div>
+    <div class="introduction">
+      <form id="form2" name="form2" method="post" action="">
+        <div align="left">
+          <table border="0">
+            <tr>
+              <td bgcolor="#FFFFFF"><strong>项目名称：</strong></td>
+              <td height="63" bgcolor="#FFFFFF"> 纽约城市大学</td>
+            </tr>
+            <tr>
+              <td height="55"><strong>价格：</strong></td>
+              <td>15000元/人</td>
+            </tr>
+            <tr>
+              <td height="51"><strong>时间安排：</strong></td>
+              <td>2015.6.20-2015.8.16</td>
+            </tr>
+            <tr>
+              <td width="95" bgcolor="#FFFFFF"><strong>地点：</strong></td>
+              <td width="310" height="54" bgcolor="#FFFFFF">纽约</td>
+            </tr>
+            <tr>
+              <td><strong>项目人数：</strong></td>
+              <td height="71">30</td>
+            </tr>
+            <tr>
+              <td><strong>周边房屋：</strong></td>
+              <td height="51">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+    <form id="form1" name="form1" method="post" action="">
+      <label for="intro"></label>
+    </form>
+  </div>
+   <div class="detail">
+     <table width="879" height="130" border="0">
+       <tr>
+         <td width="106"><strong class="STYLE8">项目说明</strong></td>
+         <td width="763" class="STYLE1">：阿斯兰的开发将阿里卡飞机啊时空裂缝阿斯兰的开发骄傲的浪费空间啊代理费阿斯兰的开发静安寺路口 ╮(╯▽╰)╭╮(╯▽╰)╭o(&gt;﹏&lt;)oo(&gt;﹏&lt;)oo(&gt;﹏&lt;)o(⊙o⊙)&hellip;阿斯蒂芬按时付款了额看人家爱丽丝疯狂刺客魔传，明细阿斯顿发那么在</td>
+       </tr>
+     </table>
+     <p>&nbsp;</p>
+     <p class="STYLE8"><strong>图片介绍</strong></p>
+     <p>&nbsp;</p>
+     <p><img src="Stanford.jpg" alt="" width="1001" height="588" /></p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+</div>
+  
+  
+  <!--end content -->
+  <div id="siteInfo"> <img src="" width="44" height="22" /><a href="#">About Us</a> | <a href="#">Site Map</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a> | &copy;2003 Company Name </div>
+  
+</div>
+<!--end pagecell1-->
+<br />
+<script type="text/javascript">
+    <!--
+      var menuitem1 = new menu(7,1,"hidden");
+			var menuitem2 = new menu(7,2,"hidden");
+			var menuitem3 = new menu(7,3,"hidden");
+			var menuitem4 = new menu(7,4,"hidden");
+			var menuitem5 = new menu(7,5,"hidden");
+			var menuitem6 = new menu(7,6,"hidden");
+			var menuitem7 = new menu(7,7,"hidden");
+    // -->
+    </script>
+</body>
+</html>

@@ -46,7 +46,7 @@ urlpatterns = patterns('',
     url(r'^house_details/(\d+)/$','app.views.house_details',name='house_details'),
     url(r'^itinerary_details/(\d+)/$','app.views.itinerary_details',name='itinerary_details'),
     url(r'^travelproduct_details/(\d+)/$','app.views.travelproduct_details',name='travelproduct_details'),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,'show_indexes': True }),
     url(r'^logout$',
         'django.contrib.auth.views.logout',
         {

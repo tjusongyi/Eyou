@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="emx_nav_right.css" type="text/css" />
+<script type="text/javascript">
+<!--
+var time = 3000;
+var numofitems = 7;
+
+//menu constructor
+function menu(allitems,thisitem,startstate){ 
+  callname= "gl"+thisitem;
+  divname="subglobal"+thisitem;  
+	this.numberofmenuitems = allitems;
+	this.caller = document.getElementById(callname);
+	this.thediv = document.getElementById(divname);
+	this.thediv.style.visibility = startstate;
+}
+				 
+//menu methods
+function ehandler(event,theobj){
+  for (var i=1; i<= theobj.numberofmenuitems; i++){
+	  var shutdiv =eval( "menuitem"+i+".thediv");
+    shutdiv.style.visibility="hidden";
+	}
+	theobj.thediv.style.visibility="visible";
+}
+				
+function closesubnav(event){
+  if ((event.clientY <48)||(event.clientY > 107)){
+    for (var i=1; i<= numofitems; i++){
+      var shutdiv =eval('menuitem'+i+'.thediv');
+			shutdiv.style.visibility='hidden';
+		}  
+	}
+}
+// -->
+</script>
+<style type="text/css">
+<!--
+.STYLE1 {
+	font-size: 18px;
+	font-family: "宋体";
+	color: #333333;
+}
+.STYLE4 {font-family: "宋体"}
+.STYLE8 {color: #000000; font-size: 18px; }
+.titlebackground {
+	background-color: #B9D1DF;
+	background-image: url(IMG_1090.jpg);
+}
+a:visited {
+	color: #C63;
+}
+-->
+</style>
+</head>
+<body onmousemove="closesubnav(event);">
+<div class="skipLinks">skip to: <a href="#content">page content</a> | <a href="#pageNav">links on this page</a> | <a href="#globalNav">site navigation</a> | <a href="#siteInfo">footer (site information)</a> </div>
+<div id="masthead">
+  <h1 id="siteName">USGO</h1>
+  <div id="utility"> <a href="#">注册</a> | <a href="#">登录</a> | <a href="#">发布房源</a> </div>
+  <div id="globalNav"> <img alt="" src="gblnav_left.gif" height="32" width="4" id="gnl" /> <img alt="" src="glbnav_right.gif" height="32" width="4" id="gnr" />
+    <div id="globalLink"> <a href="#" id="gl1" class="glink" onmouseover="ehandler(event,menuitem1);">首页</a><a href="#" id="gl2" class="glink" onmouseover="ehandler(event,menuitem2);">旅游</a><a href="#" id="gl3" class="glink" onmouseover="ehandler(event,menuitem3);">教育</a><a href="#" id="gl4" class="glink" onmouseover="ehandler(event,menuitem4);">租房</a><a href="#" id="gl5" class="glink" onmouseover="ehandler(event,menuitem5);">论坛</a><a href="#" id="gl6" class="glink" onmouseover="ehandler(event,menuitem6);">global link</a><a href="#" id="gl7" class="glink" onmouseover="ehandler(event,menuitem7);">global link</a> </div>
+    <form id="search" action="">
+      <input name="searchFor" type="text" size="10" />
+      <a href="">搜索</a>
+    </form>
+  <!--end globalLinks--></div>
+  <!-- end globalNav -->
+  <div id="subglobal1" class="subglobalNav"> <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> | <a href="#">subglobal1 link</a> </div>
+  <div id="subglobal2" class="subglobalNav"> <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> | <a href="#">subglobal2 link</a> </div>
+  <div id="subglobal3" class="subglobalNav"> <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> | <a href="#">subglobal3 link</a> </div>
+  <div id="subglobal4" class="subglobalNav"> <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> | <a href="#">subglobal4 link</a> </div>
+  <div id="subglobal5" class="subglobalNav"> <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> | <a href="#">subglobal5 link</a> </div>
+  <div id="subglobal6" class="subglobalNav"> <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> | <a href="#">subglobal6 link</a> </div>
+  <div id="subglobal7" class="subglobalNav"> <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> | <a href="#">subglobal7 link</a> </div>
+  <div id="subglobal8" class="subglobalNav"> <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> </div>
+</div>
+<!-- end masthead -->
+<div id="pagecell1">
+  <!--pagecell1-->
+  <img alt="" src="tl_curve_white.gif" height="6" width="6" id="tl" /> <img alt="" src="tr_curve_white.gif" height="6" width="6" id="tr" />
+  <div id="breadCrumb"></div>
+  <div id="pageName" class="titlebackground">
+    <h2>&nbsp;</h2>
+    <h2>&nbsp;</h2>
+    <h2>EDU</h2>
+</div>
+  <div id="pageNav">
+    <div id="sectionLinks"> <a href="#">热门资讯</a> <a href="#">线路推荐</a> <a href="#">学校排名</a> <a href="#">留学生分布</a></div>
+    <div class="relatedLinks">
+      <h3>相关网站</h3>
+      <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> </div>
+    <div class="relatedLinks">
+      <h3>院校推荐</h3>
+      <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> <a href="#">Related Link</a> </div>
+    <div id="advert"> <img src="images/det_pic.jpg" alt="" width="150" height="100" /> Advertisement copy goes here. Advertisement copy goes here. </div>
+  </div>
+  <div id="content">
+    <div class="STYLE1">
+      <form id="form1" name="form1" method="post" action="">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#999999">
+        <tr>
+          <td colspan="7" bordercolor="#999999"><table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#999999">
+            <tr>
+              <td width="10%" height="178"><div align="center">地点</div></td>
+              <td colspan="7" bordercolor="#999999"><input type="checkbox" name="checkbox10" value="checkbox" id="checkbox10" />
+                <a href="California.html">加利福尼亚</a>
+                <input type="checkbox" name="checkbox22" value="checkbox" id="checkbox22" />
+                <a href="new york.html">纽约</a>
+                <input type="checkbox" name="checkbox32" value="checkbox" id="checkbox32" />
+                亚拉巴马
+                <a href="http://www.baidu.com/s?wd=%E4%BA%9A%E6%8B%89%E5%B7%B4%E9%A9%AC&amp;hl_tag=textlink&amp;tn=SE_hldp01350_v6v6zkg6" target="_blank" rel="nofollow" data-word="41" log="pos:innerLink"></a>
+<input type="checkbox" name="checkbox42" value="checkbox" id="checkbox42" />
+                阿拉斯加
+                <label for="checkbox42"></label>
+                <input type="checkbox" name="checkbox52" value="checkbox" id="checkbox52" />
+                亚利桑那
+                <input type="checkbox" name="checkbox62" value="checkbox" id="checkbox62" />
+                <label for="checkbox62">地点6</label>
+                <input type="checkbox" name="checkbox72" value="checkbox" id="checkbox72" />
+                <label for="checkbox72">地点7</label>
+                <input type="checkbox" name="checkbox82" value="checkbox" id="checkbox82" />
+                <label for="checkbox82">地点8</label>
+                <p>
+                  <input type="checkbox" name="checkbox917" value="checkbox" id="checkbox917" />
+                  <label for="checkbox917">地点9</label>
+                  <input type="checkbox" name="checkbox922" value="checkbox" id="checkbox922" />
+                  <label for="checkbox922">地点10</label>
+                  <input type="checkbox" name="checkbox932" value="checkbox" id="checkbox932" />
+                  <label for="checkbox932">地点11</label>
+                  <input type="checkbox" name="checkbox942" value="checkbox" id="checkbox942" />
+                  <label for="checkbox942">地点12</label>
+                  <input type="checkbox" name="checkbox952" value="checkbox" id="checkbox952" />
+                  <label for="checkbox952">地点13</label>
+                  <input type="checkbox" name="checkbox962" value="checkbox" id="checkbox962" />
+                  <label for="checkbox962">地点14</label>
+                  <input type="checkbox" name="checkbox972" value="checkbox" id="checkbox972" />
+                  <label for="checkbox972">地点15</label>
+                </p>
+                <p>
+                  <input type="checkbox" name="checkbox982" value="checkbox" id="checkbox982" />
+                  <label for="checkbox982">地点16</label>
+                  <input type="checkbox" name="checkbox992" value="checkbox" id="checkbox992" />
+                  <label for="checkbox992">地点17</label>
+                  <input type="checkbox" name="checkbox9102" value="checkbox" id="checkbox9102" />
+                  <label for="checkbox9102">地点18</label>
+                  <input type="checkbox" name="checkbox9112" value="checkbox" id="checkbox9112" />
+                  <label for="checkbox9112">地点19</label>
+                  <input type="checkbox" name="checkbox9122" value="checkbox" id="checkbox9122" />
+                  <label for="checkbox9122">地点20</label>
+                  <input type="checkbox" name="checkbox9132" value="checkbox" id="checkbox9132" />
+                  <label for="checkbox9132">地点21</label>
+                  <input type="checkbox" name="checkbox9142" value="checkbox" id="checkbox9142" />
+                  <label for="checkbox9142">地点22<br />
+                  </label>
+                </p></td>
+            </tr>
+            <tr>
+              <td><div align="center">时长</div></td>
+              <td colspan="6"><p>
+                <input type="radio" name="radiobutton" value="radiobutton" id="radio3" />
+                <a href="new yorklong.html">
+                <label for="radio3"><span class="STYLE4">长期（大于等于1年）</span></label>
+                </a> </p>
+                <p>
+                  <label for="label"></label>
+                  <input type="radio" name="radiobutton" value="radiobutton" id="radio4" />
+                  <a href="new yorkshort.html">
+                  <label for="radio4"><span class="STYLE4">短期（小于1年）</span></label>
+                  </a></p></td>
+              <td width="24%"><label for="label">直接进入 rental 页面 </label>
+                <input type="submit" name="Submit2" value="To rental" id="label" /></td>
+            </tr>
+            <tr>
+              <td><div align="center">筛选条件</div></td>
+              <td width="10%"><a href="Untitled-2.html" id="gl11" class="glink"onmouseover="ehandler(event,menuitem1);">综合排名</a></td>
+              <td width="10%"><a href="#" id="gl11" class="glink"onmouseover="ehandler(event,menuitem1);">留学生比例</a></td>
+              <td width="10%"><a href="#" id="gl11" class="glink"onmouseover="ehandler(event,menuitem1);">最新项目</a></td>
+              <td width="10%"><a href="#" id="gl11" class="glink"onmouseover="ehandler(event,menuitem1);">热门指数</a></td>
+              <td width="10%" align="left"><a href="#" id="gl11" class="glink"onmouseover="ehandler(event,menuitem1);">价格</a></td>
+              <td colspan="2"><label for="textfield"></label>
+                <input name="textfield" type="text" id="textfield" value="￥" size="10" />
+                -
+                <input name="textfield2" type="text" id="textfield2" value="￥" size="10" />
+                <label for="label2"></label>
+                <input type="submit" name="Submit3" value="Go" id="label2" />
+                <label for="label"></label></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="7">&nbsp;</td>
+            </tr>
+          </table>            <label for="checkbox52"></label></td>
+        </tr>
+        </table>
+      </form>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="16%" height="53">&nbsp;</td>
+          <td width="20%"><div align="center" class="STYLE8">项目名称</div></td>
+          <td width="9%"><div align="center" class="STYLE8">位置<img src="images/art.png" width="20" height="20" alt="位置" /></div></td>
+          <td width="10%"><div align="center" class="STYLE8">时间</div></td>
+          <td width="7%"><div align="center" class="STYLE8">评分</div></td>
+          <td width="38%"><div align="center" class="STYLE8">学校链接</div></td>
+        </tr>
+        <tr>
+          <td height="114"><img src="../71cf3bc79f3df8dc8fbad9d0cc11728b461028ef.jpg" alt="去" width="163" height="141" /></td>
+          <td><pre id="best-content-56600346" accuse="aContent"><a href="CUNY.html?wd=纽约城市大学&amp;hl_tag=textlink&amp;tn=SE_hldp01350_v6v6zkg6" target="_blank" rel="nofollow" data-word="1" log="pos:innerLink">
+
+纽约城市大学</a></pre>
+            <pre>&nbsp;</pre></td>
+          <td><div align="center">纽约</div></td>
+          <td><p align="center">2015.6.29-2015.8.1</p></td>
+          <td><div align="center">4.6</div></td>
+          <td><a href="Welcome to CUNY - The City University of New York.htm">http://www.cuny.edu/index.html</a></td>
+        </tr>
+        <tr>
+          <td height="113"><img src="../37d3d539b6003af3a6c72900352ac65c1038b655.jpg" alt="去" width="163" height="141" /></td>
+          <td><pre id="best-content-" accuse="aContent">
+
+
+纽约大学</pre>
+            <pre>&nbsp;</pre></td>
+          <td><div align="center">纽约</div></td>
+          <td><p align="center">2015.4.21-2015.4.28</p></td>
+          <td><div align="center">4.6</div></td>
+          <td><a href="New York University.mht">http://www.nyu.edu/</a></td>
+        </tr>
+        <tr>
+          <td height="110"><img src="../a5c27d1ed21b0ef45c7924f8d9c451da80cb3e86.jpg" alt="去" width="163" height="141" /></td>
+          <td><pre id="best-content-2" accuse="aContent">
+
+哥伦比亚大学暑期项目</pre>
+            <pre>&nbsp;</pre></td>
+          <td><div align="center">加州</div></td>
+          <td><p align="center">2015.4.21-2015.4.28</p></td>
+          <td><div align="center">4.6</div></td>
+          <td><p><a href="ziye.html">http://www.youxuexiangmu.com</a></p></td>
+        </tr>
+        <tr>
+          <td height="112"><img src="../fcfaaf51f3deb48f12a56792f11f3a292cf578aa.jpg" alt="去" width="163" height="141" /></td>
+          <td><pre>康奈尔大学</pre></td>
+          <td><div align="center">纽约</div></td>
+          <td><p align="center">2015.4.21-2015.4.28</p></td>
+          <td><div align="center">4.6</div></td>
+          <td><a href="ziye.html">http://www.youxuexiangmu.com</a></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <h3>&nbsp;</h3>
+    </div>
+    <div class="story">
+      <form id="form2" name="form2" method="post" action="">
+      </form>
+      <h3>&nbsp;</h3>
+    </div>
+    <div class="story">
+      <table width="100%" cellpadding="0" cellspacing="0" summary="">
+        <tr valign="top">
+          <td class="storyLeft">
+            <p> <a href="#" class="capsule">Capsule Story</a> Cras enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut eu augue. Integer risus wisi, semper eu, congue quis, lobortis ut, massa. Vestibulum auctor vestibulum lectus. Vivamus neque. Cras lobortis. Aenean ut turpis eu libero volutpat euismod. <a href="#">Donec</a> eget lectus vitae ligula ornare tempor. Vivamus scelerisque lorem a elit. Sed id mauris. </p>          </td>
+          <td>
+            <p> <a href="#" class="capsule">Capsule Story</a> Cras enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut eu augue. Integer risus wisi, semper eu, congue quis, lobortis ut, massa. Vestibulum auctor vestibulum lectus. Vivamus neque. Cras lobortis. Aenean ut turpis eu libero volutpat euismod. <a href="#">Donec</a> eget lectus vitae ligula ornare tempor. Vivamus scelerisque lorem a elit. Sed id mauris. </p>          </td>
+        </tr>
+        <tr valign="top">
+          <td class="storyLeft">
+            <p> <a href="#" class="capsule">Capsule Story</a> Cras enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut eu augue. Integer risus wisi, semper eu, congue quis, lobortis ut, massa. Vestibulum auctor vestibulum lectus. Vivamus neque. Cras lobortis. Aenean ut turpis eu libero volutpat euismod. <a href="#">Donec</a> eget lectus vitae ligula ornare tempor. Vivamus scelerisque lorem a elit. Sed id mauris. </p>          </td>
+          <td>
+            <p> <a href="#" class="capsule">Capsule Story</a> Cras enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut eu augue. Integer risus wisi, semper eu, congue quis, lobortis ut, massa. Vestibulum auctor vestibulum lectus. Vivamus neque. Cras lobortis. Aenean ut turpis eu libero volutpat euismod. <a href="#">Donec</a> eget lectus vitae ligula ornare tempor. Vivamus scelerisque lorem a elit. Sed id mauris. </p>          </td>
+        </tr>
+        <tr valign="top">
+          <td class="storyLeft">
+            <p> <a href="#" class="capsule">Capsule Story</a> Cras enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut eu augue. Integer risus wisi, semper eu, congue quis, lobortis ut, massa. Vestibulum auctor vestibulum lectus. Vivamus neque. Cras lobortis. Aenean ut turpis eu libero volutpat euismod. <a href="#">Donec</a> eget lectus vitae ligula ornare tempor. Vivamus scelerisque lorem a elit. Sed id mauris. </p>          </td>
+          <td>
+            <p> <a href="#" class="capsule">Capsule Story</a> Cras enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut eu augue. Integer risus wisi, semper eu, congue quis, lobortis ut, massa. Vestibulum auctor vestibulum lectus. Vivamus neque. Cras lobortis. Aenean ut turpis eu libero volutpat euismod. <a href="#">Donec</a> eget lectus vitae ligula ornare tempor. Vivamus scelerisque lorem a elit. Sed id mauris. </p>          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!--end content -->
+  <div id="siteInfo"> <img src="" width="44" height="22" /><a href="#">About Us</a> | <a href="#">Site Map</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a> | &copy;2003 Company Name </div>
+</div>
+<!--end pagecell1-->
+<br />
+<script type="text/javascript">
+    <!--
+      var menuitem1 = new menu(7,1,"hidden");
+			var menuitem2 = new menu(7,2,"hidden");
+			var menuitem3 = new menu(7,3,"hidden");
+			var menuitem4 = new menu(7,4,"hidden");
+			var menuitem5 = new menu(7,5,"hidden");
+			var menuitem6 = new menu(7,6,"hidden");
+			var menuitem7 = new menu(7,7,"hidden");
+    // -->
+    </script>
+</body>
+</html>

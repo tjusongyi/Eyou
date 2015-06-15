@@ -1,0 +1,4985 @@
+.font-NewsGothicBT {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@media print {
+  * {
+    text-shadow: none !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 2cm .5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  .navbar {
+    display: none;
+  }
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .label {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #2c3133;
+  background-color: #fff;
+}
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+a {
+  color: #8c1515;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #000000;
+  text-decoration: none;
+  outline: none;
+}
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  outline: none;
+  color: #8c1515;
+}
+img {
+  vertical-align: middle;
+}
+.img-responsive {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-circle {
+  border-radius: 500px;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+}
+p {
+  margin: 0 0 10px;
+}
+.lead {
+  margin-bottom: 20px;
+  font-size: 16.1px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .lead {
+    font-size: 21px;
+  }
+}
+small {
+  font-size: 85%;
+}
+cite {
+  font-style: normal;
+}
+.text-muted {
+  color: #999999;
+}
+.text-primary {
+  color: #910f28;
+}
+.text-warning {
+  color: ;
+}
+.text-danger {
+  color: ;
+}
+.text-success {
+  color: ;
+}
+.text-info {
+  color: ;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h1,
+.h1 {
+  font-size: 38px;
+}
+h2,
+.h2 {
+  font-size: 32px;
+}
+h3,
+.h3 {
+  font-size: 24px;
+}
+h4,
+.h4 {
+  font-size: 18px;
+}
+h5,
+.h5 {
+  font-size: 14px;
+}
+h6,
+.h6 {
+  font-size: 12px;
+}
+h1 small,
+.h1 small {
+  font-size: 24px;
+}
+h2 small,
+.h2 small {
+  font-size: 18px;
+}
+h3 small,
+.h3 small,
+h4 small,
+.h4 small {
+  font-size: 14px;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #f2f3f2;
+}
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-bottom: 0;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+dl {
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.428571429;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+@media (min-width: 767px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+  .dl-horizontal dd:before,
+  .dl-horizontal dd:after {
+    content: " ";
+    display: table;
+  }
+  .dl-horizontal dd:after {
+    clear: both;
+  }
+  .dl-horizontal dd:before,
+  .dl-horizontal dd:after {
+    content: " ";
+    display: table;
+  }
+  .dl-horizontal dd:after {
+    clear: both;
+  }
+}
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.428571429;
+}
+code,
+pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #2c3133;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+pre.prettyprint {
+  margin-bottom: 20px;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: 0;
+}
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+.container:before,
+.container:after {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+.container:before,
+.container:after {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+.row {
+  position: relative;
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+@media (min-width: 767px) {
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+.row .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  float: left;
+}
+.col-1 {
+  width: 8.3333333333333%;
+}
+.col-2 {
+  width: 16.666666666667%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.333333333333%;
+}
+.col-5 {
+  width: 41.666666666667%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.333333333333%;
+}
+.col-8 {
+  width: 66.666666666667%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.333333333333%;
+}
+.col-11 {
+  width: 91.666666666667%;
+}
+.col-12 {
+  width: 100%;
+}
+.col-offset-1 {
+  margin-left: 8.3333333333333%;
+}
+.col-offset-2 {
+  margin-left: 16.666666666667%;
+}
+.col-offset-3 {
+  margin-left: 25%;
+}
+.col-offset-4 {
+  margin-left: 33.333333333333%;
+}
+.col-offset-5 {
+  margin-left: 41.666666666667%;
+}
+.col-offset-6 {
+  margin-left: 50%;
+}
+.col-offset-7 {
+  margin-left: 58.333333333333%;
+}
+.col-offset-8 {
+  margin-left: 66.666666666667%;
+}
+.col-offset-9 {
+  margin-left: 75%;
+}
+.col-offset-10 {
+  margin-left: 83.333333333333%;
+}
+.col-offset-11 {
+  margin-left: 91.666666666667%;
+}
+@media (max-width: 767px) {
+  .container {
+    width: 960px;
+  }
+  .col-xs-1,
+  .col-xs-2,
+  .col-xs-3,
+  .col-xs-4,
+  .col-xs-5,
+  .col-xs-6,
+  .col-xs-7,
+  .col-xs-8,
+  .col-xs-9,
+  .col-xs-10,
+  .col-xs-11,
+  .col-xs-12 {
+    float: left;
+  }
+  .col-xs-1 {
+    width: 8.3333333333333%;
+  }
+  .col-xs-2 {
+    width: 16.666666666667%;
+  }
+  .col-xs-3 {
+    width: 25%;
+  }
+  .col-xs-4 {
+    width: 33.333333333333%;
+  }
+  .col-xs-5 {
+    width: 41.666666666667%;
+  }
+  .col-xs-6 {
+    width: 50%;
+  }
+  .col-xs-7 {
+    width: 58.333333333333%;
+  }
+  .col-xs-8 {
+    width: 66.666666666667%;
+  }
+  .col-xs-9 {
+    width: 75%;
+  }
+  .col-xs-10 {
+    width: 83.333333333333%;
+  }
+  .col-xs-11 {
+    width: 91.666666666667%;
+  }
+  .col-xs-12 {
+    width: 100%;
+  }
+  .col-xs-push-1 {
+    left: 8.3333333333333%;
+  }
+  .col-xs-push-2 {
+    left: 16.666666666667%;
+  }
+  .col-xs-push-3 {
+    left: 25%;
+  }
+  .col-xs-push-4 {
+    left: 33.333333333333%;
+  }
+  .col-xs-push-5 {
+    left: 41.666666666667%;
+  }
+  .col-xs-push-6 {
+    left: 50%;
+  }
+  .col-xs-push-7 {
+    left: 58.333333333333%;
+  }
+  .col-xs-push-8 {
+    left: 66.666666666667%;
+  }
+  .col-xs-push-9 {
+    left: 75%;
+  }
+  .col-xs-push-10 {
+    left: 83.333333333333%;
+  }
+  .col-xs-push-11 {
+    left: 91.666666666667%;
+  }
+  .col-xs-pull-1 {
+    right: 8.3333333333333%;
+  }
+  .col-xs-pull-2 {
+    right: 16.666666666667%;
+  }
+  .col-xs-pull-3 {
+    right: 25%;
+  }
+  .col-xs-pull-4 {
+    right: 33.333333333333%;
+  }
+  .col-xs-pull-5 {
+    right: 41.666666666667%;
+  }
+  .col-xs-pull-6 {
+    right: 50%;
+  }
+  .col-xs-pull-7 {
+    right: 58.333333333333%;
+  }
+  .col-xs-pull-8 {
+    right: 66.666666666667%;
+  }
+  .col-xs-pull-9 {
+    right: 75%;
+  }
+  .col-xs-pull-10 {
+    right: 83.333333333333%;
+  }
+  .col-xs-pull-11 {
+    right: 91.666666666667%;
+  }
+  .col-xs-offset-1 {
+    margin-left: 8.3333333333333%;
+  }
+  .col-xs-offset-2 {
+    margin-left: 16.666666666667%;
+  }
+  .col-xs-offset-3 {
+    margin-left: 25%;
+  }
+  .col-xs-offset-4 {
+    margin-left: 33.333333333333%;
+  }
+  .col-xs-offset-5 {
+    margin-left: 41.666666666667%;
+  }
+  .col-xs-offset-6 {
+    margin-left: 50%;
+  }
+  .col-xs-offset-7 {
+    margin-left: 58.333333333333%;
+  }
+  .col-xs-offset-8 {
+    margin-left: 66.666666666667%;
+  }
+  .col-xs-offset-9 {
+    margin-left: 75%;
+  }
+  .col-xs-offset-10 {
+    margin-left: 83.333333333333%;
+  }
+  .col-xs-offset-11 {
+    margin-left: 91.666666666667%;
+  }
+}
+@media (min-width: 767px) {
+  .container {
+    width: 960px;
+  }
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
+    float: left;
+  }
+  .col-sm-1 {
+    width: 8.3333333333333%;
+  }
+  .col-sm-2 {
+    width: 16.666666666667%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-4 {
+    width: 33.333333333333%;
+  }
+  .col-sm-5 {
+    width: 41.666666666667%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-7 {
+    width: 58.333333333333%;
+  }
+  .col-sm-8 {
+    width: 66.666666666667%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-10 {
+    width: 83.333333333333%;
+  }
+  .col-sm-11 {
+    width: 91.666666666667%;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+  .col-sm-push-1 {
+    left: 8.3333333333333%;
+  }
+  .col-sm-push-2 {
+    left: 16.666666666667%;
+  }
+  .col-sm-push-3 {
+    left: 25%;
+  }
+  .col-sm-push-4 {
+    left: 33.333333333333%;
+  }
+  .col-sm-push-5 {
+    left: 41.666666666667%;
+  }
+  .col-sm-push-6 {
+    left: 50%;
+  }
+  .col-sm-push-7 {
+    left: 58.333333333333%;
+  }
+  .col-sm-push-8 {
+    left: 66.666666666667%;
+  }
+  .col-sm-push-9 {
+    left: 75%;
+  }
+  .col-sm-push-10 {
+    left: 83.333333333333%;
+  }
+  .col-sm-push-11 {
+    left: 91.666666666667%;
+  }
+  .col-sm-pull-1 {
+    right: 8.3333333333333%;
+  }
+  .col-sm-pull-2 {
+    right: 16.666666666667%;
+  }
+  .col-sm-pull-3 {
+    right: 25%;
+  }
+  .col-sm-pull-4 {
+    right: 33.333333333333%;
+  }
+  .col-sm-pull-5 {
+    right: 41.666666666667%;
+  }
+  .col-sm-pull-6 {
+    right: 50%;
+  }
+  .col-sm-pull-7 {
+    right: 58.333333333333%;
+  }
+  .col-sm-pull-8 {
+    right: 66.666666666667%;
+  }
+  .col-sm-pull-9 {
+    right: 75%;
+  }
+  .col-sm-pull-10 {
+    right: 83.333333333333%;
+  }
+  .col-sm-pull-11 {
+    right: 91.666666666667%;
+  }
+  .col-sm-offset-1 {
+    margin-left: 8.3333333333333%;
+  }
+  .col-sm-offset-2 {
+    margin-left: 16.666666666667%;
+  }
+  .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+  .col-sm-offset-4 {
+    margin-left: 33.333333333333%;
+  }
+  .col-sm-offset-5 {
+    margin-left: 41.666666666667%;
+  }
+  .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+  .col-sm-offset-7 {
+    margin-left: 58.333333333333%;
+  }
+  .col-sm-offset-8 {
+    margin-left: 66.666666666667%;
+  }
+  .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+  .col-sm-offset-10 {
+    margin-left: 83.333333333333%;
+  }
+  .col-sm-offset-11 {
+    margin-left: 91.666666666667%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    float: left;
+  }
+  .col-md-1 {
+    width: 8.3333333333333%;
+  }
+  .col-md-2 {
+    width: 16.666666666667%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.333333333333%;
+  }
+  .col-md-5 {
+    width: 41.666666666667%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.333333333333%;
+  }
+  .col-md-8 {
+    width: 66.666666666667%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83.333333333333%;
+  }
+  .col-md-11 {
+    width: 91.666666666667%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+  .col-md-push-1 {
+    left: 8.3333333333333%;
+  }
+  .col-md-push-2 {
+    left: 16.666666666667%;
+  }
+  .col-md-push-3 {
+    left: 25%;
+  }
+  .col-md-push-4 {
+    left: 33.333333333333%;
+  }
+  .col-md-push-5 {
+    left: 41.666666666667%;
+  }
+  .col-md-push-6 {
+    left: 50%;
+  }
+  .col-md-push-7 {
+    left: 58.333333333333%;
+  }
+  .col-md-push-8 {
+    left: 66.666666666667%;
+  }
+  .col-md-push-9 {
+    left: 75%;
+  }
+  .col-md-push-10 {
+    left: 83.333333333333%;
+  }
+  .col-md-push-11 {
+    left: 91.666666666667%;
+  }
+  .col-md-pull-1 {
+    right: 8.3333333333333%;
+  }
+  .col-md-pull-2 {
+    right: 16.666666666667%;
+  }
+  .col-md-pull-3 {
+    right: 25%;
+  }
+  .col-md-pull-4 {
+    right: 33.333333333333%;
+  }
+  .col-md-pull-5 {
+    right: 41.666666666667%;
+  }
+  .col-md-pull-6 {
+    right: 50%;
+  }
+  .col-md-pull-7 {
+    right: 58.333333333333%;
+  }
+  .col-md-pull-8 {
+    right: 66.666666666667%;
+  }
+  .col-md-pull-9 {
+    right: 75%;
+  }
+  .col-md-pull-10 {
+    right: 83.333333333333%;
+  }
+  .col-md-pull-11 {
+    right: 91.666666666667%;
+  }
+  .col-md-offset-1 {
+    margin-left: 8.3333333333333%;
+  }
+  .col-md-offset-2 {
+    margin-left: 16.666666666667%;
+  }
+  .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  .col-md-offset-4 {
+    margin-left: 33.333333333333%;
+  }
+  .col-md-offset-5 {
+    margin-left: 41.666666666667%;
+  }
+  .col-md-offset-6 {
+    margin-left: 50%;
+  }
+  .col-md-offset-7 {
+    margin-left: 58.333333333333%;
+  }
+  .col-md-offset-8 {
+    margin-left: 66.666666666667%;
+  }
+  .col-md-offset-9 {
+    margin-left: 75%;
+  }
+  .col-md-offset-10 {
+    margin-left: 83.333333333333%;
+  }
+  .col-md-offset-11 {
+    margin-left: 91.666666666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    float: left;
+  }
+  .col-lg-1 {
+    width: 8.3333333333333%;
+  }
+  .col-lg-2 {
+    width: 16.666666666667%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.333333333333%;
+  }
+  .col-lg-5 {
+    width: 41.666666666667%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.333333333333%;
+  }
+  .col-lg-8 {
+    width: 66.666666666667%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.333333333333%;
+  }
+  .col-lg-11 {
+    width: 91.666666666667%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+  .col-lg-push-1 {
+    left: 8.3333333333333%;
+  }
+  .col-lg-push-2 {
+    left: 16.666666666667%;
+  }
+  .col-lg-push-3 {
+    left: 25%;
+  }
+  .col-lg-push-4 {
+    left: 33.333333333333%;
+  }
+  .col-lg-push-5 {
+    left: 41.666666666667%;
+  }
+  .col-lg-push-6 {
+    left: 50%;
+  }
+  .col-lg-push-7 {
+    left: 58.333333333333%;
+  }
+  .col-lg-push-8 {
+    left: 66.666666666667%;
+  }
+  .col-lg-push-9 {
+    left: 75%;
+  }
+  .col-lg-push-10 {
+    left: 83.333333333333%;
+  }
+  .col-lg-push-11 {
+    left: 91.666666666667%;
+  }
+  .col-lg-pull-1 {
+    right: 8.3333333333333%;
+  }
+  .col-lg-pull-2 {
+    right: 16.666666666667%;
+  }
+  .col-lg-pull-3 {
+    right: 25%;
+  }
+  .col-lg-pull-4 {
+    right: 33.333333333333%;
+  }
+  .col-lg-pull-5 {
+    right: 41.666666666667%;
+  }
+  .col-lg-pull-6 {
+    right: 50%;
+  }
+  .col-lg-pull-7 {
+    right: 58.333333333333%;
+  }
+  .col-lg-pull-8 {
+    right: 66.666666666667%;
+  }
+  .col-lg-pull-9 {
+    right: 75%;
+  }
+  .col-lg-pull-10 {
+    right: 83.333333333333%;
+  }
+  .col-lg-pull-11 {
+    right: 91.666666666667%;
+  }
+  .col-lg-offset-1 {
+    margin-left: 8.3333333333333%;
+  }
+  .col-lg-offset-2 {
+    margin-left: 16.666666666667%;
+  }
+  .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .col-lg-offset-4 {
+    margin-left: 33.333333333333%;
+  }
+  .col-lg-offset-5 {
+    margin-left: 41.666666666667%;
+  }
+  .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .col-lg-offset-7 {
+    margin-left: 58.333333333333%;
+  }
+  .col-lg-offset-8 {
+    margin-left: 66.666666666667%;
+  }
+  .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .col-lg-offset-10 {
+    margin-left: 83.333333333333%;
+  }
+  .col-lg-offset-11 {
+    margin-left: 91.666666666667%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-family: ;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus {
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  outline: 0;
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: default;
+  pointer-events: none;
+  -ms-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #2D3135 !important;
+}
+.btn-link {
+  color: #8c1515;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+.btn-link,
+.btn-link:active,
+.btn-link[disabled],
+fieldset[disabled] .btn-link {
+  background-color: transparent;
+  -ms-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-link,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  border-color: transparent;
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: #000000;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.btn-link[disabled]:hover,
+.btn-link[disabled]:focus,
+fieldset[disabled] .btn-link:hover,
+fieldset[disabled] .btn-link:focus {
+  color: #999999;
+  text-decoration: none;
+}
+.btn {
+  padding-top: 8px;
+  height: 35px;
+  text-align: center;
+  border-radius: 35px;
+  width: 115px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  width: 100%;
+}
+.icon-btn {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/btn-arrow.png);
+  width: 8px;
+  height: 16px;
+  position: absolute;
+  display: block;
+  top: 14px;
+  right: 18px;
+  z-index: 1;
+  overflow: hidden;
+  background-position: center center;
+}
+.btn-loading {
+  padding-right: 48px;
+}
+.btn-back {
+  padding-left: 36px !important;
+  padding-right: 20px !important;
+}
+.icon-btn-back {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/btn-arrow_back.png) !important;
+  top: 14px;
+  left: 18px;
+}
+.icon-loading {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-refresh.png);
+  width: 20px;
+  height: 24px;
+  position: absolute;
+  display: block;
+  top: 9px;
+  right: 16px;
+  z-index: 2;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.ajax-loading .icon-loading {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/refresh-loader.gif);
+  width: 20px;
+  height: 24px;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.affix {
+  position: fixed;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@media screen and (max-width: 400px) {
+  @-ms-viewport {
+    width: 320px;
+  }
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.visible-sm {
+  display: block !important;
+}
+tr.visible-sm {
+  display: table-row !important;
+}
+th.visible-sm,
+td.visible-sm {
+  display: table-cell !important;
+}
+.visible-md {
+  display: none !important;
+}
+tr.visible-md {
+  display: none !important;
+}
+th.visible-md,
+td.visible-md {
+  display: none !important;
+}
+.visible-lg {
+  display: none !important;
+}
+tr.visible-lg {
+  display: none !important;
+}
+th.visible-lg,
+td.visible-lg {
+  display: none !important;
+}
+.hidden-sm {
+  display: none !important;
+}
+tr.hidden-sm {
+  display: none !important;
+}
+th.hidden-sm,
+td.hidden-sm {
+  display: none !important;
+}
+.hidden-md {
+  display: block !important;
+}
+tr.hidden-md {
+  display: table-row !important;
+}
+th.hidden-md,
+td.hidden-md {
+  display: table-cell !important;
+}
+.hidden-lg {
+  display: block !important;
+}
+tr.hidden-lg {
+  display: table-row !important;
+}
+th.hidden-lg,
+td.hidden-lg {
+  display: table-cell !important;
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .visible-sm {
+    display: none !important;
+  }
+  tr.visible-sm {
+    display: none !important;
+  }
+  th.visible-sm,
+  td.visible-sm {
+    display: none !important;
+  }
+  .visible-md {
+    display: block !important;
+  }
+  tr.visible-md {
+    display: table-row !important;
+  }
+  th.visible-md,
+  td.visible-md {
+    display: table-cell !important;
+  }
+  .visible-lg {
+    display: none !important;
+  }
+  tr.visible-lg {
+    display: none !important;
+  }
+  th.visible-lg,
+  td.visible-lg {
+    display: none !important;
+  }
+  .hidden-sm {
+    display: block !important;
+  }
+  tr.hidden-sm {
+    display: table-row !important;
+  }
+  th.hidden-sm,
+  td.hidden-sm {
+    display: table-cell !important;
+  }
+  .hidden-md {
+    display: none !important;
+  }
+  tr.hidden-md {
+    display: none !important;
+  }
+  th.hidden-md,
+  td.hidden-md {
+    display: none !important;
+  }
+  .hidden-lg {
+    display: block !important;
+  }
+  tr.hidden-lg {
+    display: table-row !important;
+  }
+  th.hidden-lg,
+  td.hidden-lg {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) {
+  .visible-sm {
+    display: none !important;
+  }
+  tr.visible-sm {
+    display: none !important;
+  }
+  th.visible-sm,
+  td.visible-sm {
+    display: none !important;
+  }
+  .visible-md {
+    display: none !important;
+  }
+  tr.visible-md {
+    display: none !important;
+  }
+  th.visible-md,
+  td.visible-md {
+    display: none !important;
+  }
+  .visible-lg {
+    display: block !important;
+  }
+  tr.visible-lg {
+    display: table-row !important;
+  }
+  th.visible-lg,
+  td.visible-lg {
+    display: table-cell !important;
+  }
+  .hidden-sm {
+    display: block !important;
+  }
+  tr.hidden-sm {
+    display: table-row !important;
+  }
+  th.hidden-sm,
+  td.hidden-sm {
+    display: table-cell !important;
+  }
+  .hidden-md {
+    display: block !important;
+  }
+  tr.hidden-md {
+    display: table-row !important;
+  }
+  th.hidden-md,
+  td.hidden-md {
+    display: table-cell !important;
+  }
+  .hidden-lg {
+    display: none !important;
+  }
+  tr.hidden-lg {
+    display: none !important;
+  }
+  th.hidden-lg,
+  td.hidden-lg {
+    display: none !important;
+  }
+}
+.visible-print {
+  display: none !important;
+}
+tr.visible-print {
+  display: none !important;
+}
+th.visible-print,
+td.visible-print {
+  display: none !important;
+}
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+  tr.visible-print {
+    display: table-row !important;
+  }
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
+  tr.hidden-print {
+    display: none !important;
+  }
+  th.hidden-print,
+  td.hidden-print {
+    display: none !important;
+  }
+}
+.clear:after,
+.attachment .entry-header:after,
+.site-footer .widget-area:after,
+.entry-content:after,
+.page-content:after,
+.navigation:after,
+.nav-links:after,
+.gallery:after,
+.comment-form-author:after,
+.comment-form-email:after,
+.comment-form-url:after,
+.comment-body:after {
+  clear: both;
+}
+.clear:before,
+.clear:after,
+.attachment .entry-header:before,
+.attachment .entry-header:after,
+.site-footer .widget-area:before,
+.site-footer .widget-area:after,
+.entry-content:before,
+.entry-content:after,
+.page-content:before,
+.page-content:after,
+.navigation:before,
+.navigation:after,
+.nav-links:before,
+.nav-links:after,
+.gallery:before,
+.gallery:after,
+.comment-form-author:before,
+.comment-form-author:after,
+.comment-form-email:before,
+.comment-form-email:after,
+.comment-form-url:before,
+.comment-form-url:after,
+.comment-body:before,
+.comment-body:after {
+  content: "";
+  display: table;
+}
+a:hover {
+  text-decoration: none;
+}
+body {
+  background: #F2F3F2;
+}
+#wrapper {
+  position: relative;
+}
+#main {
+  background: #ffffff;
+  position: relative;
+  z-index: 9;
+  margin-bottom: 410px;
+  min-width: 992px !important;
+}
+.screen-reader-text {
+  clip: rect(1px,1px,1px,1px);
+  position: absolute !important;
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -ms-box-shadow: 0 0 2px 2px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 0 2px 2px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,0.6);
+  box-shadow: 0 0 2px 2px rgba(0,0,0,0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  text-decoration: none;
+  width: auto;
+  z-index: 100000;
+}
+a.btn {
+  color: #fff;
+}
+b,
+strong {
+  font-weight: 600;
+}
+.btn {
+  color: #ffffff;
+  background-color: #910f28;
+  border-color: #910f28;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  outline: none !important;
+}
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active {
+  color: #ffffff;
+  background-color: #373D42;
+}
+.btn.disabled,
+.btn.disabled:hover,
+.btn.disabled:focus,
+.btn.disabled:active,
+.btn.disabled.active,
+.btn[disabled],
+.btn[disabled]:hover,
+.btn[disabled]:focus,
+.btn[disabled]:active,
+.btn[disabled].active,
+fieldset[disabled] .btn,
+fieldset[disabled] .btn:hover,
+fieldset[disabled] .btn:focus,
+fieldset[disabled] .btn:active,
+fieldset[disabled] .btn.active {
+  background-color: #910f28;
+  border-color: #910f28;
+}
+.entry-content img,
+.entry-summary img,
+.comment-content img,
+.widget img,
+.wp-caption {
+  max-width: 100%;
+}
+.entry-content img,
+.entry-summary img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+  height: auto;
+}
+img.size-full,
+img.size-large,
+img.wp-post-image {
+  height: auto;
+  max-width: 100%;
+}
+embed,
+iframe,
+object,
+video {
+  max-width: 100%;
+}
+.bg-white {
+  background: #fff;
+}
+.bg-lightblue {
+  background: #ceeaf3;
+}
+.bg-grey {
+  background: #f2f3f2;
+}
+.site-header {
+  position: fixed;
+  z-index: 99;
+  background: rgba(255,255,255,0.9);
+  top: 0;
+  width: 100%;
+  border-top: 1px solid #e8e8e8;
+  padding: 15px 0 18px 0;
+  -ms-box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.site-header .site-header .row {
+  position: relative;
+}
+.site-header .site-title {
+  line-height: 1;
+  margin: 0;
+  width: 345px;
+  height: 24px;
+  line-height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.site-header .main-navigation {
+  clear: both;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.site-header ul.nav-menu,
+.site-header div.nav-menu > ul {
+  margin: 0;
+}
+.site-header .nav-menu li {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 19px 0;
+}
+.site-header .nav-menu li ul.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300%;
+  padding: 8px 15px 15px 15px;
+  margin: 0;
+  background: rgba(159,159,159,0.95);
+}
+.site-header .nav-menu li ul.sub-menu li {
+  font-size: 13px;
+  display: block;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.site-header .nav-menu li ul.sub-menu li a {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.site-header .nav-menu li ul.sub-menu li a:hover {
+  color: #000;
+}
+.site-header .nav-menu li ul.sub-menu li.current_page_item > a
+      li.current-menu-item > a {
+  color: #000;
+}
+.site-header .nav-menu li ul.sub-menu li.see-all a {
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-transform: none;
+}
+.site-header .nav-menu li.programs-nav ul.sub-menu {
+  width: 260px;
+}
+.site-header .nav-menu li.faqs-nav ul.sub-menu {
+  width: 180px;
+}
+.site-header .nav-menu li a {
+  color: #000000;
+  display: block;
+  font-size: 13px;
+  line-height: 1;
+  margin: 0 11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.site-header .nav-menu li:last-child a {
+  margin-right: 0;
+}
+.site-header .nav-menu li:first-child a {
+  margin-left: 0;
+}
+.site-header .nav-menu li a:hover {
+  color: #910f28;
+}
+.site-header .nav-menu li:hover > ul {
+  display: block;
+}
+.site-header .nav-menu .current_page_item > a,
+.site-header .nav-menu .current_page_ancestor > a,
+.site-header .nav-menu .current-page-ancestor > a,
+.site-header .nav-menu .current-menu-item > a,
+.site-header .nav-menu .current-menu-ancestor > a {
+  color: #858585;
+}
+.site-header .menu-toggle {
+  display: none;
+}
+.tax-faq_category .menu-item-22 a,
+.single-post .menu-item-19 a,
+.single-course .menu-item-21 a {
+  color: #858585 !important;
+}
+.tax-faq_category .menu-item-22 a:hover,
+.single-post .menu-item-19 a:hover,
+.single-course .menu-item-21 a:hover {
+  color: #910f28 !important;
+}
+.blog-header {
+  width: 100%;
+  padding: 75px 0 15px 0;
+  margin: 0;
+  position: relative;
+  background: #fff;
+}
+.blog-header .main-navigation {
+  position: fixed;
+  z-index: 99999;
+  background: #f3f4f3;
+  top: 0;
+  border-bottom: 1px solid #ededed;
+  padding: 5px 0 8px 0;
+  height: 32px;
+  width: 100%;
+  text-align: center;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.blog-header ul.nav-menu,
+.blog-header div.nav-menu > ul {
+  margin: 0;
+}
+.blog-header .nav-menu li {
+  display: inline;
+  position: relative;
+  padding: 0 11px 10px 11px;
+}
+.blog-header .nav-menu li ul.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300%;
+  padding: 8px 15px 15px 15px;
+  margin: 0;
+  background: rgba(159,159,159,0.95);
+  text-align: left;
+}
+.blog-header .nav-menu li ul.sub-menu li {
+  font-size: 13px;
+  display: block;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.blog-header .nav-menu li ul.sub-menu li a {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.blog-header .nav-menu li ul.sub-menu li a:hover {
+  color: #000;
+}
+.blog-header .nav-menu li ul.sub-menu li.current_page_item > a
+      li.current-menu-item > a {
+  color: #000;
+}
+.blog-header .nav-menu li ul.sub-menu li.see-all a {
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-transform: none;
+}
+.blog-header .nav-menu li a {
+  color: #666666;
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.blog-header .nav-menu li:last-child a {
+  margin-right: 0;
+}
+.blog-header .nav-menu li:first-child a {
+  margin-left: 0;
+}
+.blog-header .nav-menu li:hover > a,
+.blog-header .nav-menu li a:hover {
+  color: #910f28;
+}
+.blog-header .nav-menu li:hover > ul {
+  display: block;
+}
+.blog-header .nav-menu .current_page_item > a,
+.blog-header .nav-menu .current_page_ancestor > a,
+.blog-header .nav-menu .current-page-ancestor > a,
+.blog-header .nav-menu .current-menu-item > a,
+.blog-header .nav-menu .current-menu-ancestor > a {
+  color: #858585;
+}
+.blog-header .menu-toggle {
+  display: none;
+}
+.blog-header .site-header .row {
+  position: relative;
+}
+.blog-header .site-title {
+  margin: 0;
+  line-height: 0;
+  text-align: center;
+}
+.blog-header .blog-title {
+  font-size: 64px;
+  line-height: 82px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #910f28;
+  font-weight: 400;
+  margin: -7px 0 0 0;
+  padding: 0;
+  text-align: center;
+}
+.single-post #primary {
+  padding-top: 0;
+}
+.single-post #secondary {
+  padding: 0;
+}
+.single-post .single-blog-post article {
+  margin: 50px 0 0 0;
+}
+.single-post .single-blog-post article .entry-header .entry-title {
+  margin: 0 0 10px 0;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: 400;
+}
+.single-post .single-blog-post article .entry-header .entry-subtitle {
+  font-size: 13px;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 5px 0;
+}
+.single-post .single-blog-post article .entry-header .entry-date {
+  font-size: 12px;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 5px 0 15px 0;
+}
+.single-post .single-blog-post article .entry-event-info {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 0 4px 0;
+  margin-bottom: 20px;
+}
+.single-post .single-blog-post article .entry-event-info .row {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.single-post .single-blog-post article .entry-event-info .row .col-1 {
+  color: #999;
+  font-weight: 700;
+}
+.single-post .single-blog-post article .entry-event-info .row .col-10 {
+  color: #000;
+  padding-left: 27px;
+}
+.single-post .single-blog-post article .entry-event-location .event-location-map {
+  width: 304px;
+  border: 1px solid #e0e0e0;
+  padding: 1px;
+}
+.single-post .single-blog-post article .entry-event-location .event-location-address {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/map-pointer-small.png) no-repeat 20px 20px;
+  padding: 20px 20px 20px 50px;
+  min-height: 37px;
+  font-family: helvetica;
+  font-size: 14px;
+  line-height: 18px;
+}
+.single-post .single-blog-post article .entry-content {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.single-post .single-blog-post article .entry-content .entry-content p {
+  margin: 0 0 25px 0;
+  padding: 0;
+}
+.single-post .single-blog-post article .entry-content .entry-content p:last-child {
+  margin-bottom: 0;
+}
+.single-post .single-blog-post article .entry-footer {
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+}
+.single-post .single-blog-post article .entry-footer .article-share .share-heading {
+  font-family: helvetica;
+  font-size: 14px;
+  color: #4d4f53;
+  margin: 0 0 10px 0;
+}
+.single-post .single-blog-post article .entry-footer .article-share ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.single-post .single-blog-post article .entry-footer .article-share ul li {
+  margin: 0 0 5px 0;
+  width: 100px;
+}
+.single-post .single-blog-post article .entry-footer .article-share ul li a {
+  display: block;
+  height: 24px;
+  padding: 0 0 0 30px;
+  font-size: 14px;
+  line-height: 26px;
+}
+.single-post .single-blog-post article .entry-footer .article-share ul li.twitter a {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-twitter.png) no-repeat 0 0;
+}
+.single-post .single-blog-post article .entry-footer .article-share ul li.facebook a {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-facebook.png) no-repeat 0 0;
+}
+.single-post .single-blog-post article .entry-footer .edit-link {
+  margin-top: 30px;
+  display: block;
+}
+.single-post .sidebar-single-post {
+  margin: 63px 0 0 0;
+}
+.single-post .sidebar-single-post #related-articles .widget-title {
+  color: #8c1515;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 0 4px 0;
+  margin: 0;
+}
+.single-post .sidebar-single-post #related-articles ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.single-post .sidebar-single-post #related-articles ul li {
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 16px 0;
+}
+.single-post .sidebar-single-post #related-articles ul li h4 {
+  margin: 0;
+  padding: 0;
+}
+.single-post .sidebar-single-post #related-articles ul li a {
+  color: #000;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.single-post .sidebar-single-post #related-articles ul li a:hover {
+  color: #8c1515;
+}
+.single-post .sidebar-single-post #widget-twitter {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/bg-twitter-widget_sb.png) no-repeat left top;
+}
+.single-post .sidebar-single-post #widget-twitter .twitter-feed {
+  width: 100%;
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+  padding: 0 28px 0 16px;
+  height: 253px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.single-post .sidebar-single-post #widget-twitter .twitter-feed p {
+  opacity: 0;
+}
+.single-post .sidebar-single-post #widget-twitter .btn-twitter {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-twitter_btn.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 40px;
+}
+.site-footer-note {
+  background: #910f28;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 22px;
+  line-height: 22px;
+  color: #d2c295;
+  padding: 32px 0;
+  width: 100%;
+  -ms-box-shadow: 0 25px 25px rgba(242,243,242,0.5);
+  -moz-box-shadow: 0 25px 25px rgba(242,243,242,0.5);
+  -webkit-box-shadow: 0 25px 25px rgba(242,243,242,0.5);
+  box-shadow: 0 25px 25px rgba(242,243,242,0.5);
+}
+.site-footer-note p {
+  margin: 0 !important;
+  padding-top: 5px;
+}
+.site-footer-note .col-2 {
+  text-align: right;
+}
+.site-footer-note .col-2 .btn {
+  color: #910f28;
+  background-color: #cbe9f2;
+  border-color: #cbe9f2;
+}
+.site-footer-note .col-2 .btn:hover,
+.site-footer-note .col-2 .btn:focus,
+.site-footer-note .col-2 .btn:active,
+.site-footer-note .col-2 .btn.active {
+  color: #910f28;
+  background-color: #373D42;
+}
+.site-footer-note .col-2 .btn.disabled,
+.site-footer-note .col-2 .btn.disabled:hover,
+.site-footer-note .col-2 .btn.disabled:focus,
+.site-footer-note .col-2 .btn.disabled:active,
+.site-footer-note .col-2 .btn.disabled.active,
+.site-footer-note .col-2 .btn[disabled],
+.site-footer-note .col-2 .btn[disabled]:hover,
+.site-footer-note .col-2 .btn[disabled]:focus,
+.site-footer-note .col-2 .btn[disabled]:active,
+.site-footer-note .col-2 .btn[disabled].active,
+fieldset[disabled] .site-footer-note .col-2 .btn,
+fieldset[disabled] .site-footer-note .col-2 .btn:hover,
+fieldset[disabled] .site-footer-note .col-2 .btn:focus,
+fieldset[disabled] .site-footer-note .col-2 .btn:active,
+fieldset[disabled] .site-footer-note .col-2 .btn.active {
+  background-color: #cbe9f2;
+  border-color: #cbe9f2;
+}
+.site-footer-note .col-2 .btn:hover {
+  color: #fff;
+}
+.site-footer {
+  background: #f2f3f2;
+  color: #686758;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.site-footer .widget-area {
+  width: 100%;
+  padding: 35px 0 0 0;
+}
+.site-footer .widget-area .container {
+  position: relative;
+}
+.site-footer .widget-area .widget .widget-title {
+  text-transform: uppercase;
+  color: #5c5e62;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.site-footer .widget-area .widget-mission .widget-content {
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+}
+.site-footer .widget-area .widget-recent-post h4 {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.site-footer .widget-area .widget-recent-post .item-meta {
+  font-size: 12px;
+}
+.site-footer .widget-area .widget-recent-post .item-summary {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+}
+.site-footer .widget-area .widget-summer-session ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+}
+.site-footer .widget-area .widget-join {
+  margin: 49px 0 0 0;
+}
+.site-footer .widget-area .widget-join .widget-title {
+  margin-bottom: 10px;
+}
+.site-footer .widget-area .widget-join ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer .widget-area .widget-join ul li {
+  float: left;
+  margin-left: 18px;
+}
+.site-footer .widget-area .widget-join ul li:first-child {
+  margin-left: 0;
+}
+.site-footer .widget-area .widget-join ul li:last-child:after {
+  clear: both;
+}
+.site-footer .widget-area .widget-join li a {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  text-indent: -999em;
+  line-height: 0;
+  font-size: 0;
+}
+.site-footer .widget-area .widget-join li.facebook a {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-facebook.png);
+}
+.site-footer .widget-area .widget-join li.twitter a {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-twitter.png);
+}
+.site-footer .widget-area .widget-join li.linkedin a {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-linkedin.png);
+}
+.site-footer .widget-area .widget-join li.vimeo a {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-vimeo.png);
+}
+.site-footer .widget-area .widget-join li.youtube a {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-youtube.png);
+}
+.site-footer .widget-area .widget-search {
+  margin: 40px 0 20px 0;
+}
+.site-footer .widget-area .site-credit {
+  width: 160px;
+  font-size: 10px;
+  line-height: 10px;
+  padding-top: 10px;
+  color: #4d4f53;
+  float: left;
+  text-align: center;
+}
+.site-footer .widget-area .site-info {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/boder-siteinfo.png) repeat-x left top;
+  font-size: 10px;
+  line-height: 10px;
+  padding: 10px 0 15px 0;
+  color: #4d4f53;
+}
+.site-footer .widget-area .site-info .copyright-text {
+  float: left;
+}
+.site-footer .widget-area .site-info .footer-navigation {
+  text-align: right;
+}
+.site-footer .widget-area .site-info .footer-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer .widget-area .site-info .footer-navigation li {
+  display: inline;
+  padding-left: 14px;
+}
+.site-footer .widget-area .site-info .footer-navigation li a {
+  color: #4d4f53;
+}
+.site-footer .widget-area .site-info .footer-navigation li a:hover {
+  color: #910f28;
+}
+.site-footer .widget-area .logo-footer {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+}
+.stanford-form .field {
+  margin: 0 0 10px 0;
+}
+.stanford-form .field .ph-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  display: block;
+  padding: 10px 13px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+.stanford-form .txtbox {
+  background: #f2f3f2;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  color: #000;
+  font-family: helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  width: 100%;
+  border: 1px solid #f2f3f2;
+  padding: 10px 13px;
+  outline: none;
+}
+.stanford-form .error_input .txtbox {
+  border: 1px solid #8c1515;
+}
+.stanford-form .error_input .ph-text {
+  color: #8c1515;
+}
+.stanford-form .error_input .ph-text .required {
+  border: 1px solid #8c1515;
+}
+.stanford-form .btn {
+  outline: none;
+}
+.stanford-form #recaptcha_response_field {
+  line-height: 14px;
+}
+.stanford-form .captcha_err {
+  border: 1px solid #8c1515 !important;
+}
+.stanford-form .error {
+  color: #8c1515;
+}
+.field {
+  margin: 0 0 10px 0;
+}
+.txtbox {
+  background: #f2f3f2;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  color: #000;
+  font-family: helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  width: 100%;
+  border: 1px solid #f2f3f2;
+  padding: 10px 13px;
+  outline: none;
+}
+#primary {
+  padding: 120px 0 80px 0;
+  background: #fff;
+}
+.has-page-header #primary {
+  padding-top: 65px;
+}
+.header-banner {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+.header-banner .header-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.header-banner .header-image img {
+  width: 100%;
+  min-width: 1200px;
+}
+.header-banner .skip-to-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.header-banner .skip-to-content a {
+  width: 29px;
+  height: 28px;
+  position: absolute;
+  bottom: -28px;
+  right: 0;
+}
+.home .header-banner {
+  height: 682px;
+  position: relative;
+  overflow: visible;
+}
+.home .header-banner .slider-caption-wrapper {
+  width: 100%;
+  height: 75px;
+  padding: 15px 0 15px 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  position: absolute;
+  background: rgba(51,51,51,0.85);
+  color: #fff;
+  font-family: helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.home .header-banner .slider-caption-wrapper .caption {
+  text-align: left;
+  width: 760px;
+  display: none;
+}
+.home .header-banner .slider-caption-wrapper a {
+  font-weight: 700;
+  color: #c7e9f2;
+  border-bottom: 1px solid #c7e9f2;
+}
+.home .header-banner .slider-dotted-path {
+  width: 100%;
+  height: 144px;
+  bottom: 2px;
+  z-index: 9;
+  position: absolute;
+}
+.home .header-banner .slider-dotted-path .dotted-path {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/path-home-banner.png) repeat-y bottom center;
+  width: 307px;
+  height: 142px;
+  float: right;
+  overflow: hidden;
+}
+.home .header-banner .slider-circle-wrapper {
+  width: 100%;
+  height: 307px;
+  left: 0;
+  bottom: 145px;
+  z-index: 19;
+  position: absolute;
+}
+.home .header-banner .slider-circle-wrapper .slider-circle {
+  width: 307px;
+  height: 307px;
+  text-align: center;
+  float: right;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/home-banner/slider-eclipse.png) no-repeat 0 0;
+  display: none;
+}
+.home .header-banner .bx-wrapper {
+  height: 682px;
+  overflow: hidden;
+}
+.home .header-banner .bx-wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+.home .header-banner .bx-wrapper ul li img {
+  max-width: 100%;
+}
+.home .header-banner .bx-wrapper ul li .slide-circle-text,
+.home .header-banner .bx-wrapper ul li .slide-caption {
+  display: none;
+}
+#log {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  background: red;
+  color: #fff;
+  padding: 0 0;
+  text-align: center;
+  z-index: 999;
+}
+.footer-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #910F28;
+  position: relative;
+}
+.footer-image img {
+  width: 100%;
+  min-width: 1200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.footer-quote,
+.header-quote {
+  background: #f2f3f2;
+}
+.footer-quote .quote,
+.header-quote .quote {
+  padding: 60px 0 45px 30px;
+}
+.footer-quote .quote-text,
+.header-quote .quote-text {
+  position: relative;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  line-height: 44px;
+  color: #000;
+}
+.footer-quote .quote-text span,
+.header-quote .quote-text span {
+  color: #8c1515;
+}
+.footer-quote .quote-text .start-quote,
+.footer-quote .quote-text .end-quote,
+.header-quote .quote-text .start-quote,
+.header-quote .quote-text .end-quote {
+  font-family: arial;
+  color: #000;
+}
+.footer-quote .quote-text .start-quote,
+.header-quote .quote-text .start-quote {
+  position: absolute;
+  left: -22px;
+  top: 0;
+}
+.footer-quote .quote-by,
+.header-quote .quote-by {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/quote-dotted_line_h.png) repeat-x left center;
+  margin: 30px 0 0 0;
+}
+.footer-quote .quote-by span,
+.header-quote .quote-by span {
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f2f3f2 url(http://summer.stanford.edu/wp-content/themes/stanford/images/quote-arrow.png) no-repeat left center;
+  padding-left: 42px;
+  font-size: 16px;
+  line-height: 12px;
+  color: #4c4e52;
+  display: block;
+  float: right;
+  text-align: right;
+}
+.header-quote {
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 55px;
+}
+.footer-quote {
+  border-top: 1px solid #e0e0e0;
+}
+.back-to-top {
+  position: absolute;
+  bottom: 105px;
+  right: 0;
+  width: 29px;
+  height: 28px;
+}
+.page-title-large,
+.page-title-med {
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000000;
+  font-weight: 400;
+  margin: 0;
+}
+.page-title-large {
+  font-size: 95px;
+  line-height: 86px;
+  margin-bottom: 35px;
+}
+.page-title-med {
+  font-size: 75px;
+  line-height: 66px;
+  margin-bottom: 35px;
+}
+.page-title {
+  font-size: 40px;
+  line-height: 48px;
+  color: #910e27;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.archive-title {
+  font-size: 20px;
+  line-height: 26px;
+  color: #000;
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.highlighted-text-large {
+  font-size: 40px;
+  line-height: 44px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #910f28;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+.highlighted-text {
+  font-size: 22px;
+  line-height: 29px;
+  color: #4c4c52;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 32px;
+}
+.small-text {
+  font-size: 14px;
+  line-height: 19px;
+}
+.entry-content {
+  font-size: 16px;
+  line-height: 23px;
+  color: #000;
+}
+.entry-content h2,
+.entry-content h3,
+.entry-content h4 {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #000000;
+}
+.entry-content h2,
+.entry-content h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.entry-content h4,
+.entry-content h5 {
+  margin-bottom: 10px;
+}
+.entry-content h2 {
+  font-size: 24px;
+  line-height: 28px;
+}
+.entry-content h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+.entry-content h4 {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.entry-content h5 {
+  color: #000;
+  font-family: "crimsonsemibolditalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+.entry-content ul,
+.entry-content ol {
+  padding: 0 0 0 18px;
+  margin: 0 0 22px 0;
+}
+.entry-content p {
+  margin: 0 0 22px 0;
+}
+.entry-content p:last-child {
+  margin: 0;
+}
+.entry-content table {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-collapse: collapse;
+  margin: 10px 0 40px 0;
+}
+.entry-content table td,
+.entry-content table th {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  font-size: 14px;
+}
+.entry-content table th {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-align: left;
+  background: #f2f3f2;
+}
+.entry-content .entry-quicklinks {
+  margin: 20px 0 30px 0;
+}
+.entry-content .entry-quicklinks .col-6 {
+  border-left: 1px solid #ddd;
+}
+.entry-content .entry-quicklinks .col-6.first-child {
+  border: none;
+}
+.entry-meta {
+  margin-top: 20px;
+}
+.entry-meta .edit-link {
+  font-size: 12px;
+  text-transform: lowercase;
+  color: #999;
+}
+.circled-icon {
+  text-align: center;
+}
+.circled-icon .icon {
+  display: block;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 15px auto;
+  background: #f2f3f2;
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  border-bottom-right-radius: 500px;
+  border-bottom-left-radius: 500px;
+  -moz-border-radius-topleft: 500px;
+  -moz-border-radius-topright: 500px;
+  -moz-border-radius-bottomright: 500px;
+  -moz-border-radius-bottomleft: 500px;
+  -webkit-border-top-left-radius: 500px;
+  -webkit-border-top-right-radius: 500px;
+  -webkit-border-bottom-right-radius: 500px;
+  -webkit-border-bottom-left-radius: 500px;
+  transition-property: all;
+  transition-duration: 3s;
+  transition-timing-function: linear;
+  transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 3s;
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-delay: 0;
+  -webkit-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  transform: scale(0.1);
+}
+.circled-icon .icon.active {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: linear;
+  transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .3s;
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-delay: 0;
+}
+.circled-icon .title {
+  color: #8c1515;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0 0 6px 0;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.circled-icon .title a {
+  color: #8c1515;
+}
+.circled-icon .title a.mouseover,
+.circled-icon .title a:hover {
+  color: #000;
+}
+.circled-icon .desc {
+  font-size: 18px;
+  line-height: 22px;
+  color: #4c4c52;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.entry-quicklinks .circled-icon h4.title {
+  text-transform: none;
+}
+.accordion .accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+.accordion .item-title {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-arrow-right.png) no-repeat 0 15px;
+  padding: 8px 0 8px 23px;
+  margin: 0;
+  color: #8c1313;
+  font-weight: 400;
+  cursor: pointer;
+}
+.accordion .item-content {
+  padding-left: 23px;
+  display: none;
+}
+.accordion .item-content ul,
+.accordion .item-content ol {
+  padding-left: 13px;
+}
+.accordion .item-content ul li,
+.accordion .item-content ol li {
+  margin: 0 0 10px 0;
+}
+.accordion .on .item-title {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-arrow-down.png) no-repeat 3px 12px;
+  color: #000;
+}
+.topbar {
+  height: 6px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  background: #8c1515;
+  z-index: 2;
+}
+.overlay {
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: linear;
+  transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .3s;
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-delay: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+}
+.overlay.mouseover,
+.overlay:hover {
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+}
+.page-home {
+  padding: 0 !important;
+}
+#enrich-your-perspective {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/path-enrich_your_perspective.png) no-repeat center top;
+}
+#enrich-your-perspective .entry-header {
+  margin-top: 20px;
+}
+#enrich-your-perspective .entry-content {
+  margin-top: 20px;
+  margin-bottom: 36px;
+  position: relative;
+  height: 150px;
+}
+#enrich-your-perspective .entry-content p {
+  margin-bottom: 43px;
+}
+#enrich-your-perspective .entry-content .scrolling-text {
+  position: absolute;
+  width: 780px;
+  height: 200px;
+  left: 0;
+  top: 0px;
+  padding: 5px;
+}
+#learn-at-stanford {
+  padding-bottom: 0;
+  background: #f2f3f2 url(http://summer.stanford.edu/wp-content/themes/stanford/images/path-learn_at_stanford1.png) no-repeat center 112px;
+}
+#learn-at-stanford .entry-header {
+  margin-top: 50px;
+}
+#learn-at-stanford .highlighted-text {
+  font-size: 20px;
+  line-height: 24px;
+}
+#learn-at-stanford .entry-content {
+  position: relative;
+  height: 75px;
+}
+#learn-at-stanford .entry-content .scrolling-text {
+  position: absolute;
+  width: 600px;
+  height: 115px;
+  left: 0;
+  top: 0px;
+  padding: 5px;
+}
+#learn-at-stanford .programs-list {
+  margin: 30px 0 0 0;
+}
+#learn-at-stanford .section-footer {
+  background: #f2f3f2 url(http://summer.stanford.edu/wp-content/themes/stanford/images/path-learn_at_stanford_footer.png) no-repeat center bottom;
+  height: 100px;
+}
+#learn-at-stanford .view-our-programs {
+  width: 200px;
+  margin-bottom: -185px;
+  z-index: 2;
+}
+#learn-at-stanford #interested-programs .highlighted-text {
+  margin: 0 0 0 182px;
+  padding: 0 70px 0 0;
+}
+.page-title-large span,
+.page-title-med span {
+  color: #911b0d;
+}
+#deepen-understanding {
+  margin: 0 0 30px 0;
+  padding-top: 0;
+}
+#deepen-understanding .banner-middle {
+  position: relative;
+  height: 385px;
+  width: 100%;
+  overflow: hidden;
+}
+#deepen-understanding .banner-middle .banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 385px;
+}
+#deepen-understanding .banner-middle .banner-image img {
+  width: 100%;
+  min-height: 500px;
+}
+#deepen-understanding .banner-middle .page-title-large {
+  color: #fff;
+  padding: 174px 0 0 0;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/path-home-banner.png) no-repeat 243px top;
+}
+#deepen-understanding #home-widgets {
+  margin: 70px 0 60px 0;
+}
+#deepen-understanding #home-widgets .col-4 {
+  position: relative;
+}
+#deepen-understanding #home-widgets .home-widget {
+  padding-right: 55px;
+  padding-bottom: 50px;
+}
+#deepen-understanding #home-widgets .home-widget .widget-title {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #000;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 22px;
+}
+#deepen-understanding #home-widgets .home-widget .widget-action-links {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  left: 10px;
+}
+#deepen-understanding #home-widgets #widget-courses p {
+  color: #4c4d52;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 24px;
+}
+#deepen-understanding #home-widgets #widget-courses .field {
+  margin: 0 0 15px 0;
+}
+#deepen-understanding #home-widgets #widget-courses #btn-search {
+  display: block;
+  float: left;
+}
+#deepen-understanding #home-widgets #widget-courses .browse-courses {
+  margin: 8px 0 0 20px;
+  display: block;
+  float: left;
+}
+#deepen-understanding #home-widgets #widget-featured-posts article {
+  margin-top: 30px;
+}
+#deepen-understanding #home-widgets #widget-featured-posts article.first-child,
+#deepen-understanding #home-widgets #widget-featured-posts article:first-child {
+  margin-top: 0 !important;
+}
+#deepen-understanding #home-widgets #widget-featured-posts h4 {
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 3px 0;
+  padding: 0;
+}
+#deepen-understanding #home-widgets #widget-featured-posts .item-meta {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+#deepen-understanding #home-widgets #widget-featured-posts .item-summary {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+}
+#deepen-understanding #home-widgets #widget-twitter {
+  padding-right: 0;
+}
+#deepen-understanding #home-widgets #widget-twitter .twitter-feed {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/bg-twitter-feeds.png) no-repeat left bottom;
+  width: 100%;
+  font-size: 16px;
+  line-height: 21px;
+  height: 200px;
+  display: block;
+  padding: 25px 45px 60px 25px;
+  position: relative;
+}
+#deepen-understanding #home-widgets #widget-twitter .twitter-feed p {
+  opacity: 0;
+}
+#deepen-understanding #home-widgets #widget-twitter .btn-twitter {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-twitter_btn.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 40px;
+}
+#home-footer {
+  background: #f2f3f2 url(http://summer.stanford.edu/wp-content/themes/stanford/images/path-home_footer.png) no-repeat center bottom;
+  padding: 70px 0 55px 0;
+  min-width: 960px;
+}
+.page-template-page-templatesacademics-php .entry-content {
+  position: relative;
+}
+.page-template-page-templatesacademics-php .entry-content .col-12 {
+  height: 100px;
+}
+.page-template-page-templatesacademics-php .entry-content .col-12 .scrolling-text {
+  position: absolute;
+  width: 790px;
+  height: 100px;
+  left: 0;
+  top: 0;
+  padding: 5px;
+}
+.page-template-page-templatesacademics-php .entry-content .programs-list {
+  margin: 70px 0 0 0;
+}
+.hide_footer_bar .back-to-top {
+  bottom: 7px !important;
+}
+.page-template-page-templatesprograms-php .entry-content {
+  position: relative;
+}
+.page-template-page-templatesprograms-php .entry-content .col-12 {
+  height: 85px;
+}
+.page-template-page-templatesprograms-php .entry-content .col-12 .scrolling-text {
+  position: absolute;
+  width: 790px;
+  height: 85px;
+  left: 0;
+  top: 0;
+  padding: 5px;
+}
+.programs-list {
+  margin: 30px 0 100px 0;
+}
+.programs-list .col-6 {
+  position: relative;
+  padding-bottom: 18px;
+}
+.programs-list .col-4 {
+  position: relative;
+  padding-bottom: 18px;
+}
+.programs-list .program-item {
+  background: #f2f3f2;
+}
+.programs-list .program-item .item-thumb {
+  overflow: hidden;
+  position: relative;
+}
+.programs-list .program-item .item-thumb img {
+  width: 100%;
+}
+.programs-list .program-item .item-content {
+  padding: 24px 20px 30px 20px;
+  font-size: 16px;
+  line-height: 22px;
+}
+.programs-list .program-item .item-content h4 {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #8c1515;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+}
+.programs-list .program-item .item-link {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.programs-list .home-listing {
+  background: #ffffff;
+}
+#programs-entry-footer {
+  margin: 0 0 100px 0;
+}
+#programs-entry-footer .col-4 {
+  border-left: 1px solid #e0e0e0;
+}
+#programs-entry-footer .first-child {
+  border: none;
+}
+#program-entry-footer {
+  margin: 60px 0 100px 0;
+}
+#program-entry-footer .col-6 {
+  border-left: 1px solid #e0e0e0;
+}
+#program-entry-footer .first-child {
+  border: none;
+}
+.video-embed-wrapper {
+  margin: 40px 0;
+}
+.video-embed-wrapper .quote {
+  width: 290px;
+  height: 236px;
+  background: #f2f3f2;
+  float: left;
+  position: relative;
+}
+.video-embed-wrapper .quote .quote-text {
+  font-size: 24px;
+  line-height: 28px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 18px 18px 0 18px;
+  color: #000;
+}
+.video-embed-wrapper .quote .quote-by {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  color: #4c4d52;
+}
+.video-embed-wrapper .video-box {
+  width: 414px;
+  height: 236px;
+  overflow: hidden;
+  float: right;
+  position: relative;
+}
+.video-embed-wrapper .video-box .video-embed {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+}
+.video-embed-wrapper .video-box .video-loading {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/bx_loader.gif) no-repeat center center;
+  background-color: rgba(0,0,0,0.8);
+}
+.video-embed-wrapper .video-box .video-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  height: 48px;
+  overflow: hidden;
+}
+.video-embed-wrapper .video-box .video-stripe .icon-play-video {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-play.gif) no-repeat left top;
+  width: 74px;
+  height: 48px;
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -999em;
+  float: left;
+}
+.video-embed-wrapper .video-box .video-stripe .icon-play-video:hover {
+  background-position: left bottom;
+}
+.video-embed-wrapper .video-box .video-stripe .video-desc {
+  color: #fff;
+  font-size: 13px;
+  line-height: 17px;
+  float: left;
+  padding: 5px 10px;
+}
+.table-expenses-wrapper {
+  position: relative;
+}
+.entry-content .table-expenses {
+  width: 100%;
+  border-collapase: collapse;
+  border: 1px solid #e0e0e0;
+  margin: 0 0 30px 0;
+}
+.entry-content .table-expenses th,
+.entry-content .table-expenses td {
+  border: 1px solid #e0e0e0;
+  padding: 22px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4c4c52;
+  text-align: center;
+  background: none;
+}
+.entry-content .table-expenses th {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+}
+.entry-content .table-expenses strong {
+  font-size: 20px;
+  color: #000;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.entry-content .table-expenses .no-border-tl {
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+.entry-content .table-expenses .alignright {
+  text-align: right !important;
+}
+.entry-content .table-expenses tr.table-caption th {
+  border-color: #cbe9f2;
+  background: #cbe9f2;
+  padding: 14px 22px 14px 14px;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.entry-content .table-expenses td.fill-bg {
+  background: #f2f3f2;
+}
+.entry-content .table-expenses td.hover-bg {
+  background: #e0e0e0;
+}
+.entry-content .table-expenses .tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -220px;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/bg-tooltip_exp.png) no-repeat left top;
+  padding: 20px 30px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+  width: 236px;
+  display: none;
+  z-index: 3;
+  cursor: pointer;
+}
+.entry-content .table-expenses .tooltip a {
+  color: #fff;
+  text-decoration: underline;
+}
+.entry-content .table-expenses .expand-table td {
+  padding: 0;
+  font-size: 0;
+  line-height: 2px;
+}
+.table-expander {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-expand.png) no-repeat left top;
+  color: #fff;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -999em;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+}
+.hide-me {
+  display: none;
+}
+#academic-calendar .month-name {
+  background: #f2f3f2;
+  text-align: left;
+  text-transform: uppercase;
+  color: #4c4d52;
+  font-weight: 700;
+  padding: 9px;
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 0px;
+}
+#academic-calendar .schedule-item {
+  border-top: 1px solid #e0e0e0;
+}
+#academic-calendar .schedule-item.first-child,
+#academic-calendar .schedule-item:first-child {
+  border: none;
+}
+#academic-calendar .schedule-date,
+#academic-calendar .schedule-desc {
+  padding: 30px 0;
+  font-size: 15px;
+  line-hight: 19px;
+}
+#academic-calendar .schedule-date h4,
+#academic-calendar .schedule-date strong,
+#academic-calendar .schedule-date .schedule-notes,
+#academic-calendar .schedule-desc h4,
+#academic-calendar .schedule-desc strong,
+#academic-calendar .schedule-desc .schedule-notes {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+#academic-calendar .schedule-date h4,
+#academic-calendar .schedule-date .schedule-notes,
+#academic-calendar .schedule-desc h4,
+#academic-calendar .schedule-desc .schedule-notes {
+  font-size: 16px;
+  line-height: 19px;
+  color: #8c1515;
+  margin: 0;
+  padding: 0 80px 0 0;
+}
+#academic-calendar .schedule-date .schedule-notes,
+#academic-calendar .schedule-desc .schedule-notes {
+  margin-top: 10px;
+}
+#academic-calendar .schedule-date p,
+#academic-calendar .schedule-desc p {
+  margin-bottom: 10px !important;
+}
+#academic-calendar .schedule-date p:last-child,
+#academic-calendar .schedule-desc p:last-child {
+  margin: 0;
+}
+#courses-searchform {
+  margin: 30px 0;
+}
+#courses-searchform .field {
+  margin: 0;
+}
+#courses-searchform .course-search-field {
+  margin-bottom: 12px;
+}
+#courses-searchform .courses_filters {
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+}
+#courses-searchform .courses_filters h3 {
+  border-top: 1px solid #ddd;
+  margin: 15px 0 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  color: #595e5f;
+  padding: 10px 0 10px 15px;
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#courses-searchform .courses_filters .filter_options {
+  display: none;
+}
+#courses-searchform .courses_filters .row {
+  margin-bottom: 12px;
+}
+#courses-searchform .courses_filters .row.last-child,
+#courses-searchform .courses_filters .row:last-child {
+  margin-bottom: 10px;
+}
+#courses-searchform .courses_filters.active .filter_options {
+  display: block;
+}
+#courses-searchform .courses_filters.active h3 {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-arrow-up.png);
+}
+#courses-searchform .courses_filters.on h3 {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-arrow-up.png);
+  border-top: none;
+}
+#courses-search-results .item-search {
+  margin: 0 0 20px 0;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+#courses-search-results .item-search p {
+  margin: 0;
+}
+#courses-search-results .no-results {
+  color: #4c4d52;
+  margin: 20px 0;
+  font-size: 20px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+#courses-list .sort-alphabet {
+  font-size: 20px;
+  color: #000;
+  margin: 30px 0 20px 0;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+#courses-list .item-title span {
+  color: #000;
+}
+#courses-list .item-content {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  list-style: none;
+}
+#courses-list .item-content li {
+  margin: 0 0 5px 0;
+}
+.page-course {
+  padding-top: 90px !important;
+}
+.course-breadcrumb {
+  margin-bottom: 45px;
+}
+.course-title {
+  font-size: 20px;
+  line-height: 26px;
+  color: #910e27;
+  margin: 0 0 5px 0;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.course-info {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 5px 0 30px 0;
+  padding: 5px 0 10px 0;
+}
+.course-info .row {
+  padding: 5px 0;
+}
+.course-info .course-section {
+  background: #f2f3f2;
+  padding: 8px 12px;
+}
+.course-info .course-section span {
+  color: #999999;
+}
+.course-content {
+  font-size: 14px;
+  line-height: 19px;
+}
+.course-content .course-text {
+  color: #4c4c52;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 30px;
+}
+.course-content h4 {
+  text-transform: uppercase;
+  margin-bottom: 0 !important;
+}
+.course-meta {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+.course-meta .share-course {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-share-course.png) no-repeat 0 0;
+  line-height: 22px;
+  padding-left: 40px;
+  display: block;
+  float: left;
+}
+.sidebar-course .highlighted-text {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+.sidebar-course .course-filter-dd .row {
+  margin-bottom: 15px;
+}
+#experience-stanford .col-4 {
+  position: relative;
+  padding-bottom: 18px;
+}
+#experience-stanford .item {
+  background: #fff;
+}
+#experience-stanford .item img {
+  width: 100%;
+}
+#experience-stanford .item .item-content {
+  padding: 34px 24px;
+  font-size: 16px;
+  line-height: 22px;
+}
+#experience-stanford .item .item-content h4 {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #8c1515;
+  font-size: 16px;
+  margin: 0 0 16px 0;
+}
+#experience-stanford .item .item-link {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.faq-search {
+  background: #f2f3f2;
+  padding: 80px 0 80px 30px;
+}
+.faq-search h3 {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.faq-search #searchfaq input[type="text"] {
+  background: #fff;
+  width: 100%;
+  padding: 13px 18px 15px 18px;
+  color: #8c1515;
+  font-size: 14px;
+  line-height: 14px;
+  border: 1px solid #dfe0df;
+}
+.faq-search #searchfaq .col-2 {
+  padding-top: 6px;
+}
+.faq-search #searchfaq input[type="text"].error_input {
+  border: 1px solid #8c1515;
+}
+#faq-categories {
+  margin-top: 40px;
+}
+#faq-categories .circled-icon {
+  margin-top: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+.have-question-wrapper {
+  margin-top: 70px;
+  text-align: center;
+  padding-bottom: 18px;
+  position: relative;
+}
+.have-question-wrapper .have-question {
+  border: 1px solid #e0e0e0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  color: #8c1515;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  padding: 15px 0 40px 0;
+}
+.have-question-wrapper .btn-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#faqs-accordion .item-title {
+  padding: 4px 0 4px 20px;
+  background-position: 0 10px;
+  color: #8c1313;
+}
+#faqs-accordion .item-content {
+  padding-top: 8px;
+}
+#faqs-accordion .on .item-title {
+  background-position: 3px 6px;
+  color: #8c1313;
+}
+.page-section {
+  padding: 32px 0 80px 0;
+  min-width: 960px;
+}
+.section-title {
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 0 0 30px 0;
+}
+#about_stanford {
+  padding-top: 0;
+}
+#about_letter {
+  background: #ceeaf3;
+}
+#about_letter .highlighted-text {
+  font-size: 40px;
+  line-height: 46px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #8c1515;
+  padding-right: 200px;
+  margin-bottom: 50px;
+  min-height: 131px;
+}
+#about_letter img {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+}
+#about_team {
+  padding-bottom: 0;
+}
+#about_team .team-member {
+  margin: 0 0 30px 0;
+  cursor: pointer;
+}
+#about_team .team-member .member-profile {
+  width: 220px;
+  height: 235px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+#about_team .team-member .member-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(145,26,12,0.94);
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+#about_team .team-member .member-overlay.animate {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#about_team .team-member .member-content {
+  padding: 18px 17px;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+}
+#about_team .team-member .member-content a {
+  color: #fff;
+  text-decoration: underline;
+}
+#about_team .team-member .member-name {
+  color: #910f28;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+#about_team .team-member .member-title {
+  font-size: 16px;
+  line-height: 22px;
+  color: #4c4c52;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#about_team .team-member .slideFromTop {
+  left: 0px;
+  top: -100%;
+}
+#about_team .team-member .slideFromBottom {
+  left: 0px;
+  top: 100%;
+}
+#about_team .team-member .slideFromLeft {
+  top: 0px;
+  left: -100%;
+}
+#about_team .team-member .slideFromRight {
+  top: 0px;
+  left: 100%;
+}
+#about_team .team-member .slideTop {
+  top: 0px;
+}
+#about_team .team-member .slideLeft {
+  left: 0px;
+}
+#about_team .team-member.mouseover .member-name a {
+  color: #000;
+}
+.page-apply .content-col {
+  padding-right: 22px;
+  border-right: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+  position: relative;
+}
+.page-apply .content-col .spacer {
+  height: 50px;
+}
+.page-apply .content-col .field-submit {
+  margin: 0;
+  padding: 0;
+}
+.page-apply .content-col .field-submit,
+.page-apply .content-col .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.page-apply .content-col.last-child {
+  border: none;
+}
+.page-contact {
+  padding-bottom: 0 !important;
+}
+.page-contact .page-title-large {
+  margin: 0 0 17px 0;
+}
+.page-contact #contact_footer {
+  background: #f2f3f2;
+  padding: 10px 0 42px 0;
+  font-size: 18px;
+  line-height: 24px;
+  -ms-box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+}
+.page-contact #contact_footer h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  padding: 0;
+}
+#map-canvas {
+  width: 100%;
+  height: 350px;
+  background: #efefef;
+}
+#form-contact {
+  margin: 24px 0 110px 0;
+}
+#form-contact .status-msg {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 20px 0;
+  color: #8c1515;
+}
+#form-contact .ajax-loader {
+  height: 30px;
+  position: relative;
+  margin: 0 0 0 10px;
+  display: none;
+}
+#form-contact .ajax-loader span {
+  display: block;
+  margin: auto;
+  width: auto;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/ajax-loader.gif) no-repeat center top;
+  font-size: 11px;
+}
+#form-newsletter .ajax-loader {
+  height: 30px;
+  position: relative;
+  margin: 10px 0 0 10px;
+  display: none;
+}
+#form-newsletter .ajax-loader span {
+  display: block;
+  margin: auto;
+  width: auto;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/ajax-loader.gif) no-repeat center top;
+  font-size: 11px;
+}
+.field {
+  position: relative;
+  font-family: helvetica;
+}
+#form-contact .field .ph-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  padding: 10px 13px 10px 13px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+#form-contact .field-textarea .ph-text {
+  height: 200px;
+  color: #999;
+}
+#form-contact .field-textarea .txtbox {
+  resize: none;
+}
+#form-login {
+  margin: 80px 0 0 0;
+}
+#form-login .small-links {
+  padding-left: 8px;
+  font-size: 11px;
+  line-height: 11px;
+}
+.page-login {
+  padding-bottom: 160px !important;
+}
+.page-login .page-title-large {
+  margin: 0 0 17px 0;
+  text-align: center;
+}
+.page-login #form-login {
+  margin: 53px 0 0 0;
+}
+.page-login #form-login .field-submit {
+  margin-top: 23px;
+  text-align: center;
+}
+.searchform {
+  background-color: #ffffff;
+  position: relative;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  width: 88%;
+}
+.searchform #s {
+  border: none;
+  float: left;
+  width: 220px;
+  margin: 9px 0 9px 10px;
+  padding: 0;
+  height: 20px;
+  font-size: 16px;
+  background: none;
+  color: #4d4f53;
+  z-index: 1;
+  line-height: 16px;
+  outline: none;
+}
+#searchsubmit {
+  width: 38px;
+  height: 38px;
+  float: right;
+  border: none;
+  text-indent: -999em;
+  font-size: 0;
+  line-height: 0;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-search.png) no-repeat center center;
+}
+#searchform-header {
+  background: #930D25;
+  position: absolute;
+  z-index: 2;
+  top: 80px;
+  right: 0;
+  overflow: hidden;
+  width: 38px;
+  height: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 20px;
+  -ms-box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+}
+#searchform-header #s_header {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  height: 22px;
+  margin: 8px 0 9px 42px;
+  font-family: helvetica;
+  width: 320px;
+}
+#searchform-header #searchsubmit-header {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-search-header.png) no-repeat 14px 11px;
+  width: 38px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 39px;
+  border: none;
+  text-indent: -999em;
+  font-size: 0;
+  line-height: 0;
+}
+#searchform-header #s_header::-webkit-input-placeholder {
+  color: #fff !important;
+}
+#searchform-header #s_header:-moz-placeholder {
+  color: #fff !important;
+}
+#searchform-header #s_header:-ms-input-placeholder {
+  color: #fff !important;
+}
+.search-title {
+  color: #4c4d52;
+  font-size: 20px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+#search-results {
+  position: relative;
+}
+#search-results article {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 22px;
+  padding-top: 21px;
+}
+#search-results article .entry-title {
+  color: #8c1515;
+  font-size: 30px;
+  line-height: 36px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0 0 18px 0;
+  padding: 0;
+}
+#search-results article .entry-title a {
+  color: #8c1515;
+}
+#search-results article .entry-title a:hover {
+  color: #000;
+}
+#search-results article .entry-summary {
+  font-family: helvetica;
+  font-size: 14px;
+  line-height: 20px;
+}
+.page-error404 {
+  padding-bottom: 0 !important;
+}
+article.error404 {
+  padding: 76px 0;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/path-404.png) no-repeat center bottom;
+  min-height: 740px;
+}
+article.error404 .entry-title {
+  margin: 0;
+  padding: 0;
+  font-size: 160px;
+  line-height: 120px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000000;
+  font-weight: 400;
+}
+article.error404 .entry-content {
+  color: #52525F;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 64px 20px 50px 20px;
+}
+article.error404 .entry-content .text-404 {
+  height: 100px;
+  padding-right: 10px;
+}
+article.error404 .entry-footer .col-offset-4 {
+  text-align: right;
+}
+#secondary {
+  padding: 0 20px 0 0;
+}
+.sidebar-widget {
+  margin: 0 0 20px 0;
+}
+.sidebar-widget .widget-title {
+  text-transform: none;
+  color: #000;
+  margin: 6px 0 18px 0;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 14px;
+}
+.widget-quicklinks {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+.widget-quicklinks a {
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  min-height: 120px;
+  margin-top: -1px;
+  color: #8c1515;
+  text-align: center;
+  font-size: 14px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 14px;
+  padding: 10px 0;
+  background-repeat: no-repeat;
+  background-position: center 6px;
+}
+.widget-quicklinks a:hover {
+  background-color: #f2f3f2;
+}
+.sidebar-programs {
+  padding-right: 20px;
+}
+.widget-menu-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.widget-menu-nav > ul > li {
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  position: relative;
+}
+.widget-menu-nav > ul > li > a {
+  font-size: 14px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.widget-menu-nav .current_page_item > a,
+.widget-menu-nav .current_page_ancestor > a,
+.widget-menu-nav .current_page_parent > a,
+.widget-menu-nav li.on > a {
+  color: #000;
+}
+.widget-menu-nav .current_page_item ul,
+.widget-menu-nav .current_page_ancestor ul {
+  display: block;
+}
+.widget-menu-nav ul li ul {
+  padding-right: 50px;
+  padding-top: 5px;
+  font-size: 13px;
+  line-height: 15px;
+}
+.widget-menu-nav ul li ul li {
+  margin: 12px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.widget-menu-nav ul li ul li ul {
+  margin: 0 0 0 10px;
+  padding: 0;
+  display: none;
+}
+.widget-menu-nav ul li ul li ul li {
+  margin: 5px 0;
+  padding: 0;
+}
+.widget-menu-nav ul li ul li ul a {
+  font-weight: 400;
+  color: #8c1515;
+}
+.widget-menu-nav ul li ul li ul a:hover {
+  color: #000;
+}
+.back-link {
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+.back-link a {
+  font-size: 14px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.widget-menu-default ul li ul {
+  margin: 0;
+  padding: 0;
+}
+.widget-menu-default ul li ul li {
+  padding: 0;
+}
+#program-nav-wrapper .program-nav {
+  border-top: 1px solid #ddd;
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children {
+  line-height: 18px;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children a {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu {
+  padding-right: 50px;
+  padding-top: 5px;
+  font-size: 13px;
+  line-height: 15px;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu a {
+  font-family: helvetica;
+  font-size: 13px;
+  text-transform: none;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu li {
+  margin: 12px 0;
+  padding-left: 19px;
+  position: relative;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu li ul {
+  margin: 0 0 0 10px;
+  padding: 0;
+  display: none;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu li ul li {
+  margin: 5px 0;
+  padding: 0;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu li ul a {
+  font-weight: 400;
+  color: #8c1515;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu li ul a:hover {
+  color: #000;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .sub-menu li.current_page_item ul {
+  display: block;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .icon-toggle {
+  width: 15px;
+  height: 8px;
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/arrow-right.png);
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  cursor: pointer;
+}
+#program-nav-wrapper .program-nav li.menu-item-has-children .on {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/arrow-down.png);
+  height: 15px;
+  width: 8px;
+}
+.widget-faq-categories {
+  border-top: 1px solid #e0e0e0;
+}
+.widget-faq-categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 16px;
+}
+.widget-faq-categories ul li {
+  margin: 0 0 10px 0;
+  padding-right: 20px;
+}
+.widget-faq-categories ul li.current-cat a {
+  color: #000;
+}
+.widget-contact-us {
+  border-top: 1px solid #e0e0e0;
+  padding: 20px 0 18px 0;
+  position: relative;
+}
+.widget-contact-us .contact-wrapper {
+  border: 1px solid #ddd;
+  padding: 10px 0 30px 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 19px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.widget-contact-us .contact-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+#widget-programs .program-item {
+  font-size: 14px;
+  line-height: 18px;
+}
+#widget-programs .program-item h4 {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #910e27;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+#widget-programs .program-item h4 a {
+  color: #910e27;
+}
+#widget-programs .program-item p {
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4d4f53;
+  margin: 0;
+}
+#widget-programs .first-child,
+#widget-programs .program-item:first-child {
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 12px 0;
+  margin: 0 0 18px 0;
+}
+.blog-categories {
+  border-top: 4px solid #000;
+  text-align: center;
+  padding-top: 10px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.blog-categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.blog-categories ul li {
+  display: inline;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+.blog-categories ul li a {
+  color: #000;
+}
+.blog-categories ul li a.selected {
+  color: #999;
+}
+.page-blog {
+  padding: 0 !important;
+}
+.page-blog #blog-list {
+  margin: 30px 0 80px 0;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/bg-bloglist.png) repeat-y 310px top;
+  position: relative;
+}
+.page-blog #blog-list .item {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  float: left;
+  margin: 0 20px 20px 0;
+  padding: 10px 0 0 0;
+  border-top: 1px solid #cccccc;
+}
+.page-blog #blog-list .item-top {
+  border-top: none;
+  padding-top: 0;
+}
+.page-blog #blog-list .item-last {
+  margin-right: 0;
+}
+.page-blog #blog-list .item-cat {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.page-blog #blog-list h3 {
+  font-size: 25px;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 7px 0 10px 0;
+}
+.page-blog #blog-list h3 a {
+  color: #000;
+}
+.page-blog #blog-list h3 a:hover {
+  border-bottom: 1px dotted #000;
+}
+.page-blog #blog-list .featured-video {
+  margin: 0 0 15px 0;
+  width: 300px;
+}
+.page-blog #blog-list .featured-video .featured-video iframe {
+  width: 100% !important;
+  height: 200px !important;
+}
+.page-blog #blog-list .item-date {
+  font-size: 12px;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.page-blog #blog-list .item-thumb {
+  width: 300px;
+  margin: 0 0 15px 0;
+  overflow: hidden;
+  position: relative;
+}
+.page-blog #blog-list .item-thumb img {
+  width: 100%;
+}
+.page-blog #blog-list .item-summary {
+  margin: 7px 0 10px 0;
+  font-family: "crimsonroman", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.page-blog #blog-list .read-more a {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 18px;
+  color: #666666;
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.page-blog .load-more-articles {
+  width: 80px;
+  display: none;
+  margin: auto;
+  text-align: center;
+  font-size: 11px;
+  line-height: 28px;
+}
+.page-blog .isotope-item {
+  z-index: 2;
+}
+.page-blog .isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+.page-blog .isotope,
+.page-blog .isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+.page-blog .isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+.page-blog .isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: top, left, opacity;
+  transition-property: transform, opacity;
+}
+.page-blog .isotope.no-transition,
+.page-blog .isotope.no-transition .isotope-item,
+.page-blog .isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+.page-blog .isotope.infinite-scrolling {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.page-blog #infscr-loading {
+  position: fixed;
+  text-align: center;
+  bottom: 30px;
+  left: 42%;
+  z-index: 100;
+  background: white;
+  background: rgba(255,255,255,0.9);
+  padding: 10px;
+  color: #222;
+  font-size: 15px;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+}
+.page-blog .clearfix:after {
+  clear: both;
+}
+.page-blog .clearfix {
+  zoom: 1;
+}
+.ajax-loading {
+  padding-bottom: 50px;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/bx_loader.gif) no-repeat center bottom;
+}
+.ajax-loader {
+  position: absolute;
+  bottom: 0;
+  height: 150px;
+  width: 100%;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/ajax-loader-bg.png) repeat-x center bottom;
+  font-size: 11px;
+  text-align: center;
+  z-index: 2;
+}
+.ajax-loader span {
+  display: block;
+  margin: auto;
+  width: auto;
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/ajax-loader.gif) no-repeat center top;
+  font-size: 11px;
+  padding-top: 30px;
+  margin-top: 100px;
+}
+.sidebar-press .sidebar-widget {
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.sidebar-press .sidebar-widget p {
+  font-size: 14px;
+  line-height: 18px;
+  color: #4c4c52;
+  margin: 0 0 16px 0;
+}
+.sidebar-press .sidebar-widget p.last-child,
+.sidebar-press .sidebar-widget p:last-child {
+  margin-bottom: 0;
+}
+.sidebar-press .sidebar-widget em {
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+}
+.sidebar-press .sidebar-widget .widget-title {
+  color: #8c1515;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  padding: 0 0 4px 0;
+  margin: 0;
+}
+.sidebar-press .sidebar-widget ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-press .sidebar-widget ul li {
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 16px 0;
+}
+.sidebar-press .sidebar-widget ul li h4 {
+  margin: 0;
+  padding: 0;
+}
+.sidebar-press .sidebar-widget ul li a {
+  color: #000;
+  font-family: "crimsonsemibold", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.sidebar-press .sidebar-widget ul li.last-child,
+.sidebar-press .sidebar-widget ul li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.sidebar-press .sidebar-widget.last-child,
+.sidebar-press .sidebar-widget:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.ui-autocomplete li a span.hl_results {
+  background-color: #ffff66;
+}
+.ui-autocomplete-loading {
+  background: #fff url('http://summer.stanford.edu/wp-content/themes/stanford/images/ajax-loader.gif') no-repeat 98% center !important;
+}
+.ui-autocomplete {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 810px;
+  background: #fff;
+  list-style: none;
+  -ms-box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.ui-autocomplete li {
+  font-size: 14px;
+  line-height: 19px;
+}
+.ui-autocomplete li:first-child {
+  border: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+.ui-autocomplete li a {
+  cursor: pointer;
+  display: block;
+  border-top: 1px dotted #e0e0e0;
+  padding: 8px 20px;
+  color: #666;
+  font-size: 12px;
+  line-height: 17px;
+}
+.ui-autocomplete li a strong {
+  color: #000;
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.ui-autocomplete li a:hover {
+  background: #f8f8f8;
+}
+#tribe-events-content {
+  margin: 50px 0 0 0;
+}
+#tribe-events-content .tribe-events-page-title {
+  font-family: "crimsonitalic", Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #4c4c52;
+}
+.tribe-events-calendar {
+  margin: 20px 0 !important;
+  border: 1px solid #E0E0E0 !important;
+  border-collapse: collapse;
+}
+.tribe-events-calendar th {
+  background: #cbe9f2 !important;
+  border: none !important;
+  font-size: 14px;
+  color: #4c4c52;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+.tribe-events-calendar td {
+  border: none !important;
+  border-left: 1px solid #E0E0E0 !important;
+  border-right: 1px solid #E0E0E0 !important;
+  position: relative !important;
+}
+.tribe-events-calendar td div {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 14px !important;
+  color: #999999 !important;
+  text-align: center;
+}
+.tribe-events-has-events .tribe_events {
+  background: none !important;
+  margin: 0;
+  padding: 15px !important;
+  text-align: left !important;
+}
+.tribe-events-calendar .tribe-events-tooltip,
+.tribe-events-week .tribe-events-tooltip,
+.recurring-info-tooltip {
+  background-color: transparent !important;
+}
+.tribe-events-tooltip {
+  border: none !important;
+  bottom: 100% !important;
+  padding: 0 0 29px 0 !important;
+  text-align: left !important;
+}
+.tribe-events-tooltip .entry-title {
+  background: #8c1515 !important;
+  padding: 10px 20px 0 20px !important;
+  margin: 0 !important;
+  font-weight: 700;
+  font-size: 13px !important;
+  line-height: 16px !important;
+}
+.tribe-events-tooltip .tribe-events-event-body {
+  background: #8c1515 !important;
+  color: #ffffff !important;
+  text-align: left !important;
+  padding: 0 20px 10px 20px !important;
+}
+.tribe-events-tooltip .tribe-events-event-body .duration {
+  background: #8c1515 !important;
+  color: #ffffff !important;
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 0 15px 0 !important;
+  font-size: 11px !important;
+}
+.tribe-events-tooltip .tribe-events-event-body .tribe-events-arrow {
+  background-image: none !important;
+  width: 0;
+  height: 0;
+  margin-top: -29px;
+  top: 100% !important;
+  border-style: solid;
+  border-width: 15px 10px 0 10px;
+  border-color: #8c1515 transparent transparent transparent;
+}
+.tribe-events-notices {
+  background: #f2f3f2 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #666 !important;
+  font-weight: 700;
+  margin: 0 0 30px 0 !important;
+}
+.tribe-events-single-event-title {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px !important;
+  color: #910C26 !important;
+}
+.tribe-events-schedule {
+  margin: 0 0 30px 0 !important;
+}
+.tribe-events-schedule h3 {
+  font-size: 14px !important;
+}
+.tribe-events-button,
+.tribe-events-button:hover {
+  background: #910c26 !important;
+  color: #fff !important;
+  border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  width: auto !important;
+  padding: 10px 15px !important;
+}
+#tribe-events-bar .tribe-events-button {
+  margin: 3px 0 0 0;
+}
+.tribe-events-loop .type-tribe_events {
+  border-bottom: 1px solid #E0E0E0;
+}
+.tribe-events-loop .tribe-events-list-separator-month {
+  background: #CBE9F2;
+  color: #4C4C52;
+}
+.tribe-events-loop .tribe-events-list-event-title {
+  font-family: "NewsGothicBT-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px !important;
+  line-height: 22px !important;
+  margin: 0 !important;
+}
+.tribe-events-loop .tribe-events-event-meta {
+  font-size: 15px !important;
+  line-height: 18px !important;
+}
+.tribe-events-loop .time-details {
+  margin: 0 0 5px 0 !important;
+}
+#tribe-events-pg-template {
+  padding: 120px 0 30px 0;
+}
+#tribe-events-pg-template #tribe-bar-views .tribe-bar-views-inner label {
+  background: url(http://summer.stanford.edu/wp-content/themes/stanford/images/dropdown-arrow.png) no-repeat 68px 3px;
+}
+#tribe-events-pg-template #tribe-bar-views .tribe-bar-views-inner .tribe-select2-results-views span[class^="tribe-icon-list"],
+#tribe-events-pg-template #tribe-bar-views .tribe-bar-views-inner .tribe-bar-views-list span[class^="tribe-icon-list"],
+#tribe-events-pg-template #tribe-bar-views .tribe-bar-views-inner .tribe-bar-view-list a[class^="tribe-icon-list"] {
+  background-image: url(http://summer.stanford.edu/wp-content/themes/stanford/images/icon-list.png);
+  -webkit-background-size: 11px 10px;
+  background-size: 11px 10px;
+}
+#tribe-events-pg-template #tribe-events-footer {
+  margin: 0 !important;
+}
+#tribe-events-pg-template #tribe-events-footer .tribe-events-sub-nav {
+  display: none !important;
+}

@@ -1,0 +1,18 @@
+.qq {
+	font-family: "ÐÂËÎÌå";
+	font-size: large;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	margin: 10px;
+	padding: 20px;
+	clear: left;
+	float: left;
+	height: 40px;
+	width: 100px;
+	border: thin groove #000099;
+	list-style-position: inside;
+	list-style-type: disc;
+}
