@@ -5,28 +5,28 @@
 
   <div class="list">
         <header>          
-          <h3><i class="icon-list-ul icon-border-circle"></i> 我发布的旅游产品 &nbsp;<small>{{travelproducts.count}}个行程</small><a href="/travelproduct_publish" class="btn btn-info pull-right">发布旅游产品</a></h3>
+          <h3><i class="icon-list-ul icon-border-circle"></i> 我发布的教育产品 &nbsp;<small>{{studyproducts.count}}个行程</small><a href="/studyproduct_publish" class="btn btn-info pull-right">发布教育产品</a></h3>
           
         </header>
         <section class="items items-hover">
-            {% for travelproduct in travelproducts %}
+            {% for studyproduct in studyproducts %}
                 <div class="item">
                 <div class="item-heading">
                     <div class="row">
                         <div class="col-md-1">
-                             <img src="{{MEDIA_URL}}{{ travelproduct.pics}}" class="img-rounded" alt="" height="86px" width="86px">
+                             <img src="{{MEDIA_URL}}{{ studyproduct.pics}}" class="img-rounded" alt="" height="86px" width="86px">
                         </div>
                         <div class="col-md-3">
-                               <h4><span class="label label-success">NEW</span>&nbsp; <a href="/travelproduct_details/{{travelproduct.pk}}">{{travelproduct.title}}</a>&nbsp; &nbsp; &nbsp; <span class="text-muted">{{travelproduct.publisher.username}}</span></h4>
+                               <h4><span class="label label-success">NEW</span>&nbsp; <a href="/studyproduct_details/{{studyproduct.pk}}">{{studyproduct.title}}</a>&nbsp; &nbsp; &nbsp; <span class="text-muted">{{studyproduct.publisher.username}}</span></h4>
                              <div class="item-content">
-                   {{travelproduct.description}}
+                   {{studyproduct.description}}
                 </div>
                 <div class="item-footer">
                   <a href="#" class="text-muted"><i class="icon-comments"></i> 243</a>&nbsp;
-                  <span class="text-muted">{{travelproduct.createdTime}}</span>
+                  <span class="text-muted">{{studyproduct.createdTime}}</span>
                 </div>
               </div>
-                        <div id="{{travelproduct.pk}}" class="btn btn-info pull-right delete">删除</div>
+                        <div id="{{studyproduct.pk}}" class="btn btn-info pull-right delete">删除</div>
                         </div>
                       
                     </div>
@@ -57,7 +57,7 @@ $(document).ready(function(){
     $(".delete").click(function () {
         var id = $(this).attr('id');
         $.ajax({
-            url: '/travel_delete/'+id+'/',
+            url: '/study_delete/' + id + '/',
 
             type: 'POST',
 

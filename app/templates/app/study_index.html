@@ -10,21 +10,11 @@
         </ol>
         <div class="carousel-inner">
             <div class="item active">
-                <img alt="First slide" src="{% static 'app/img/3.jpg' %}">
-                <div class="carousel-caption">
-                  <div class="slider-text">
-                    <h1>广州⇌柬埔寨</h1>
-                    <span>【爆款1999】年轻人第一次高逼格的出国旅行，广州柬埔寨</span>
-                                        <span class="fxproduct"></span>
-                                    </div>
-                </div>
-            </div>
-            <div class="item">
                 <img alt="First slide" src="{% static 'app/img/4.jpg' %}">
                 <div class="carousel-caption">
                   <div class="slider-text">
-                    <h1>上海⇌巴厘岛</h1>
-                    <span>【小木屋5999】年轻人第一次放肆的海岛旅行，上海巴厘岛</span>
+                    <h1>哈佛大学</h1>
+                    <span></span>
                                         <span class="fxproduct"></span>
                                     </div>
                 </div>
@@ -33,8 +23,18 @@
                 <img alt="First slide" src="{% static 'app/img/5.jpg' %}">
                 <div class="carousel-caption">
                   <div class="slider-text">
-                    <h1>北京⇌希腊</h1>
-                    <span>【唯美9999起】年轻人第一次浸在爱琴海的梦幻旅行 北京出发</span>
+                    <h1>斯坦福大学</h1>
+                    <span></span>
+                                        <span class="fxproduct"></span>
+                                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="First slide" src="{% static 'app/img/9.jpg' %}">
+                <div class="carousel-caption">
+                  <div class="slider-text">
+                    <h1>耶鲁大学</h1>
+                    <span></span>
                                         <span class="fxproduct"></span>
                                     </div>
                 </div>
@@ -51,30 +51,66 @@
         <div class="example">
             <br />
             <br />
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="icon-search"></i></span>
-                        <input class="form-control" type="text">
-                        <span class="input-group-btn">
-                            <button class="btn btn-info" type="button">搜索</button>
-                        </span>
+            <div class=" row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <br>
+                        <div class="input-group ">
+                            <input class="form-control" placeholder="目的地" id="des" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <input class="form-control form-date" placeholder="出发日期" id="checkinDate"type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <input class="form-control form-date" placeholder="返回日期" id="checkoutDate"type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="button" id="search">搜索</button>
+                            </span>
+
+                        </div>
                     </div>
-                    <br>
                 </div>
-            </div>
+
 
             <div class="list">
                 <header>
                     <div class="pull-right">
-                        <a href="#">查看更多</a>
+                        <a href="/study_list">查看更多</a>
                     </div>
-                    <h3> 热门房源 &nbsp;<small></small></h3>
+                    <h3> 热门教育产品 &nbsp;<small></small></h3>
                 </header>
                 <section class="cards">
-                     {% for travel in travelproducts%}
+                     {% for study in studyproducts%}
                     <div class="col-md-4 col-sm-6 col-lg-3">
-                        <a href="/study_details/{{ study.pk}}" class="card">
+                        <a href="/studyproduct_details/{{ study.pk}}" class="card">
+                            <img src="{{MEDIA_URL}}{{ study.pics}}" alt="">
+                            <span class="caption">{{study.title}}</span>
+                        </a>
+                        <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
+                                        <div>
+                                            <sup class="h6 text-contrast">¥</sup>
+                                            <span class="h3 price-amount">{{study.price}}</span>
+                                            <sup class="h6 text-contrast"></sup>
+                                        </div>
+                        </div>
+                    </div>                   
+                    {% endfor %}
+
+                </section>
+                <footer>
+                    <ul class="pager">
+                    </ul>
+                </footer>
+            </div>
+            <div class="list">
+                <header>
+                    <div class="pull-right">
+                        <a href="/study_list">查看更多</a>
+                    </div>
+                    <h3> 最新教育产品 &nbsp;<small></small></h3>
+                </header>
+                <section class="cards">
+                     {% for study in studyproducts%}
+                    <div class="col-md-4 col-sm-6 col-lg-3">
+                        <a href="/studyproduct_details/{{ study.pk}}" class="card">
                             <img src="{{MEDIA_URL}}{{ study.pics}}" alt="">
                             <span class="caption">{{study.title}}</span>
                         </a>

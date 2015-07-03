@@ -31,7 +31,7 @@ class House(models.Model):
 
 class TravelProduct(models.Model):
     title = models.CharField(max_length = 50)
-    destination = models.CharField(max_length = 15)
+    destination = models.CharField(max_length = 30)
     price = models.PositiveIntegerField()
     planeticket = models.CharField(max_length = 100)
     checkinHotel = models.CharField(max_length = 100)
@@ -41,6 +41,7 @@ class TravelProduct(models.Model):
     updatedTime = models.DateTimeField(auto_now_add = True)
     timesViewed = models.PositiveIntegerField()
     description = models.CharField(max_length = 1000)
+    contact =  models.CharField(max_length=30,blank=True,null=True)
     publisher = models.ForeignKey(User)
     rate = models.PositiveSmallIntegerField()
     pics = models.FileField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
@@ -59,6 +60,20 @@ class Itinerary(models.Model):
 
 class EduProduct(models.Model):
     title = models.CharField(max_length = 50)
+    startPlace = models.CharField(max_length = 30)
+    destination = models.CharField(max_length = 30)
+    type = models.SmallIntegerField()
+    price = models.PositiveIntegerField()
+    startime = models.DateField()
+    endtime = models.DateField()
+    createdTime = models.DateTimeField(auto_now_add = True)
+    updatedTime = models.DateTimeField(auto_now_add = True)
+    timesViewed = models.PositiveIntegerField()
+    description = models.CharField(max_length = 1000)
+    publisher = models.ForeignKey(User)
+    contact = models.CharField(max_length=30,blank=True,null=True)
+    rate = models.PositiveSmallIntegerField()
+    pics = models.FileField(upload_to = 'temp_media/%Y/%m/%d',blank=True,null=True)
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User)

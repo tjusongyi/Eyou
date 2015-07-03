@@ -86,8 +86,8 @@
             <div class="col-md-1 col-md-offset-4">
                 <p class="lead">描述</p>
             </div>
-            <div class="col-md-2">
-              <textarea id="desc" placeholder="简单介绍一下您的房源"style="width: 100%;"></textarea>
+            <div class="col-md-6">
+              <textarea class="kindeditor" id="kindeditor" style="width: 100%;" placeholder="简单介绍一下您的房源"></textarea>
             </div>                    
         </div>
                 <br/> 
@@ -165,7 +165,7 @@ $(document).ready(function(){
     
     $("#publish").click(function () {
         var title = $("#title").val();
-        var desc = $("#desc").val();
+        var desc = editor.html();
         var rent = $("#rent").val();
         var startime = $("#startime").val();
         var endtime = $("#endtime").val();

@@ -1,23 +1,78 @@
 {% extends "app/layout.html" %}
 {% load staticfiles %}
 {% block content %}
+<div class="row">
+      <div class="col-lg-2 col-md-12 text-center-sm text-center-md row-space-sm-1 filter-label">
+        <label>日期</label>
+      </div>
 
+      <form class="col-lg-9 trip-form">
+          <div class="col-md-4 col-sm-6 row-space-1-sm">
+            <input class="form-control form-date" placeholder="入住日期" id="checkinDate" type="text">
+          </div>
 
+          <div class="col-md-4 col-sm-6 row-space-1-sm">
+            <input class="form-control form-date" placeholder="退房日期" id="checkoutDate" type="text">
+        </div>
+
+      </form>
+    </div>
+<div class="row">
+      <div class="col-lg-2 col-md-2">
+        <h3>
+          房间类型
+        </h3>        
+      </div>
+
+      <div class="col-lg-9">
+        <div class="row row-condensed" id="room-options">
+
+          <div class="col-middle-alt col-sm-4">
+            <label class="checkbox panel panel-dark">
+              <input class="pull-right" name="room-type" value="Entire home/apt" type="checkbox">
+              <i class="icon icon-entire-place h5 needsclick"></i>
+              整套房子/公寓
+            </label>
+          </div>
+
+          <div class="col-middle-alt col-sm-4">
+            <label class="checkbox panel panel-dark">
+              <input class="pull-right" name="room-type" value="Private room" type="checkbox">
+              <i class="icon icon-private-room h5 needsclick"></i>
+              独立房间
+            </label>
+          </div>
+
+          <div class="col-middle-alt col-sm-4">
+            <label class="checkbox panel panel-dark">
+              <input class="pull-right" name="room-type" value="Shared room" type="checkbox">
+              <i class="icon icon-shared-room h5 needsclick"></i>
+              合住房间
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
   <div class="list">
         <header>          
           <h3><i class="icon-list-ul icon-border-circle"></i> 房源列表 &nbsp;<small>{{houses.count}}间房子</small><a href="/house_publish" class="btn btn-info pull-right">发布房源</a></h3>
           
         </header>
         <section class="items items-hover">
+            <div class="row">
+                <div class="col-md-7">
             {% if houses %}
             {% for house in houses %}
+
                 <div class="item">
                 <div class="item-heading">
+
                     <div class="row">
-                        <div class="col-md-2">
-                             <img src="{{MEDIA_URL}}{{ house.pics}}" class="img-rounded" alt="" height="256px" width="256px">
-                        </div>
                         <div class="col-md-3">
+                             <img src="{{MEDIA_URL}}{{ house.pics}}" class="img-rounded" alt="" height="128px" width="128px">
+                        </div>
+                        <div class="col-md-2">
                                <h4><span class="label label-success">NEW</span>&nbsp; <a href="/house_details/{{house.pk}}">{{house.title}}</a>&nbsp; &nbsp; &nbsp; <span class="text-muted">{{house.publisher.username}}</span></h4>
                              <div class="item-content">
                    {{house.description}}
@@ -28,18 +83,21 @@
                 </div>
               </div>
                         </div>
+                        
+                        </div>
                       
-                    </div>
-                 
-                  
-                </div>
-               
+                    </div>                                                           
             {% endfor %}
             {% else %}
             没有合适的房源。 
             {% endif %}
-          
+            </div>
+                 <div id="mapContainer" class="col-md-2" style="width: 480px; height: 480px">      </div>
+          </div>
         </section>
+            
+
+
         <footer>
           <ul class="pager">
             <li class="previous"><a href="#">« 上一页</a></li>
@@ -55,5 +113,58 @@
           </ul>
         </footer>
       </div>
-      
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    var platform = new H.service.Platform({
+        'app_id': 'QK8VU8IHVjsjdh2pwqPn',
+        'app_code': 'HvDcgeYXgvHyThysCUK8eQ'
+    });
+    var defaultLayers = platform.createDefaultLayers();
+
+    // Instantiate (and display) a map object:
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        defaultLayers.normal.map,
+        {
+            zoom: 5,
+            center: { lat: 32.5, lng: -100.4 }
+        });
+    var mapEvents = new H.mapevents.MapEvents(map);
+    map.addEventListener('tap', function(evt) {
+        // Log 'tap' and 'mouse' events:
+        console.log(evt.type, evt.currentPointer.type); 
+    });
+    var behavior = new H.mapevents.Behavior(mapEvents);
+    var geocodingParams = {
+        searchText: '{{des}}'
+    };
+    var onResult = function (result) {
+        var locations = result.Response.View[0].Result;
+        var position,marker;
+        // Add a marker for each location found
+        for (i = 0; i < locations.length; i++) {
+            position = {
+                lat: locations[i].Location.DisplayPosition.Latitude,
+                lng: locations[i].Location.DisplayPosition.Longitude
+            };
+            marker = new H.map.Marker(position);
+            map.addObject(marker);
+            map.setCenter(position);
+            
+        }
+       
+       
+    };
+
+        // Get an instance of the geocoding service:
+    var geocoder = platform.getGeocodingService();
+        // Call the geocode method with the geocoding parameters,
+        // the callback and an error callback function (called if a
+        // communication error occurs):
+    geocoder.geocode(geocodingParams, onResult, function (e) {
+        alert(e);
+    });
+});
+</script>
 {% endblock %}

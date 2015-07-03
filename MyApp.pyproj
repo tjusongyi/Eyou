@@ -4,7 +4,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>MyApp</Name>
     <RootNamespace>MyApp</RootNamespace>
-    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
     <InterpreterVersion>3.4</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,6 +52,8 @@
     <Folder Include="MyApp\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\plan.html" />
+    <Content Include="app\templates\app\studyproduct_add_picture.html" />
     <Content Include="app\templates\app\community.html" />
     <Content Include="app\templates\app\hotel_index.html" />
     <Content Include="app\templates\app\hotel_list.html" />
@@ -62,11 +64,14 @@
     <Content Include="app\templates\app\itinerary_publish.html" />
     <Content Include="app\templates\app\my_house_list.html" />
     <Content Include="app\templates\app\my_itinerary_list.html" />
+    <Content Include="app\templates\app\my_study_list.html" />
     <Content Include="app\templates\app\my_travel_list.html" />
     <Content Include="app\templates\app\profile.html" />
     <Content Include="app\templates\app\house_publish.html" />
+    <Content Include="app\templates\app\studyproduct_details.html" />
     <Content Include="app\templates\app\study_index.html" />
     <Content Include="app\templates\app\study_list.html" />
+    <Content Include="app\templates\app\study_publish.html" />
     <Content Include="app\templates\app\travelproduct_add_picture.html" />
     <Content Include="app\templates\app\travelproduct_details.html" />
     <Content Include="app\templates\app\travelproduct_publish.html" />
@@ -108,7 +113,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.4" />
+    <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\3.4" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 

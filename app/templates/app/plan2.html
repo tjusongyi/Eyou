@@ -1,0 +1,449 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/css/index.css' %}" />
+<div class="nb_main clearfix">
+            <!--牛帮问题区 S-->
+            <div class="nb_quest">
+                <!--牛帮问题进度提示 S-->
+                <div class="flex_wrap nb_steps">
+                    <i class="nb_icon nb_step_line"></i>
+                    <div id="J_StepOne" class="flex_item nb_step nb_step_1 nb_step_0 nb_step_current">
+                        <div class="nb_icon nb_step_circle">
+                            <i class="nb_icon nb_icon_able"></i>
+                        </div>
+                        <div class="nb_step_tit">基本出游信息</div>
+                        <i class="nb_icon nb_step_arrow J_IconCircle"></i>
+                    </div>
+                    <div id="J_StepTwo" class="flex_item nb_step nb_step_2 nb_step_0">
+                        <div class="nb_icon nb_step_circle">
+                            <i class="nb_icon"></i>
+                        </div>
+                        <div class="nb_step_tit">出游人数及预算</div>
+                        <i class="nb_icon nb_step_arrow nb_hide J_IconCircle"></i>
+
+                    </div>
+                    <div id="J_StepThree" class="flex_item nb_step nb_step_3 nb_hide">
+                        <div class="nb_icon nb_step_circle">
+                            <i class="nb_icon"></i>
+                        </div>
+                        <div class="nb_step_tit">住宿和景点要求</div>
+                        <i class="nb_icon nb_step_arrow nb_hide J_IconCircle"></i>
+
+                    </div>
+                    <div id="J_StepFour" class="flex_item nb_step nb_step_4 nb_hide">
+                        <div class="nb_icon nb_step_circle">
+                            <i class="nb_icon"></i>
+                        </div>
+                        <div class="nb_step_tit">其他补充</div>
+                        <i class="nb_icon nb_step_arrow nb_hide J_IconCircle"></i>
+
+                    </div>
+                    <div id="J_StepFive" class="flex_item nb_step nb_step_5">
+                        <div class="nb_icon nb_step_circle">
+                            <i class="nb_icon"></i>
+                        </div>
+                        <div class="nb_step_tit">个人信息</div>
+                        <i class="nb_icon nb_step_arrow nb_hide J_IconCircle"></i>
+                    </div>
+                </div>
+                <!--牛帮问题进度提示 E-->
+                <!--牛帮问题页 S-->
+                <div class="nb_pages">
+                    <!--page 1 S-->
+                    <div style="display: block;" class="nb_page J_OnePage">
+                        <div class="nb_page_hd"><span>*</span>这次出游你想要牛人帮你？</div>
+                        <div class="flex_wrap nb_page_item nb_page_item_single">
+                            <div class="flex_item nb_page_field" id="J_NBType"><div class="nb_form_checkbox"><ul class="flex_wrap"><li class="flex_item"><a href="javascript:;">公司游定制(大于10人)</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item nb_form_checked"><a href="javascript:;">出境小包团定制</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">跟团线路选择</a><i class="nb_icon nb_form_checkbox_icon"></i></li></ul></div></div>
+                        </div>
+                        <div class="nb_page_hd">你想要的？</div>
+
+
+                        <div class="flex_wrap nb_page_item nb_hide J_OneMethod">
+                            <div class="flex_item nb_page_label"><span>*</span>出游方式：</div>
+                            <div class="flex_item nb_page_field nb_relative nb_forIe" id="J_NBMethod"></div>
+                        </div>
+
+                        <div class="flex_wrap nb_page_item nb_page_start nb_page_end">
+                            <div class="flex_item nb_page_label"><span>*</span>从哪出发：</div>
+                            <div class="flex_item nb_page_field">
+                                <div class="nb_form_input">
+                                    <input code="3000" autocomplete="off" style="" id="J_NBStart" placeholder="请输入您的出发地" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="flex_wrap nb_page_item nb_page_end">
+                            <div class="flex_item nb_page_label"><span>*</span>到哪儿玩：</div>
+                            <div class="flex_item nb_page_field J_Spot">
+                                <!--<div class="flex_item nb_form_btn nb_form_selected">-->
+                                    <!--<span>丽江</span>-->
+                                    <!--<a class="" href="javascript:;"><i class="nb_icon J_FirDel"></i></a>-->
+                                <!--</div>-->
+                                <div class="flex_item nb_form_btn nb_form_selected J_GoWhere"><span>美国</span><a class="" href="javascript:;"><i class="nb_icon J_FirDel"></i></a></div><div class="flex_item nb_form_btn nb_form_selected J_GoWhere"><span>旧金山</span><a class="" href="javascript:;"><i class="nb_icon J_FirDel"></i></a></div><div class="flex_item nb_form_input nb_mrb8 J_AddSpot">
+                                    <input autocomplete="off" style="" id="J_NBDest" placeholder="请输入您想去的地点" type="text">
+                                </div>
+                                <div class="flex_wrap nb_form_promote J_HotEnd nb_hide">
+                                    <strong class="flex_item">热门目的地：</strong>
+                                    <a class="flex_item" href="javascript:;" data-code="602">北京</a>
+                                    <a class="flex_item" href="javascript:;" data-code="2413">青岛</a>
+                                    <a class="flex_item" href="javascript:;" data-code="2900">台湾</a>
+                                    <a class="flex_item" href="javascript:;" data-code="414">厦门</a>
+                                    <a class="flex_item" href="javascript:;" data-code="2815">九寨沟</a>
+                                </div>
+                                 <div class="flex_wrap nb_form_promote J_HotFEnd">
+                                    <strong class="flex_item">热门目的地：</strong>
+                                    <a class="flex_item" href="javascript:;" data-code="3910">泰国</a>
+                                    <a class="flex_item" href="javascript:;" data-code="3905">日本</a>
+                                    <a class="flex_item" href="javascript:;" data-code="3922">马尔代夫</a>
+                                    <a class="flex_item" href="javascript:;" data-code="3904">韩国</a>
+                                    <a class="flex_item" href="javascript:;" data-code="45410">普吉岛</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="flex_wrap nb_page_item">
+                            <div class="flex_item nb_page_label"><span>*</span>玩多久：</div>
+                            <div class="flex_item nb_page_field nb_form_field_number" id="J_NBDays"><div class="flex_wrap nb_form_number"><div class="flex_item nb_form_btn nb_form_minus"><a class="J_Minus" href="javascript:;"><i class="nb_icon"></i></a></div><div class="flex_item nb_form_input"><input class="J_Number" type="text"></div><div class="flex_item nb_form_btn nb_form_plus"><a class="J_Plus" href="javascript:;"><i class="nb_icon"></i></a></div></div></div>
+                        </div>
+
+
+                        <div class="flex_wrap nb_page_item nb_page_item_startdate">
+                            <div class="flex_item nb_page_label"><span>*</span>啥时候出发：</div>
+                            <div class="flex_item nb_page_field nb_form_field_select">
+                                <div class="nb_form_select nb_time_width">
+                                    <div class="flex_item nb_form_input nb_relative J_NBTimeIcon">
+                                        <input id="J_NBStartDate" class="Wdate nb_bak" value="2015-07-01" type="text">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="flex_wrap nb_page_item nb_page_item_term">
+                            <div class="flex_item nb_page_label"></div>
+                            <div class="flex_item nb_page_field">
+                                <div class="flex_item nb_form_btn nb_form_checkbox_2">
+                                    <a href="javascript:;" class="J_Adjustment"><i class="nb_icon nb_icon_select"></i></a>
+                                </div>
+                                <div class="flex_item nb_page_item_term_det">可根据实际情况调整出发日期和天数</div>
+                            </div>
+                        </div>
+
+
+                        <div class="flex_wrap nb_page_item nb_page_item_term nb_hide J_PTips">
+                            <div class="flex_item nb_page_label"></div>
+                            <div class="flex_item nb_page_field">
+                                <p class="nb_page_tips"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex_wrap nb_page_item nb_page_item_term">
+                            <div class="flex_item nb_page_label"></div>
+                            <div class="flex_item nb_page_field">
+                                <input value="下一步" class="J_NBNext nb_p_prevbtn nb_p_nextbtn" name="nbSubmitone" type="button">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--page 1 E-->
+                    <!--page 2 S-->
+                    <div class="nb_page J_TwoPage">
+                        <div class="nb_page_hd">你期待的行程安排及人均预算是？</div>
+
+
+                        <div class="flex_wrap nb_page_item nb_page_route nb_mrb20">
+                            <div class="flex_item nb_page_label"><span>*</span>行程安排：</div>
+                            <div class="flex_item nb_page_field" id="J_NBTwoType">
+                                <div class="nb_form_checkbox">
+                                    <ul class="flex_wrap"></ul>
+                                </div>
+                            <div class="nb_form_checkbox"><ul class="flex_wrap"><li class="flex_item"><a href="javascript:;">紧凑点，多玩景点</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">适中，不要太赶</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">宽松，休闲为主</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">不确定</a><i class="nb_icon nb_form_checkbox_icon"></i></li></ul></div></div>
+                        </div>
+
+
+
+                        <div class="flex_wrap nb_page_item nb_page_amount nb_mrb20">
+                            <div class="flex_item nb_page_label"><span>*</span>出游人数：</div>
+                            <div class="flex_item nb_page_field nb_form_field_number" id="J_NBTwoAdult"><div class="flex_wrap nb_form_number"><div class="flex_item nb_form_btn nb_form_minus"><a class="J_Minus" href="javascript:;"><i class="nb_icon"></i></a></div><div class="flex_item nb_form_input"><input class="J_Number" type="text"></div><div class="flex_item nb_form_btn nb_form_plus"><a class="J_Plus" href="javascript:;"><i class="nb_icon"></i></a></div></div></div>
+                            <div class="flex_item nb_page_txt">个成人</div>
+
+                            <div class="flex_item nb_page_field nb_form_field_number" id="J_NBTwoChild"><div class="flex_wrap nb_form_number"><div class="flex_item nb_form_btn nb_form_minus"><a class="J_Minus" href="javascript:;"><i class="nb_icon"></i></a></div><div class="flex_item nb_form_input"><input class="J_Number" type="text"></div><div class="flex_item nb_form_btn nb_form_plus"><a class="J_Plus" href="javascript:;"><i class="nb_icon"></i></a></div></div></div>
+                            <div class="flex_item nb_page_txt">个儿童</div>
+                            <div class="flex_item nb_page_txt"><a href="javascript:;" class="J_ChildStandard">儿童标准</a></div>
+                            <p style="display: block;" class="nb_more_ten J_MoreTen">人数不足10人时，定制价格相对较高，建议您可选择网站线路或进行电话(4007-999-999)咨询</p>
+                            <p style="display: none;" class="nb_more_ten J_MTten">超过10人时，建议您选择公司游定制或出境小包团定制</p>
+                        </div>
+
+
+
+                        <div class="flex_wrap nb_page_item nb_page_budget nb_mrb20">
+                            <div class="flex_item nb_page_label"><span>*</span>人均预算：</div>
+                            <div class="flex_item nb_page_field" id="J_NBTwoMethod">
+                                <div class="nb_form_checkbox">
+                                    <ul class="flex_wrap"></ul>
+                                </div>
+                            <div class="nb_form_checkbox"><ul class="flex_wrap"><li class="flex_item"><a href="javascript:;">1-1000元</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">1000-3000元</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">3000-5000元</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">5000-8000元</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">8000-15000元</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">15000-20000元</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">20000元以上</a><i class="nb_icon nb_form_checkbox_icon"></i></li><li class="flex_item"><a href="javascript:;">不确定</a><i class="nb_icon nb_form_checkbox_icon"></i></li></ul></div></div>
+                        </div>
+
+                        <div class="flex_wrap nb_page_item nb_page_item_term nb_hide J_PTips">
+                            <div class="flex_item nb_page_label"></div>
+                            <div class="flex_item nb_page_field">
+                                <p class="nb_page_tips"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex_wrap nb_page_item nb_page_item_term">
+                            <div class="flex_item nb_page_label"></div>
+                            <div class="flex_item nb_page_field nb_mrt20">
+                                <input value="上一步" class="J_NBPrev nb_p_prevbtn" name="nbSubmittw" type="button">
+                                <input disabled="" value="下一步" class="J_NBNext nb_p_prevbtn nb_p_nextbtn nb_unable" name="nbSubmittwo" type="button">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--page 2 E-->
+                    <!--page 3 S-->
+                    <div style="display: none;" class="nb_page J_ThreePage">
+                        <div class="nb_page_hd">你想要住的酒店和想要去的景点是？</div>
+
+                        <div class="flex_wrap nb_page_item nb_page_live nb_mrb30">
+                            <div class="flex_item nb_page_label"><span>*</span>住宿：</div>
+                            <div class="flex_item nb_page_field" id="J_NBThreeType"><div class="nb_form_checkbox"><ul class="flex_wrap"><li class="flex_item nb_form_checkbox_3"><a href="javascript:;"><img src="http://images.tuniucdn.com/img/201504231415/helpcow/room1.jpg"><em>奢华型（5星）</em></a><i class="nb_icon nb_form_checkbox_icon"></i><i class="nb_icon nb_form_checkbox_box"></i></li><li class="flex_item nb_form_checkbox_3"><a href="javascript:;"><img src="http://images.tuniucdn.com/img/201504231415/helpcow/room2.jpg"><em>舒适型（3-4星）</em></a><i class="nb_icon nb_form_checkbox_icon"></i><i class="nb_icon nb_form_checkbox_box"></i></li><li class="flex_item nb_form_checkbox_3"><a href="javascript:;"><img src="http://images.tuniucdn.com/img/201504231415/helpcow/room3.jpg"><em>经济型（0-2星）</em></a><i class="nb_icon nb_form_checkbox_icon"></i><i class="nb_icon nb_form_checkbox_box"></i></li><li class="flex_item nb_form_checkbox_4"><a href="javascript:;">不确定</a><i class="nb_icon nb_form_checkbox_icon"></i><i class="nb_icon nb_form_checkbox_box"></i></li></ul></div></div>
+                        </div>
+
+                        <div class="flex_wrap nb_page_item nb_mrb0">
+                            <div class="flex_item nb_page_label">景点：</div>
+                            <div class="flex_item nb_page_field nb_relative J_Spot">
+                                <div class="flex_item nb_page_item J_AddSpot">
+                                    <div class="nb_form_input">
+                                        <input autocomplete="off" style="" id="J_NBThreeDest" class="nb_grey" placeholder="请输入您想去的景点" type="text">
+                                    </div>
+                                </div>
+                                <div class="nb_cover J_NbCover"></div>
+                            </div>
+                        </div>
+                            <div class="flex_wrap nb_page_item nb_mrb0">
+                                <div class="flex_item nb_page_label"></div>
+                                <div class="flex_item nb_page_field ">
+                                    <div class="nb_page_item nb_page_item_term">
+                                        <div class="flex_item nb_page_field">
+                                            <div class="flex_item nb_form_btn nb_form_checkbox_2 ">
+                                                <a href="javascript:;" class="J_AdjustSpot"><i class="nb_icon"></i></a>
+                                            </div>
+                                            <div class="flex_item nb_page_item_term_det">还没想好去哪些景点（勾选此项则以上所选择的景点都无效哦）</div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="flex_wrap nb_page_item nb_page_item_term nb_hide J_PTips">
+                            <div class="flex_item nb_page_label"></div>
+                            <div class="flex_item nb_page_field">
+                                <p class="nb_page_tips">错误提示</p>
+                            </div>
+                        </div>
+                        <div class="flex_wrap nb_page_item nb_page_item_term nb_mrt10">
+                            <div class="flex_item nb_page_label"></div>
+                            <div class="flex_item nb_page_field">
+                                <input value="上一步" class="J_NBPrev nb_p_prevbtn" name="nbSubmitthr" type="button">
+                                <input disabled="" value="下一步" class="J_NBNext nb_p_prevbtn nb_p_nextbtn nb_unable" name="nbSubmitthree" type="button">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--page 3 E-->
+                    <!--page 4 S-->
+                    <div style="display: none;" class="nb_page J_FourPage">
+
+                        <!---------->
+                        <div class="nb_page_hd">是否还有其他要补充的问题？</div>
+                        <div class="nb_page_field">
+                            <div class="nb_remarks">
+                                <div class="nb_rem_box">
+                                    <label class="nb_label">补充备注:</label>
+                                    <textarea class="nb_rem_area" name="marksText" id="FourPage" maxlength="">亲还有什么想要补充的吗？写的越详细，越能够获得靠谱的定制（推荐）哦！</textarea>
+                                    <div class="nb_rem_tips">
+                                        <span class="J_RemNum">0</span>/150
+                                    </div>
+                                </div>
+                                <div class="nb_p_submit">
+                                    <label class="nb_label"></label>
+                                    <input value="上一步" class="J_NBPrev nb_p_prevbtn" name="nbSubmitfor" type="button">
+                                    <input value="下一步" class="J_NBNext nb_p_prevbtn nb_p_nextbtn" name="nbSubmitfour" type="button">
+                                </div>
+                            </div>
+                        </div>
+                        <!---------->
+
+                    </div>
+                    <!--page 4 E-->
+                    <!--page 5 S-->
+                    <div class="nb_page nb_pr30 J_PFV J_FivePage">
+
+                        <!---------->
+                        <div class="nb_msg">
+                            <span class="tn_fontface nb_msg_icon"></span>
+                            <div class="nb_msg_hd">
+                                <p class="nb_text">所有问题都已回答完毕，请留下你的联系方式</p>
+                                <p class="nb_intro">留下你的联系方式，牛牛将会第一时间和你联系哦！</p>
+                            </div>
+
+                        </div>
+                        <div class="nb_person_msg">
+                            <div class="nb_p_item">
+                                <label class="nb_label"><span>*</span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                                <input value="" class="nb_p_input J_FvName" maxlength="10" name="nbName" type="text">
+                            </div>
+                            <div class="J_NBPhone nb_p_item">
+                                <label class="nb_label"><span>*</span>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
+                                <input value="" class="nb_p_input J_FvPhone" maxlength="11" name="nbPhone" type="text">
+                                <p class="nb_no_reg">提交需求后系统将自动为您注册会员，请注意查收短信提醒。</p>
+                            </div>
+                            <div class="nb_p_item">
+                                <label class="nb_label"><span>*</span>短信验证码：</label>
+                                <input value="" class="nb_p_btn J_FvSms" name="nbSmsVefy" disabled="disabled" type="text">
+                                <input class="nb_p_smsbtn nb_rem_disabled J_FvGetSms" value="获取" disabled="disabled" type="button">
+                                <p class="nb_p_time nb_hide J_FvTimeP"><span class="J_FvTime">59</span>s后重新获取</p>
+                            </div>
+                            <div class="nb_p_item">
+                                <label class="nb_label">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</label>
+                                <input value="" class="nb_p_input J_FvEmail" name="nbSmsVefy" type="text">
+                            </div>
+                            <div class="nb_p_tips J_PTips">
+                                <label class="nb_label"></label>
+                                <p class="nb_page_tips">错误提示</p>
+                            </div>
+                            <div class="nb_p_submit">
+                                <label class="nb_label"></label>
+                                <input value="上一步" class="J_NBPrev nb_p_prevbtn" name="nbSubmitfiv" type="button">
+                                <input value="提 交" class="J_NBNext nb_p_prevbtn nb_p_nextbtn nb_unable" name="nbSubmitfive" type="button">
+                            </div>
+                        </div>
+                        <!---------->
+
+                    </div>
+                    <!--page 5 E-->
+                </div>
+                <!--牛帮问题页 E-->
+            </div>
+            <!--牛帮问题区 E-->
+            <div class="nb_menu" id="J_NBMenu">
+                <i class="nb_icon nb_menu_arrow"></i>
+                <div class="nb_menu_bg"></div>
+                <div class="nb_menu_box">
+                    <div class="nb_menu_hd">我的需求单</div>
+                    <div class="nb_menu_list" id="J_NBMenuList"><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">出游类型</div><div class="flex_wrap nb_menu_item_con"><div class="flex_item nb_menu_item_res">出境小包团定制</div></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">从哪出发</div><div class="flex_wrap nb_menu_item_con"><div class="flex_item nb_menu_item_res">天津</div></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">到哪儿玩</div><div class="flex_wrap nb_menu_item_con"><div class="flex_item nb_menu_item_res">美国</div><div class="flex_item nb_menu_item_res">旧金山</div></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">玩多久</div><div class="flex_wrap nb_menu_item_con"><div class="flex_item nb_menu_item_res">3天</div></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">啥时候出发</div><div class="flex_wrap nb_menu_item_con"><div class="flex_item nb_menu_item_res">2015-07-01</div></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">行程安排</div><div class="flex_wrap nb_menu_item_con"></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">出游人数</div><div class="flex_wrap nb_menu_item_con"></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">人均预算</div><div class="flex_wrap nb_menu_item_con"></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">姓名</div><div class="flex_wrap nb_menu_item_con"></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">手机号</div><div class="flex_wrap nb_menu_item_con"></div></div><div class="nb_menu_item clearfix"><div class="nb_menu_item_tit">邮箱</div><div class="flex_wrap nb_menu_item_con"></div></div></div>
+                </div>
+            </div>
+        </div>
+     <script>
+function loadBaidu() {
+    var _hmt = _hmt || [];
+    (function(){
+	    var hm = document.createElement("script");
+	    hm.src = "//hm.baidu.com/hm.js?51d49a7cda10d5dd86537755f081cc02";
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(hm, s);
+    })();
+}
+//在新的头尾做出后jquery会移动到尾部，到时候这里要改的
+if (window.$) {
+    $(function() {
+        loadBaidu();
+    });
+} else {
+    loadBaidu();
+}
+</script>
+<script type="text/javascript">
+(function(){
+    var nav_tabs = document.getElementsByName("nav-tab");
+    var tabId = document.getElementsByName("tabId")[0].value;
+        if(nav_tabs.length && tabId.length){
+            for(var i=0;i<nav_tabs.length;i++){
+                if(nav_tabs[i].getAttribute("data-tab") == tabId){
+                    var class_str = nav_tabs[i].className;
+                        class_str+=" selected";
+                        nav_tabs[i].className = class_str;
+                }
+            };
+        }   
+})();
+</script><script>
+$(document).ready(function(){
+        var catLoaded = false;
+        $(document).mousemove(function(){
+          if (!catLoaded){
+              var getCookie = function(objName){
+            	    var arrStr = document.cookie.split("; ");
+                	for(var i = 0;i < arrStr.length;i ++){
+                	var temp = arrStr[i].split("=");
+                	if(temp[0] == objName) return unescape(temp[1]);
+                	}
+                	return false;
+              };
+              catLoaded = true;
+              var cityCode = '';
+              cityCode = getCookie("tuniuuser_citycode");
+              cityCode = base64decode(cityCode.toString());
+              $.getScript("//www.tuniu.com/headermenu/"+cityCode);
+          }
+      });
+});
+</script>
+
+<script type="text/javascript" src="//ssl3.tuniucdn.com/j/2014101501/common/index_base_v5.js"></script> 
+<script type="text/javascript">
+function selectTag(showContent,selfObj){
+    var tag = document.getElementById("tags").getElementsByTagName("li");
+    var taglength = tag.length;
+    for(i=0; i<taglength; i++){
+        tag[i].className = "";
+    }
+    selfObj.parentNode.className = "selectTag";
+    for(i=1; j=document.getElementById("tagContent"+i); i++){
+        j.style.display = "none";
+    }
+    document.getElementById(showContent).style.display = "block";
+}
+
+var startCity = document.getElementById("startCity");
+if(startCity){
+    startCity.onmouseover = function(){
+        startCity.className = "head_start_city change_tab";
+    };
+    startCity.onmouseout = function(){
+        startCity.className = "head_start_city";
+    };
+}
+function getCookie(objName){
+    var arrStr = document.cookie.split("; ");
+    for(var i = 0;i < arrStr.length;i ++){
+        var temp = arrStr[i].split("=");
+        if(temp[0] == objName) return unescape(temp[1]);
+    }
+    return false;
+}
+var tuniuPPhoneDiv = document.getElementById("tuniu_400_num_phone");
+var tuniuPPhoneNumber = getCookie("p_phone_400");
+if (tuniuPPhoneDiv) {
+    if (tuniuPPhoneNumber) {
+        tuniuPPhoneDiv.innerHTML = tuniuPPhoneNumber;
+    } else {
+        tuniuPPhoneDiv.innerHTML = "400-797-5188";
+    }
+}
+$(function($) {
+    var sub = $("#keyword-input-sub").val();
+    if(sub && sub != ''){
+        $("#keyword-input").val(sub);
+    }
+});
+</script>
+{% endblock %}

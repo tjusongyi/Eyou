@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required  
-from app.models import House, UserProfile, Itinerary, Comments, TravelProduct
+from app.models import House, UserProfile, Itinerary, Comments, TravelProduct, EduProduct
 
 def home(request):
     """Renders the home page."""
@@ -57,7 +57,7 @@ def travel_index(request):
 
 def study_index(request):
     assert isinstance(request, HttpRequest)
-    houses = House.objects.all()[:4]
+    studyproducts = EduProduct.objects.all()[:4]
     return render(
         request,
         'app/study_index.html',
@@ -65,7 +65,7 @@ def study_index(request):
         {
             'title':'易游',
             'year':datetime.now().year,
-            'houses':houses,
+            'studyproducts':studyproducts,
         })
     )
 
@@ -79,6 +79,7 @@ def hotel_search_list(request,des,startime,endtime):
         {
             'title':'易游',
             'year':datetime.now().year,
+            'des':des,
             'houses':houses,
         })
     )
@@ -116,9 +117,101 @@ def travel_list(request):
         })
     )
 
+def travel_search_list(request,des,startime,endtime):
+    assert isinstance(request, HttpRequest)
+    travelproducts = TravelProduct.objects.filter(destination__icontains=des,startime__lte=startime,endtime__gte=endtime)
+    return render(
+        request,
+        'app/travel_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'des':des,
+            'travelproducts':travelproducts,
+        })
+    )
+
+@login_required
+def study_publish(request):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'POST' and request.is_ajax():
+        response = HttpResponse()  
+        title = request.POST['title']
+        desc = request.POST['desc']
+        startPlace = request.POST['startPlace']
+        type = request.POST['type']
+        destination = request.POST['destination']
+        price = request.POST['price']
+        startime = request.POST['startime']
+        endtime = request.POST['endtime']
+        contact = request.POST['contact']
+        study = EduProduct(title=title,startPlace = startPlace,type=type,price=price,startime=startime,endtime=endtime
+                      ,destination=destination,description=desc,contact=contact,publisher=request.user,timesViewed = 1,rate=0)
+        study.save()
+        response.write(study.pk)
+        return response
+    return render(
+        request,
+        'app/study_publish.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'发布房源',
+            'year':datetime.now().year,
+        })
+        
+    )
+
+@login_required
+def studyproduct_add_picture(request,studyproductid):
+    assert isinstance(request, HttpRequest)
+    try:
+         studyproductid = int(studyproductid)
+    except ValueError:
+         raise Http404()
+    studyproduct = EduProduct.objects.get(pk=studyproductid)
+    if request.method == 'POST':       
+        studyproduct.pics = request.FILES.get('file_photo', None)
+        studyproduct.save()
+        return HttpResponseRedirect('/studyproduct_details/%s/' %studyproduct.pk)
+    return render(
+    request,
+    'app/studyproduct_add_picture.html',
+    context_instance = RequestContext(request,
+    {
+        'title':'添加照片',
+        'year':datetime.now().year,
+        'studyproduct':studyproduct,
+    })
+     )
+
+def studyproduct_details(request,studyproductid):
+    assert isinstance(request, HttpRequest)
+    try:
+         studyproductid = int(studyproductid)
+    except ValueError:
+         raise Http404()
+    try:
+        studyproduct = EduProduct.objects.get(pk=studyproductid)
+    except ValueError:
+        raise Http404()
+    comments = Comments.objects.filter(relatedId=studyproductid,relatedType=1)
+    profile = UserProfile.objects.get(user=studyproduct.publisher)
+    return render(
+        request,
+        'app/studyproduct_details.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'房屋详情',
+            'year':datetime.now().year,
+            'studyproduct':studyproduct,
+            'profile':profile,
+            'comments':comments,
+        })
+    )
 def study_list(request):
     assert isinstance(request, HttpRequest)
-    houses = House.objects.all()
+    studyproducts = EduProduct.objects.all()
     return render(
         request,
         'app/study_list.html',
@@ -126,7 +219,22 @@ def study_list(request):
         {
             'title':'易游',
             'year':datetime.now().year,
-            'houses':houses,
+            'studyproducts':studyproducts,
+        })
+    )
+
+def study_search_list(request,des,startime,endtime):
+    assert isinstance(request, HttpRequest)
+    studyproducts = EduProduct.objects.filter(destination__icontains=des,startime__lte=startime,endtime__gte=endtime)
+    return render(
+        request,
+        'app/study_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'des':des,
+            'studyproducts':studyproducts,
         })
     )
 
@@ -163,7 +271,7 @@ def my_travel_list(request):
     travelproducts = TravelProduct.objects.filter(publisher=request.user)
     comments = list()
     for travel_product in travel_products:
-        comment = Comments.object.filter(relatedId=travel_product.pk,relatedType=0)
+        comment = Comments.objects.filter(relatedId=travel_product.pk,relatedType=0)
         comments.append(comment)
     return render(
         request,
@@ -173,6 +281,25 @@ def my_travel_list(request):
             'title':'易游',
             'year':datetime.now().year,
             'travelproducts':travelproducts,
+            'comments':comments,
+        })
+    )
+
+def my_study_list(request):
+    assert isinstance(request, HttpRequest)
+    studyproducts = EduProduct.objects.filter(publisher=request.user)
+    comments = list()
+    for studyproduct in studyproducts:
+        comment = Comments.objects.filter(relatedId=studyproduct.pk,relatedType=0)
+        comments.append(comment)
+    return render(
+        request,
+        'app/my_study_list.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'易游',
+            'year':datetime.now().year,
+            'studyproducts':studyproducts,
             'comments':comments,
         })
     )
@@ -220,6 +347,7 @@ def register(request):
         new_user = User.objects.create_user(username, request.POST['user[email]'], password)
         new_user.save()
         profile = UserProfile(user=new_user);
+        profile.save();
         user = authenticate(username=username, password=password)
         login(request, user)
     return render(
@@ -348,13 +476,14 @@ def travelproduct_publish(request):
     if request.method == 'POST' and request.is_ajax():
         response = HttpResponse()  
         title = request.POST['title']
+        destination = request.POST['destination']
         desc = request.POST['desc']
         price = request.POST['price']
         planeticket = request.POST['planeticket']     
         startime = request.POST['startime']
         endtime = request.POST['endtime']
         checkinHotel = request.POST['checkinHotel']
-        travelproduct = TravelProduct(title=title,startime=startime,price=price,endtime=endtime,planeticket=planeticket,checkinHotel=checkinHotel,description=desc,publisher=request.user,timesViewed = 1,rate=0)
+        travelproduct = TravelProduct(title=title,startime=startime,price=price,endtime=endtime,planeticket=planeticket,checkinHotel=checkinHotel,description=desc,destination=destination,publisher=request.user,timesViewed = 1,rate=0)
         travelproduct.save()
         response.write(travelproduct.pk)
         return response
@@ -517,6 +646,7 @@ def house_details(request,houseid):
     except ValueError:
         raise Http404()
     comments = Comments.objects.filter(relatedId=houseid,relatedType=2)
+    profile = UserProfile.objects.get(user=house.publisher)
     return render(
         request,
         'app/house_details.html',
@@ -525,6 +655,7 @@ def house_details(request,houseid):
             'title':'房屋详情',
             'year':datetime.now().year,
             'house':house,
+            'profile':profile,
             'comments':comments,
         })
     )
@@ -540,6 +671,7 @@ def itinerary_details(request,itineraryid):
     except ValueError:
         raise Http404()
     comments = Comments.objects.filter(relatedId=itineraryid,relatedType=3)
+    profile = UserProfile.objects.get(user=itinerary.publisher)
     return render(
         request,
         'app/itinerary_details.html',
@@ -548,6 +680,7 @@ def itinerary_details(request,itineraryid):
             'title':'游记',
             'year':datetime.now().year,
             'itinerary':itinerary,
+            'profile':profile,
             'comments':comments,
         })
     )
@@ -561,6 +694,7 @@ def travelproduct_details(request,travelid):
     
     travelproduct = TravelProduct.objects.get(pk=travelid)
     comments = Comments.objects.filter(relatedId=travelid,relatedType=0)
+    profile = UserProfile.objects.get(user=travelproduct.publisher)
     return render(
         request,
         'app/travelproduct_details.html',
@@ -569,6 +703,7 @@ def travelproduct_details(request,travelid):
             'title':'游记',
             'year':datetime.now().year,
             'travelproduct':travelproduct,
+            'profile':profile,
             'comments':comments,
         })
     )
@@ -592,13 +727,13 @@ def comment(request,relatedType,relatedId):
 def profile(request,userid):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
-    #profile = UserProfile.objects.get(user=userid)
+    profile = UserProfile.objects.get(user=userid)
     if request.method == 'POST':
         response = HttpResponse()
         profile.avatar = request.FILES.get('file_photo', None)
         profile.save()
         response.write(profile.pk)
-        return response
+        return HttpResponseRedirect('/profile/%s/' %userid)
     return render(
         request,
         'app/profile.html',
@@ -633,6 +768,49 @@ def about(request):
         context_instance = RequestContext(request,
         {
             'title':'About',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        })
+    )
+
+
+def plan(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/plan.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'plan',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        })
+    )
+
+def plan1(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/plan1.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'plan',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        })
+    )
+
+def plan2(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/plan2.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'plan',
             'message':'Your application description page.',
             'year':datetime.now().year,
         })

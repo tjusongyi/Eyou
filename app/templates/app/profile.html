@@ -2,8 +2,8 @@
 {% load staticfiles %}
 {% block content %}
     <div class="example">
-        <div class="row">
-            <form enctype="multipart/form-data" method="POST" action="/profile/{{user.pk}}/">
+        <form enctype="multipart/form-data" method="POST" action="/profile/{{user.pk}}/">
+        <div class="row">            
             <div class="col-md-1 col-md-offset-4">
                 <p class="lead">名字</p>
             </div>
@@ -41,14 +41,18 @@
         <div class="col-md-1 col-md-offset-4">
                 <p class="lead">照片</p>
             </div>
+            <div class="col-md-1">
+                             <img src="{{MEDIA_URL}}{{ profile.avatar}}" class="img-rounded" alt="" height="86px" width="86px">
+                        </div>
             <div class="col-md-2">
              <input type="file" name="file_photo" class="btn "/><br/> 
             </div>
         <div class="row">
             <div class="col-md-1 col-md-offset-5">
-                <div class="btn btn-info" id="publish">保存</div>
+                <input type="submit" class="btn btn-info" id="publish" value="保存"/>
             </div>
         </div>
+            </form>
         </div>
 
 {% endblock %}

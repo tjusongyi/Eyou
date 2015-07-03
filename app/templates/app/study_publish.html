@@ -1,0 +1,150 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="example">
+        <div class="col-7 col-center text-center">
+            <h1 class="h2">发布您的教育产品</h1>
+            <p class="text-lead">
+                分享您独特的留学服务。
+            </p>
+        </div>
+    </div>
+    <div class="example">      
+                <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">标题</p>
+            </div>
+            <div class="col-md-5">
+              <input type="text" id="title" placeholder=""style="width: 100%;"></>
+
+            </div>                    
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">价格</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="price" placeholder="人均价格"></>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">类型</p>
+            </div>
+            <div class="col-md-2">
+                <div class="btn-group" id="housetype">
+                    <button class="btn btn-default">留学</button>
+                    <button class="btn btn-default">游学</button>
+                </div>
+            </div>
+            
+        </div>
+                <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">目的地</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="destination" placeholder="地址"></>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">出发地</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="startPlace" placeholder="出发地址"></>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead"> 行程日期</p>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group ">
+                            <input class="form-control form-date" id="startime" placeholder="开始日期" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <input class="form-control form-date" id="endtime" placeholder="结束日期" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                        </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">描述</p>
+            </div>
+            <div class="col-md-5">
+              <textarea class="kindeditor" id="kindeditor" style="width: 100%;"></textarea>
+            </div>                    
+        </div>
+                <br/> 
+           
+        <br/>
+                        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">联系方式</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="contact" placeholder="请填写正确的联系方式"></>
+            </div>
+        </div>      
+        <div class="row">
+            <div class="col-md-1 col-md-offset-2">
+                <div class="btn btn-info" id="publish">发布</div>
+            </div>
+        </div>
+
+        </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    var type = 0;
+    $("#housetype button").each(function (index, elem) {
+        this.onclick = (function () {
+            type = index;
+            $(this).addClass("btn-info");
+            $(this).siblings("button").each(function () {
+                $(this).removeClass("btn-info");
+            });
+        });
+    });
+    $("#publish").click(function () {
+        var title = $("#title").val();
+        var desc = editor.html();
+        var price = $("#price").val();
+        var startime = $("#startime").val();
+        var endtime = $("#endtime").val();
+        var destination = $("#destination").val();
+        var startPlace = $("#startPlace").val();
+        var contact = $("#contact").val();
+        
+        //alert(contact);
+        $.ajax({
+            url: '/study_publish/',
+
+            type: 'POST',
+
+            data: {
+                title: title,
+                desc: desc,
+                price: price,
+                destination: destination,
+                startime: startime,
+                type:type,
+                endtime: endtime,
+                startPlace: startPlace,
+                contact:contact
+            },
+
+            dataType: 'json',
+
+            timeout: 1000,
+
+            error: function (result) { alert("发布失败"); alert(result) },
+
+            success: function (result) { location.href = "/studyproduct_add_picture/" + result; }
+
+        });
+        });
+    });
+</script>
+{% endblock %}

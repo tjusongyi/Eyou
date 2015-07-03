@@ -1,29 +1,28 @@
 {% extends "app/layout.html" %}
 {% load staticfiles %}
 {% block content %}
-
     <div class="container-fluid">
         <div class="example">
             <br />
             <br />
             <div class="row">
  <div class="list">
-                <section class="cards">
+                <section class="cards" >
   
                     <div class="col-md-4 col-sm-6 col-lg-3">
                         
-                        <a href="/travel_index" class="card">
-                            <img src="{% static 'app/img/travel.jpg' %}" alt="">                            
+                        <a href="/study_index" class="card">
+                            <img src="{% static 'app/img/gallery-img1.png' %}" alt="">
                         </a> 
                     </div>
                     <div class="col-md-4 col-sm-6 col-lg-3 col-lg-offset-1">
-                        <a href="/media/index.html" class="card">
-                            <img src="{% static 'app/img/education.jpg' %}" alt="">                            
+                        <a href="/travel_index" class="card">
+                            <img src="{% static 'app/img/gallery-img2.png' %}" alt="">                            
                         </a> 
                     </div>
                     <div class="col-md-4 col-sm-6 col-lg-3 col-lg-offset-1">
                         <a href="/hotel_index" class="card">
-                            <img src="{% static 'app/img/hotel.jpg' %}" alt="" height="600px" width="536px">                            
+                            <img src="{% static 'app/img/gallery-img3.png' %}" alt="" height="600px" width="536px">                            
                         </a> 
                     </div>
 
@@ -33,10 +32,9 @@
                     </ul>
                 </footer>
             </div>
-            </div>
-
+            </div>          
 
         </div>
-    </div>
+        </div>
 
 {% endblock %}

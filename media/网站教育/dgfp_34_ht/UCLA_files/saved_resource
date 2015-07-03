@@ -1,2 +1,0 @@
-var google = document.createElement("img"); google.height = 1; google.width = 1; google.style = "border-style: none"; google.src = "http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1011963747/?value=1.00&label=icsgCNydulYQ467F4gM&guid=ON&script=0"; document.body.appendChild(google);
-var appnexus = document.createElement("script"); appnexus.src = "http://ib.adnxs.com/seg?add=2066776&t=1"; document.body.appendChild(appnexus);

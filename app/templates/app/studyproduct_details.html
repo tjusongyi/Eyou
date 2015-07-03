@@ -1,10 +1,9 @@
-﻿{% extends "app/layout.html" %}
+{% extends "app/layout.html" %}
 {% load staticfiles %}
 {% block content %}
 
-<div class="example">
-    <div class="row">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div class="example">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                     <li class="" data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -12,7 +11,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img alt="First slide " src="{{MEDIA_URL}}{{ itinerary.pics}}/">
+                        <img alt="First slide " src="{{MEDIA_URL}}{{ studyproduct.pics}}/">
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -24,53 +23,80 @@
                     <span class="icon-chevron-right"></span>
                 </a>
             </div>
-    </div>
-</div>
-
-
-<div class="example">
-    <div class="row">
-         <div class="col-md-8 ">
-                <div class="col-md-3 text-center">
-                    <a href="#host-profile" class="media-photo media-round"><img alt="{{publisher.username}}" class="host-profile-image" src="{{MEDIA_URL}}{{profile.avatar}}" title="{{publisher.username}}" height="90" width="90"></a>
+        </div>
+    <div class="example">
+        <div class="row">
+            <div class="col-md-8 ">
+                <div class="col-md-3 text-center col-md-offset-1">
+                    <a href="#host-profile" class="media-photo media-round"><img alt="{{studyproduct.publisher.username}}" class="host-profile-image" src="{{MEDIA_URL}}{{profile.avatar}}" title="{{studyproduct.publisher.username}}" height="90" width="90"></a>
                 </div>
                 <div class="col-md-6">
-
+                    <div class="row">
+        </div>
                     <h1 itemprop="name" class="overflow h3 row-space-1 text-center-sm" style="margin-top: 0" id="listing_name">
-                       {{ itinerary.title }}
-                    </h1>                   
-                    <span class="text-muted">{{itinerary.createdTime}}</span>
+                       {{ studyproduct.title }}
+                    </h1>
+                    <span>行程日期: {{studyproduct.startime}}-{{studyproduct.endtime}}</span>
+                     <h5>价格: {{studyproduct.price}}</h5>
+                    <div id="display-address" class="row-space-2 text-muted hide-sm">
+                        出发地
+                        <span>{{ studyproduct.startPlace }}</span>
+                        目的地
+                        <span>{{ studyproduct.destination }}</span>
+
+                        &nbsp;
+                        <a href="#reviews" class="link-reset">
+                            <div class="star-rating">
+                                <div class="foreground">
+                                    (<a href="#comments">{{comments.count}}条评论</a>)
+                                </div>
+
+                            </div>
+
+                        </a>
+                    </div>
                 </div>
-            </div>            
+            </div> 
         </div>
-     <div class="row">
+        <div class="row">
             <div class="col-md-8">
-                <div class="col-md-3 text-muted text-center hide-sm">
-                    <a href="#host-profile" class="link-reset text-wrap">{{itinerary.publisher.username}}</a>
-                </div>                
-
-
+                <div class="col-md-3 text-muted text-center hide-sm col-md-offset-1">
+                    <a href="#host-profile" class="link-reset text-wrap">{{studyproduct.publisher.username}}</a>
+                </div>
+                {% ifequal  studyproduct.type 0 %}
+                <div class="col-sm-1">
+                   留学
+                </div>
+               {% endifequal %}
+                {% ifequal  studyproduct.type 1 %}
+                <div class="col-sm-1">
+                   游学
+                </div>
+                {% endifequal %}                
+                
+            </div>
         </div>
-    </div>
-     </div>
 
+    </div>
 <div class="example">
         <div class="row">
             <div class="col-lg-10" id="details-column">
 
-                <div class="col-lg-9 ">
+                <div class="col-lg-9 col-md-offset-2">
 
 
-                    {{itinerary.description|safe}}                                 
+                    <p>{{studyproduct.description}}</p>
+
+
+
                 </div>
 
             </div>
         </div>
     </div>
-
-<div class="example">
+<div class="example" id="comments">
      {% for comment in comments%}
-    <div class="comments">
+    <div class="comments" id="{{comment.pk}}">
         <header>            
             <h3><i class="icon-comments icon-border-circle"></i>{{comments.count}} 条评论</h3>
         </header>
@@ -78,14 +104,14 @@
             <div class="comment">
                 <a href="###" class="avatar"><i class="icon-user icon-border icon-2x icon-muted"></i></a>
                 <div class="content">
-                    <div class="pull-right"><span class="text-muted" title="2013-11-08 15:52:32">2 hours ago</span> &nbsp;</div>
+                    <div class="pull-right"><span class="text-muted" title="2013-11-08 15:52:32">{{comment.createdTime}}</span> &nbsp;</div>
                     <span class="author">
                         <a href="#"><strong>Catouse</strong></a>
                     </span>
                     <div class="text">
                        {{comment.content}}
                     </div>
-                    {% ifequal user itinerary.publisher%}
+                    {% ifequal user studyproduct.publisher%}
                     <div class="actions">
                         
                     <div id="{{comment.pk}}" class="delete btn-link">delete</div>
@@ -117,7 +143,7 @@ $(document).ready(function(){
     $("#publish").click(function () {
         var content = $("#content").val();
         $.ajax({
-            url: '/comment/3/{{itinerary.pk}}/',
+            url: '/comment/1/{{studyproduct.pk}}/',
 
             type: 'POST',
 

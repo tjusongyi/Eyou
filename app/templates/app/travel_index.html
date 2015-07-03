@@ -10,31 +10,31 @@
         </ol>
         <div class="carousel-inner">
             <div class="item active">
+                <img alt="First slide" src="{% static 'app/img/1.jpg' %}">
+                <div class="carousel-caption">
+                  <div class="slider-text">
+                    <h1>旧金山金门大桥</h1>
+                    <span></span>
+                                        <span class="fxproduct"></span>
+                                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="First slide" src="{% static 'app/img/2.jpg' %}">
+                <div class="carousel-caption">
+                  <div class="slider-text">
+                    <h1>落基山脉</h1>
+                    <span></span>
+                                        <span class="fxproduct"></span>
+                                    </div>
+                </div>
+            </div>
+            <div class="item">
                 <img alt="First slide" src="{% static 'app/img/3.jpg' %}">
                 <div class="carousel-caption">
                   <div class="slider-text">
-                    <h1>广州⇌柬埔寨</h1>
-                    <span>【爆款1999】年轻人第一次高逼格的出国旅行，广州柬埔寨</span>
-                                        <span class="fxproduct"></span>
-                                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img alt="First slide" src="{% static 'app/img/4.jpg' %}">
-                <div class="carousel-caption">
-                  <div class="slider-text">
-                    <h1>上海⇌巴厘岛</h1>
-                    <span>【小木屋5999】年轻人第一次放肆的海岛旅行，上海巴厘岛</span>
-                                        <span class="fxproduct"></span>
-                                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img alt="First slide" src="{% static 'app/img/5.jpg' %}">
-                <div class="carousel-caption">
-                  <div class="slider-text">
-                    <h1>北京⇌希腊</h1>
-                    <span>【唯美9999起】年轻人第一次浸在爱琴海的梦幻旅行 北京出发</span>
+                    <h1>黄石公园</h1>
+                    <span></span>
                                         <span class="fxproduct"></span>
                                     </div>
                 </div>
@@ -51,25 +51,59 @@
         <div class="example">
             <br />
             <br />
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="icon-search"></i></span>
-                        <input class="form-control" type="text">
-                        <span class="input-group-btn">
-                            <button class="btn btn-info" type="button" placeholder="目的地">搜索</button>
-                        </span>
+            <div class=" row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <br>
+                        <div class="input-group ">
+                            <input class="form-control" placeholder="目的地" id="des" type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <input class="form-control form-date" placeholder="行程开始日期" id="checkinDate"type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <input class="form-control form-date" placeholder="行程结束日期" id="checkoutDate"type="text">
+                            <span class="input-group-addon fix-border fix-padding"></span>
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="button" id="search">搜索</button>
+                            </span>
+
+                        </div>
                     </div>
-                    <br>
                 </div>
-            </div>
 
             <div class="list">
                 <header>
                     <div class="pull-right">
                         <a href="/travel_list">查看更多</a>
                     </div>
-                    <h3> 热门目的地 &nbsp;<small></small></h3>
+                    <h3> 热门旅游产品 &nbsp;<small></small></h3>
+                </header>
+                <section class="cards">
+                    {% for travel in travelproducts%}
+                    <div class="col-md-4 col-sm-6 col-lg-3">
+                        <a href="/travelproduct_details/{{ travel.pk}}" class="card">
+                            <img src="{{MEDIA_URL}}{{ travel.pics}}" alt="">
+                            <span class="caption">{{travel.title}}</span>
+                        </a>
+                        <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
+                                        <div>
+                                            <sup class="h6 text-contrast">¥</sup>
+                                            <span class="h3 price-amount">{{travel.price}}</span>
+                                            <sup class="h6 text-contrast"></sup>
+                                        </div>
+                        </div>
+                    </div>                   
+                    {% endfor %}
+                </section>
+                <footer>
+                    <ul class="pager">
+                    </ul>
+                </footer>
+            </div>
+            <div class="list">
+                <header>
+                    <div class="pull-right">
+                        <a href="/travel_list">查看更多</a>
+                    </div>
+                    <h3> 最新旅游产品 &nbsp;<small></small></h3>
                 </header>
                 <section class="cards">
                     {% for travel in travelproducts%}
@@ -95,5 +129,14 @@
             </div>
         </div>
     </div>
-
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#search").click(function () {
+        var des = $("#des").val();
+        var startime = $("#checkinDate").val();
+        var endtime = $("#checkoutDate").val();
+        location.href = "/travel_search_list/" + des + "/" + startime + "/" + endtime + "/";
+    });
+    });
+</script>
 {% endblock %}

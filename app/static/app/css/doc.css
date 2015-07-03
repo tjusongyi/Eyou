@@ -679,3 +679,31 @@ line-height: 30px;
 font-size: 24px;
 text-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
 }
+
+.carousel-image {
+  border:0;
+  display:block;
+}
+.carousel-feature {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    cursor: pointer;
+}
+#carousel {
+    height: 449px;
+    width: 960px;
+    position: relative;
+}
+.carousel-container {
+    position: relative;
+    width: 960px;
+    margin: 0px auto;
+}
+
+.center-shadow {
+    width: 100%;
+    height: 100%;
+    min-height: 20px;
+    background: transparent url("../images/center-shadow2.jpg") no-repeat scroll center top;
+}

@@ -10,31 +10,31 @@
         </ol>
         <div class="carousel-inner">
             <div class="item active">
-                <img alt="First slide" src="{% static 'app/img/3.jpg' %}">
+                <img alt="First slide" src="{% static 'app/img/6.jpg' %}">
                 <div class="carousel-caption">
                   <div class="slider-text">
-                    <h1>广州⇌柬埔寨</h1>
-                    <span>【爆款1999】年轻人第一次高逼格的出国旅行，广州柬埔寨</span>
+                    <h1>趁青春，去猎“奇”</h1>
+                    <span>住进属于你的树屋，房车与城堡</span>
                                         <span class="fxproduct"></span>
                                     </div>
                 </div>
             </div>
             <div class="item">
-                <img alt="First slide" src="{% static 'app/img/4.jpg' %}">
+                <img alt="First slide" src="{% static 'app/img/7.jpg' %}">
                 <div class="carousel-caption">
                   <div class="slider-text">
-                    <h1>上海⇌巴厘岛</h1>
-                    <span>【小木屋5999】年轻人第一次放肆的海岛旅行，上海巴厘岛</span>
+                    <h1>睡在山海间，住进人情里</h1>
+                    <span>台湾民宿精选</span>
                                         <span class="fxproduct"></span>
                                     </div>
                 </div>
             </div>
             <div class="item">
-                <img alt="First slide" src="{% static 'app/img/5.jpg' %}">
+                <img alt="First slide" src="{% static 'app/img/8.jpg' %}">
                 <div class="carousel-caption">
                   <div class="slider-text">
-                    <h1>北京⇌希腊</h1>
-                    <span>【唯美9999起】年轻人第一次浸在爱琴海的梦幻旅行 北京出发</span>
+                    <h1>住在城市中心</h1>
+                    <span>潮流时尚不打烊</span>
                                         <span class="fxproduct"></span>
                                     </div>
                 </div>
@@ -75,6 +75,36 @@
                         <a href="/hotel_list">查看更多</a>
                     </div>
                     <h3> 热门房源 &nbsp;<small></small></h3>
+                </header>
+                <section class="cards">
+                    {% for house in houses %}
+                    <div class="col-md-4 col-sm-6 col-lg-3">
+                        <a href="/house_details/{{ house.pk}}" class="card">
+                            <img src="{{MEDIA_URL}}{{ house.pics}}" alt="">
+                            <span class="caption">{{house.title}}</span>
+                        </a>
+                        <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
+                                        <div>
+                                            <sup class="h6 text-contrast">¥</sup>
+                                            <span class="h3 price-amount">{{house.rent}}</span>
+                                            <sup class="h6 text-contrast"></sup>
+                                        </div>
+                        </div>
+                    </div>                   
+                    {% endfor %}
+
+                </section>
+                <footer>
+                    <ul class="pager">
+                    </ul>
+                </footer>
+            </div>
+            <div class="list">
+                <header>
+                    <div class="pull-right">
+                        <a href="/hotel_list">查看更多</a>
+                    </div>
+                    <h3> 最新房源 &nbsp;<small></small></h3>
                 </header>
                 <section class="cards">
                     {% for house in houses %}
