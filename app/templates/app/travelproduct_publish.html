@@ -44,6 +44,14 @@
               <input type="text" id="checkinHotel" placeholder="酒店名称"></>
             </div>
         </div>
+        div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <p class="lead">目的地</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" id="destination" placeholder=""></>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-1 col-md-offset-1">
                 <p class="lead"> 行程日期</p>
@@ -86,6 +94,7 @@ $(document).ready(function(){
         var endtime = $("#endtime").val();
         var planeticket = $("#planeticket").val();
         var checkinHotel = $("#checkinHotel").val();
+        var destination = $("#destination").val();
         //alert(contact);
         $.ajax({
             url: '/travelproduct_publish/',
@@ -99,7 +108,8 @@ $(document).ready(function(){
                 planeticket: planeticket,
                 startime: startime,
                 endtime: endtime,
-                checkinHotel: checkinHotel
+                checkinHotel: checkinHotel,
+                destination: destination
             },
 
             dataType: 'json',
