@@ -75,7 +75,7 @@
                         <div class="col-md-2">
                                <h4><span class="label label-success">NEW</span>&nbsp; <a href="/house_details/{{house.pk}}">{{house.title}}</a>&nbsp; &nbsp; &nbsp; <span class="text-muted">{{house.publisher.username}}</span></h4>
                              <div class="item-content">
-                   {{house.description}}
+                   {{house.description|safe}}
                 </div>
                 <div class="item-footer">
                   <a href="#" class="text-muted"><i class="icon-comments"></i> {% for comment in comments %} {% ifequal forloop.counter forloop.parentloop.forloop.counter %}{{comment}}{% endifequal %}{%endfor%}</a>&nbsp;

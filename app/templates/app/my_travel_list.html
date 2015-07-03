@@ -19,7 +19,7 @@
                         <div class="col-md-3">
                                <h4><span class="label label-success">NEW</span>&nbsp; <a href="/travelproduct_details/{{travelproduct.pk}}">{{travelproduct.title}}</a>&nbsp; &nbsp; &nbsp; <span class="text-muted">{{travelproduct.publisher.username}}</span></h4>
                              <div class="item-content">
-                   {{travelproduct.description}}
+                   {{travelproduct.description|safe}}
                 </div>
                 <div class="item-footer">
                   <a href="#" class="text-muted"><i class="icon-comments"></i> 243</a>&nbsp;
